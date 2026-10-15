@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+
+import { StandaloneLink } from '@/components/ui/StandaloneLink';
 
 export const metadata: Metadata = {
   title: 'Page not found · Fixed for All',
@@ -12,7 +13,7 @@ export default function NotFound() {
       <h1>Page not found</h1>
       <p>This page doesn’t exist, or it has moved.</p>
       <p>
-        <Link href="/">Go to the home page</Link>
+        <StandaloneLink href="/">Go to the home page</StandaloneLink>
       </p>
     </>
   );

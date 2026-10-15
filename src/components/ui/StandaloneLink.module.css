@@ -1,0 +1,13 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  border-radius: var(--radius-link);
+}
+
+.link:hover {
+  text-decoration-thickness: 2.5px;
+}
