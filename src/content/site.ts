@@ -26,3 +26,15 @@ export const header = {
     href: isSet(config.bookingUrl) ? config.bookingUrl : sectionHref(anchors.contact),
   },
 };
+
+type FooterLink = { label: string; href: string };
+
+export const footer = {
+  links: [
+    { label: config.email, href: `mailto:${config.email}` },
+    ...(isSet(config.linkedinUrl) ? [{ label: 'LinkedIn', href: config.linkedinUrl }] : []),
+    // The accessibility statement and privacy pages add their links here when they're built (#10, #11).
+  ] satisfies FooterLink[],
+  // Build-time year: the site is static, and is rebuilt on every change.
+  copyright: `© ${new Date().getFullYear()} Fixed for All · Akhil Vij`,
+};
