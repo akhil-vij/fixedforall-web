@@ -8,3 +8,6 @@ export async function open(page: Page, route: Route) {
   expect(response?.status(), `status for ${route.path}`).toBe(route.status);
   await page.evaluate(() => document.fonts.ready);
 }
+
+/** The axe tags every page must pass. */
+export const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];

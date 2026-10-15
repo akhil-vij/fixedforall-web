@@ -123,6 +123,7 @@
   --text-body: 1.125rem;
   --text-list: 1.1875rem;
   --text-nav: 1.0625rem;
+  --text-menu: 1.25rem;
   --text-small: 1rem;
   --text-code-size: 0.9375rem;
   --text-wordmark: 1.5rem;
@@ -153,6 +154,7 @@
   /* ---------- Shape ---------- */
 
   --radius-link: 2px;
+  --radius-mark: 3px;
   --radius-sm: 4px;
   --radius-control: 6px;
   --radius-md: 8px;
@@ -166,5 +168,6 @@
 
   --target-min: 44px;
   --target-button: 52px;
+  --target-button-compact: 48px;
   --transition-fast: 150ms ease;
 }

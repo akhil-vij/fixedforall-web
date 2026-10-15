@@ -1,10 +1,8 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
-import { open } from './helpers';
+import { open, WCAG_TAGS } from './helpers';
 import { routes } from './routes';
-
-const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
 for (const route of routes) {
   test(`${route.name}: no axe violations`, async ({ page }) => {

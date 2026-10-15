@@ -1,0 +1,58 @@
+.header {
+  border-bottom: 1px solid var(--border);
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+  max-width: var(--header-max);
+  min-height: var(--header-height);
+  margin: 0 auto;
+  padding: 12px var(--gutter);
+}
+
+.wordmark {
+  display: inline-flex;
+  color: var(--text);
+  align-items: center;
+  gap: 10px;
+  min-height: var(--target-min);
+  padding: 0 4px;
+  font-family: var(--font-heading);
+
+  /* The design specifies 700 but loads Source Serif only at 400/600, so it renders at 600. */
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-wordmark);
+  letter-spacing: var(--tracking-heading);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.wordmark:hover {
+  color: var(--text);
+}
+
+.mark {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: var(--radius-mark);
+}
+
+/* Narrow layout: wordmark and Menu button on a fixed-height first row; the open menu takes a
+   second, full-width row (see MainNav.module.css). */
+@media (width < 760px) {
+  .bar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: minmax(calc(var(--header-height) - 24px), auto);
+    gap: 0 16px;
+  }
+
+  .wordmark {
+    justify-self: start;
+  }
+}
