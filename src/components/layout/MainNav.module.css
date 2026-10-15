@@ -1,0 +1,99 @@
+/* ---------- Wide (760px and up): inline nav, no Menu button ---------- */
+
+.menuButton {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px 28px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: inline-flex;
+  color: var(--text);
+  align-items: center;
+  min-height: var(--target-min);
+  padding: 0 4px;
+  font-size: var(--text-nav);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.link:hover {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---------- Narrow (below 760px): Menu button, nav opens below the header ---------- */
+
+@media (width < 760px) {
+  .menuButton {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--target-min);
+    padding: 0 16px;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-weight: var(--weight-bold);
+    font-size: var(--text-nav);
+    border: var(--border-width-control) solid var(--control-border);
+    border-radius: var(--radius-control);
+    cursor: pointer;
+  }
+
+  .menuButton:hover {
+    background: var(--control-hover);
+  }
+
+  .nav {
+    display: none;
+  }
+
+  /* Second row, full width of the header: cancel the bar's side and bottom padding. */
+  .nav[data-open='true'] {
+    display: block;
+    grid-column: 1 / -1;
+    margin: 12px calc(-1 * var(--gutter)) -12px;
+    padding: 8px var(--gutter) 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .link {
+    display: flex;
+    min-height: var(--target-button);
+    padding: 8px 4px;
+    font-size: var(--text-menu);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .link:hover {
+    text-decoration-thickness: auto;
+  }
+
+  .nav .cta {
+    display: flex;
+    width: 100%;
+    min-height: var(--target-button);
+    margin-top: 20px;
+  }
+}

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
+import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SkipLink } from '@/components/layout/SkipLink';
 import { config } from '@/content/config';
 import { site } from '@/content/site';
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={fontVariables}>
       <body>
         <SkipLink />
+        <SiteHeader />
         <main id="main" tabIndex={-1}>
           {children}
         </main>

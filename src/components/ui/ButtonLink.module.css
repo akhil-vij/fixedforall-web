@@ -1,0 +1,59 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--target-button);
+  padding: 10px 22px;
+  font-weight: var(--weight-bold);
+  font-size: var(--text-body);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+
+  /* Every variant has a border; on solid variants it's transparent, so forced-colours mode
+     (which drops backgrounds) still draws the button's edge. */
+  border: var(--border-width-control) solid transparent;
+  border-radius: var(--radius-control);
+  transition: background-color var(--transition-fast);
+}
+
+.primary {
+  color: var(--action-text);
+  background: var(--action);
+}
+
+.primary:hover {
+  color: var(--action-text);
+  background: var(--action-hover);
+}
+
+.secondary {
+  color: var(--text);
+  background: transparent;
+  border-color: var(--control-border);
+}
+
+.secondary:hover {
+  color: var(--text);
+  background: var(--control-hover);
+}
+
+.onBand {
+  color: var(--action-on-band-text);
+  background: var(--action-on-band);
+}
+
+.onBand:hover {
+  color: var(--action-on-band-text);
+  background: var(--action-on-band-hover);
+}
+
+.compact {
+  min-height: var(--target-button-compact);
+  padding: 10px 20px;
+}
+
+.block {
+  display: flex;
+  width: 100%;
+}
