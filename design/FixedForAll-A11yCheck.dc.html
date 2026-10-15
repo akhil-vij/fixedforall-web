@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="https://cdn.jsdelivr.net/npm/axe-core@4.10.3/axe.min.js"></script>
+<style>
+body { margin: 0; background: #E7E2D8; }
+*, *::before, *::after { box-sizing: border-box; }
+a { color: #1E6B5A; }
+a:hover { color: #1C1B18; }
+</style>
+</helmet>
+<div style="padding: 24px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; line-height: 1.6; color: #1C1B18; background: #E7E2D8;">
+  <h1 style="margin: 0 0 8px; font-size: 16px;">Automated accessibility check — axe-core, WCAG 2.0/2.1/2.2 A and AA</h1>
+  <p style="margin: 0 0 16px;">{{ status }}</p>
+  <sc-for list="{{ results }}" as="r" hint-placeholder-count="0">
+    <section style="background: #FFFFFF; border: 1px solid #D6D0C4; border-radius: 6px; padding: 16px 18px; margin: 0 0 14px; max-width: 1100px;">
+      <h2 style="margin: 0 0 6px; font-size: 15px;">{{ r.title }}</h2>
+      <p style="margin: 0 0 8px;">{{ r.summary }}</p>
+      <ul style="margin: 0; padding: 0 0 0 20px;">
+        <sc-for list="{{ r.items }}" as="it" hint-placeholder-count="0"><li>{{ it }}</li></sc-for>
+      </ul>
+    </section>
+  </sc-for>
+  <div ref="{{ boxRef }}" style="width: {{ widthPx }}; max-width: 100%; margin-top: 24px; background: #FAF8F3; box-shadow: 0 2px 6px rgba(28, 27, 24, 0.08);">
+    <dc-import name="FixedForAll-Final" variant="{{ variant }}" hint-size="100%,1200px"></dc-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { status: 'Loading axe-core…', results: [], widthPx: '1440px', variant: 'desktop' };
+  boxRef = React.createRef();
+
+  componentDidMount() { this.run(); }
+
+  wait(ms) { return new Promise((r) => setTimeout(r, ms)); }
+
+  async run() {
+    const t0 = Date.now();
+    while (!window.axe && Date.now() - t0 < 20000) await this.wait(100);
+    if (!window.axe) {
+      this.setState({ status: 'axe-core could not be loaded from the CDN in this environment.' });
+      console.log('A11Y-CHECK axe not loaded');
+      return;
+    }
+    document.title = 'Fixed for All — automated accessibility check';
+    if (document.fonts && document.fonts.ready) await document.fonts.ready;
+    await this.wait(1500);
+    const out = [];
+    const fmt = (v) => v.id + ' (' + v.impact + ', ' + v.nodes.length + ' node' + (v.nodes.length === 1 ? '' : 's') + '): ' + v.nodes.slice(0, 3).map((n) => n.target.join(' ')).join(' | ');
+    for (const pass of [{ w: '1440px', v: 'desktop' }, { w: '390px', v: 'mobile' }]) {
+      this.setState({ widthPx: pass.w, variant: pass.v, status: 'Running at ' + pass.w + '…' });
+      await this.wait(1500);
+      const el = this.boxRef.current;
+      const wcag = await window.axe.run(el, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } });
+      const page = await window.axe.run(document, { runOnly: { type: 'rule', values: ['html-has-lang', 'html-lang-valid', 'document-title', 'landmark-one-main', 'page-has-heading-one', 'bypass'] } });
+      const bp = await window.axe.run(el, { runOnly: { type: 'tag', values: ['best-practice'] } });
+      const r = {
+        title: 'Width ' + pass.w + ' (' + pass.v + ' layout)',
+        summary: 'WCAG A/AA: ' + wcag.violations.length + ' violations · ' + wcag.passes.length + ' rules passed · ' + wcag.incomplete.length + ' need manual review. Page-level: ' + page.violations.length + ' violations (passed: ' + page.passes.map((p) => p.id).join(', ') + '). Best-practice notes: ' + bp.violations.length + '.',
+        items: [].concat(
+          wcag.violations.map(fmt),
+          page.violations.map(fmt),
+          bp.violations.map((v) => 'best-practice · ' + fmt(v)),
+          wcag.incomplete.map((v) => 'manual review · ' + v.id + ' (' + v.nodes.length + ' node' + (v.nodes.length === 1 ? '' : 's') + '): ' + v.nodes.slice(0, 2).map((n) => n.target.join(' ')).join(' | '))
+        ),
+      };
+      out.push(r);
+      console.log('A11Y-CHECK ' + JSON.stringify({
+        width: pass.w,
+        violations: wcag.violations.map((v) => ({ id: v.id, impact: v.impact, nodes: v.nodes.map((n) => ({ target: n.target, summary: n.failureSummary })) })),
+        pageViolations: page.violations.map((v) => v.id),
+        pagePasses: page.passes.map((p) => p.id),
+        bestPractice: bp.violations.map((v) => ({ id: v.id, nodes: v.nodes.length, targets: v.nodes.slice(0, 3).map((n) => n.target) })),
+        incomplete: wcag.incomplete.map((v) => ({ id: v.id, nodes: v.nodes.length, targets: v.nodes.slice(0, 3).map((n) => n.target) })),
+        passes: wcag.passes.length,
+      }));
+      this.setState({ results: out.slice() });
+    }
+    this.setState({ status: 'Done. axe-core ' + window.axe.version + '. Scope: the page itself for WCAG tags; the whole document for page-level rules.' });
+  }
+
+  renderVals() {
+    return { status: this.state.status, results: this.state.results, widthPx: this.state.widthPx, variant: this.state.variant, boxRef: this.boxRef };
+  }
+}
+</script>
+</body>
+</html>

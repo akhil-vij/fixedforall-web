@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+body { margin: 0; background: #FFFFFF; }
+*, *::before, *::after { box-sizing: border-box; }
+a { color: #1A4FBF; }
+a:hover { color: #0B2E7A; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" id="{{ idp }}top" style="position: relative; container-type: inline-size; width: 100%; min-width: 0; background: #FFFFFF; color: #0B0C0C; font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 19px; line-height: 1.5; -webkit-font-smoothing: antialiased;">
+<a href="#{{ idp }}main" style="position: absolute; left: -9999px; top: 10px; z-index: 10; display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; background: #FFDD00; color: #0B0C0C; font-weight: 700; text-decoration: underline;" style-focus="left: 12px; outline: 3px solid #0B0C0C; outline-offset: 0;">Skip to main content</a>
+
+<header style="border-bottom: 1px solid #B1B4B6;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 10px clamp(20px, 4cqw, 40px); min-height: 68px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px;">
+    <a href="#{{ idp }}top" style="display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; min-height: 44px; color: #0B0C0C; text-decoration: none; font-weight: 700; font-size: 22px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Fixed for All <span style="font-weight: 400; font-size: 16px; color: #505A5F;">Accessibility services for EU teams</span></a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Main">
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 17px;">
+          <li><a href="#{{ idp }}how" style="display: inline-flex; align-items: center; min-height: 44px; color: #1A4FBF; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">How it works</a></li>
+          <li><a href="#{{ idp }}services" style="display: inline-flex; align-items: center; min-height: 44px; color: #1A4FBF; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Services</a></li>
+          <li><a href="#{{ idp }}work" style="display: inline-flex; align-items: center; min-height: 44px; color: #1A4FBF; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Work</a></li>
+          <li><a href="#{{ idp }}about" style="display: inline-flex; align-items: center; min-height: 44px; color: #1A4FBF; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">About</a></li>
+          <li><a href="#{{ idp }}faq" style="display: inline-flex; align-items: center; min-height: 44px; color: #1A4FBF; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Questions</a></li>
+          <li><a href="#{{ idp }}contact" style="display: inline-flex; align-items: center; min-height: 44px; color: #1A4FBF; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Contact</a></li>
+        </ul>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; background: #FFFFFF; border: 2px solid #0B0C0C; font-family: inherit; font-weight: 700; font-size: 17px; color: #0B0C0C; cursor: pointer;" style-hover="background: #F3F2F1;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Menu</button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav aria-label="Main" style="border-top: 1px solid #B1B4B6; background: #F3F2F1; padding: 8px clamp(20px, 4cqw, 40px) 16px;">
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
+        <li><a href="#{{ idp }}how" style="display: flex; align-items: center; min-height: 48px; padding: 6px 0; border-bottom: 1px solid #B1B4B6; color: #1A4FBF; font-size: 19px; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">How it works</a></li>
+        <li><a href="#{{ idp }}services" style="display: flex; align-items: center; min-height: 48px; padding: 6px 0; border-bottom: 1px solid #B1B4B6; color: #1A4FBF; font-size: 19px; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Services</a></li>
+        <li><a href="#{{ idp }}work" style="display: flex; align-items: center; min-height: 48px; padding: 6px 0; border-bottom: 1px solid #B1B4B6; color: #1A4FBF; font-size: 19px; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Work</a></li>
+        <li><a href="#{{ idp }}about" style="display: flex; align-items: center; min-height: 48px; padding: 6px 0; border-bottom: 1px solid #B1B4B6; color: #1A4FBF; font-size: 19px; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">About</a></li>
+        <li><a href="#{{ idp }}faq" style="display: flex; align-items: center; min-height: 48px; padding: 6px 0; border-bottom: 1px solid #B1B4B6; color: #1A4FBF; font-size: 19px; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Questions</a></li>
+        <li><a href="#{{ idp }}contact" style="display: flex; align-items: center; min-height: 48px; padding: 6px 0; color: #1A4FBF; font-size: 19px; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Contact</a></li>
+      </ul>
+    </nav>
+  </sc-if>
+</header>
+
+<main id="{{ idp }}main" style="max-width: 1100px; margin: 0 auto; padding: clamp(32px, 4cqw, 56px) clamp(20px, 4cqw, 40px) clamp(56px, 6cqw, 96px); display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px 72px;">
+
+  <nav aria-label="Contents" style="flex: 1 1 200px; max-width: 240px; min-width: 0; padding-top: 6px;">
+    <p style="margin: 0 0 10px; font-weight: 700; font-size: 17px;">Contents</p>
+    <ol style="margin: 0; padding: 0 0 0 1.5em; font-size: 17px; line-height: 1.45; display: flex; flex-direction: column; gap: 8px;">
+      <li><a href="#{{ idp }}why" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Why this matters now</a></li>
+      <li><a href="#{{ idp }}how" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">How it works</a></li>
+      <li><a href="#{{ idp }}services" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Services and prices</a></li>
+      <li><a href="#{{ idp }}report" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">What you get</a></li>
+      <li><a href="#{{ idp }}work" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Previous work</a></li>
+      <li><a href="#{{ idp }}howiwork" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">How I work</a></li>
+      <li><a href="#{{ idp }}about" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">About Akhil Vij</a></li>
+      <li><a href="#{{ idp }}faq" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Questions</a></li>
+      <li><a href="#{{ idp }}contact" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Get a free check</a></li>
+    </ol>
+  </nav>
+
+  <div style="flex: 999 1 460px; max-width: 760px; min-width: 0;">
+    <p style="margin: 0 0 12px; font-size: 17px; color: #505A5F;">For product, engineering and compliance teams selling to EU consumers</p>
+    <h1 style="margin: 0 0 20px; font-weight: 700; font-size: clamp(36px, 4cqw, 54px); line-height: 1.1; letter-spacing: -0.01em; text-wrap: pretty;">Accessibility problems: found, fixed at the source, and kept fixed.</h1>
+    <p style="margin: 0; font-size: clamp(21px, 1.7cqw, 24px); line-height: 1.4; text-wrap: pretty;">I find and fix accessibility problems in the shared components your product is built from, so every page gets better at once and stays that way. For teams preparing for the European Accessibility Act.</p>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 28px;">
+      <a href="#{{ idp }}contact" style="display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 10px 24px; background: #1A4FBF; color: #FFFFFF; font-weight: 700; font-size: 19px; text-decoration: none; transition: background-color .15s ease;" style-hover="background: #0B2E7A; color: #FFFFFF;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Book a 20-minute call</a>
+      <a href="#{{ idp }}report" style="color: #1A4FBF; font-size: 19px; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">See a sample report</a>
+    </div>
+    <p style="margin: 28px 0 0; font-size: 17px; color: #505A5F; text-wrap: pretty;">Previously built accessibility into 25+ enterprise products at Informatica and a travel platform behind 30+ brands at Agoda. <span style="display: inline-block; border: 1px dashed #505A5F; padding: 0 6px;">[placeholder — confirming I can name these companies]</span></p>
+
+    <section id="{{ idp }}why" style="margin-top: 56px; padding-top: 32px; border-top: 1px solid #B1B4B6;">
+      <h2 style="margin: 0 0 16px; font-weight: 700; font-size: clamp(27px, 2.6cqw, 36px); line-height: 1.15;">1. Why this matters now</h2>
+      <p style="margin: 0 0 14px; text-wrap: pretty;"><strong>The law applies now.</strong> Since June 2025, the European Accessibility Act covers online shops, banking, travel booking and many consumer apps.</p>
+      <p style="margin: 0 0 14px; text-wrap: pretty;"><strong>Scanners only catch part of it.</strong> Automated tools find roughly a third of real problems. Can someone finish your checkout with only a keyboard? Does a screen reader announce errors? That takes a person.</p>
+      <p style="margin: 0; text-wrap: pretty;"><strong>Widgets don’t fix code.</strong> Overlay tools hide problems instead of fixing them. German testing centres (BIK) no longer give their test seal to sites that rely on them.</p>
+    </section>
+
+    <section id="{{ idp }}how" style="margin-top: 48px; padding-top: 32px; border-top: 1px solid #B1B4B6;">
+      <h2 style="margin: 0 0 16px; font-weight: 700; font-size: clamp(27px, 2.6cqw, 36px); line-height: 1.15;">2. How it works</h2>
+      <p style="margin: 0; text-wrap: pretty;">Most accessibility problems live in a handful of shared components. Fix those, and every page that uses them is fixed. One change, reviewed by your team as a normal pull request.</p>
+      <table style="width: 100%; border-collapse: collapse; margin: 24px 0 0; font-size: 17px; line-height: 1.4;">
+        <caption style="text-align: left; font-weight: 700; padding: 0 0 10px;">Example: one fix in a shared component</caption>
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: left; vertical-align: bottom; padding: 8px 12px 8px 0; border-bottom: 2px solid #0B0C0C;">Component</th>
+            <th scope="col" style="text-align: left; vertical-align: bottom; padding: 8px 12px 8px 0; border-bottom: 2px solid #0B0C0C;">Pages that use it</th>
+            <th scope="col" style="text-align: left; vertical-align: bottom; padding: 8px 0 8px 0; border-bottom: 2px solid #0B0C0C;">Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid #B1B4B6;"><strong>Date picker</strong><br>Couldn’t be opened with a keyboard</td>
+            <td style="vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid #B1B4B6;">Search, Results, Checkout, Confirmation, Account, Support</td>
+            <td style="vertical-align: top; padding: 12px 0 12px 0; border-bottom: 1px solid #B1B4B6;">One pull request. Six pages fixed.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 style="margin: 32px 0 12px; font-weight: 700; font-size: 24px; line-height: 1.25;">The three steps</h3>
+      <ol style="margin: 0; padding: 0 0 0 1.4em; display: flex; flex-direction: column; gap: 12px;">
+        <li style="text-wrap: pretty;"><strong>Check.</strong> I scan your key pages and test the main user journeys by hand: keyboard only, screen reader, zoom.</li>
+        <li style="text-wrap: pretty;"><strong>Fix.</strong> I fix problems in your shared components and code, as normal pull requests your team reviews.</li>
+        <li style="text-wrap: pretty;"><strong>Keep it fixed.</strong> I add simple checks to your release process and give your team a short training, so problems don’t creep back.</li>
+      </ol>
+    </section>
+
+    <section id="{{ idp }}services" style="margin-top: 48px; padding-top: 32px; border-top: 1px solid #B1B4B6;">
+      <h2 style="margin: 0 0 16px; font-weight: 700; font-size: clamp(27px, 2.6cqw, 36px); line-height: 1.15;">3. Services and prices</h2>
+      <table style="width: 100%; border-collapse: collapse; font-size: 17px; line-height: 1.4;">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: left; vertical-align: bottom; padding: 8px 12px 8px 0; border-bottom: 2px solid #0B0C0C; width: 28%;">Service</th>
+            <th scope="col" style="text-align: left; vertical-align: bottom; padding: 8px 12px 8px 0; border-bottom: 2px solid #0B0C0C;">What’s included</th>
+            <th scope="col" style="text-align: left; vertical-align: bottom; padding: 8px 0 8px 0; border-bottom: 2px solid #0B0C0C; width: 24%;">Time and price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" style="text-align: left; vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid #B1B4B6; font-weight: 700;">Accessibility Check<br><span style="font-weight: 400; color: #505A5F;">Most teams start here</span></th>
+            <td style="vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid #B1B4B6;">Your main user journeys, scanned and tested by hand. A plain-English report with what to fix first.</td>
+            <td style="vertical-align: top; padding: 12px 0 12px 0; border-bottom: 1px solid #B1B4B6;">2–3 days<br>From €1,200 <span style="display: inline-block; font-size: 15px; color: #505A5F; border: 1px dashed #505A5F; padding: 0 5px;">[placeholder]</span></td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align: left; vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid #B1B4B6; font-weight: 700;">Fix Sprint<br><span style="font-weight: 400; color: #505A5F;">After the Check</span></th>
+            <td style="vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid #B1B4B6;">I fix your shared components and key journeys, and train your team.</td>
+            <td style="vertical-align: top; padding: 12px 0 12px 0; border-bottom: 1px solid #B1B4B6;">1–4 weeks<br>Quoted after the Check</td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align: left; vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid #B1B4B6; font-weight: 700;">Independent Accessibility Report<br><span style="font-weight: 400; color: #505A5F;">For software companies</span></th>
+            <td style="vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid #B1B4B6;">For when your customers ask for one (often called an ACR or VPAT). An honest, independent report, which buyers trust more than one a company writes about itself.</td>
+            <td style="vertical-align: top; padding: 12px 0 12px 0; border-bottom: 1px solid #B1B4B6;">Quoted per product</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="{{ idp }}report" style="margin-top: 48px; padding-top: 32px; border-top: 1px solid #B1B4B6;">
+      <h2 style="margin: 0 0 16px; font-weight: 700; font-size: clamp(27px, 2.6cqw, 36px); line-height: 1.15;">4. What you get</h2>
+      <p style="margin: 0 0 14px; text-wrap: pretty;">Every Check ends with a short report. Each finding says whether a scanner found it or a person did. You get:</p>
+      <ul style="margin: 0 0 20px; padding: 0 0 0 1.4em; display: flex; flex-direction: column; gap: 8px;">
+        <li>a one-line summary of where you stand</li>
+        <li>problems grouped by how badly they block people</li>
+        <li>the five fixes to do first</li>
+        <li>a spreadsheet of every issue, and tickets ready to import into Jira</li>
+      </ul>
+      <div style="background: #F3F2F1; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;">
+        <p style="margin: 0; font-size: 16px; color: #505A5F;">From a sample report (illustrative)</p>
+        <p style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1.3; text-wrap: pretty;">12 problems found on 6 key screens. 4 block users completely.</p>
+        <table style="width: 100%; border-collapse: collapse; font-size: 17px; line-height: 1.4;">
+          <caption style="text-align: left; font-weight: 700; padding: 0 0 8px;">Fix these first</caption>
+          <thead>
+            <tr>
+              <th scope="col" style="text-align: left; padding: 6px 12px 6px 0; border-bottom: 2px solid #0B0C0C; width: 2.5em;">No.</th>
+              <th scope="col" style="text-align: left; padding: 6px 12px 6px 0; border-bottom: 2px solid #0B0C0C;">Problem</th>
+              <th scope="col" style="text-align: left; padding: 6px 0; border-bottom: 2px solid #0B0C0C; width: 26%;">Found by</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid #B1B4B6;">1</td><td style="vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid #B1B4B6;">Checkout “Continue” button has no accessible name</td><td style="vertical-align: top; padding: 8px 0; border-bottom: 1px solid #B1B4B6;">A person</td></tr>
+            <tr><td style="vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid #B1B4B6;">2</td><td style="vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid #B1B4B6;">Date picker can’t be used with a keyboard</td><td style="vertical-align: top; padding: 8px 0; border-bottom: 1px solid #B1B4B6;">A person</td></tr>
+            <tr><td style="vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid #B1B4B6;">3</td><td style="vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid #B1B4B6;">Form errors aren’t announced to screen readers</td><td style="vertical-align: top; padding: 8px 0; border-bottom: 1px solid #B1B4B6;">A person</td></tr>
+            <tr><td style="vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid #B1B4B6;">4</td><td style="vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid #B1B4B6;">Price text contrast is 3.1:1, needs 4.5:1</td><td style="vertical-align: top; padding: 8px 0; border-bottom: 1px solid #B1B4B6;">Scanner</td></tr>
+            <tr><td style="vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid #B1B4B6;">5</td><td style="vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid #B1B4B6;">Focus is lost when the cookie dialog closes</td><td style="vertical-align: top; padding: 8px 0; border-bottom: 1px solid #B1B4B6;">A person</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin: 20px 0 0;"><a href="#{{ idp }}report" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Download the sample report (PDF, 14 pages)</a> <span style="display: inline-block; font-size: 16px; color: #505A5F; border: 1px dashed #505A5F; padding: 0 6px;">[placeholder — sample PDF to come]</span></p>
+    </section>
+
+    <section id="{{ idp }}work" style="margin-top: 48px; padding-top: 32px; border-top: 1px solid #B1B4B6;">
+      <h2 style="margin: 0 0 16px; font-weight: 700; font-size: clamp(27px, 2.6cqw, 36px); line-height: 1.15;">5. Previous work</h2>
+      <h3 style="margin: 0 0 8px; font-weight: 700; font-size: 24px; line-height: 1.25;">Informatica: one design system, 25+ products</h3>
+      <p style="margin: 0 0 6px; text-wrap: pretty;">Built accessibility (WCAG 2.1 AA) into the company-wide component library, a requirement for enterprise and government sales.</p>
+      <p style="margin: 0 0 24px; font-size: 16px; color: #505A5F;"><span style="display: inline-block; border: 1px dashed #505A5F; padding: 0 6px;">[placeholder — numbers to confirm]</span></p>
+      <h3 style="margin: 0 0 8px; font-weight: 700; font-size: 24px; line-height: 1.25;">Agoda: one platform, 30+ brands</h3>
+      <p style="margin: 0 0 6px; text-wrap: pretty;">On a shared codebase behind 30+ partner brands, every fix reached every brand. Built a tool that turns audit reports into ready-to-review fixes: about 60% fixed in the first pass, about 85% a strong starting point, all reviewed by engineers.</p>
+      <p style="margin: 0 0 24px; font-size: 16px; color: #505A5F;"><span style="display: inline-block; border: 1px dashed #505A5F; padding: 0 6px;">[placeholder — confirming I can share these]</span></p>
+      <h3 style="margin: 0 0 8px; font-weight: 700; font-size: 24px; line-height: 1.25;">Before and after: my own product</h3>
+      <p style="margin: 0 0 12px;">A real scan, the fixes, and the result.</p>
+      <div style="min-height: 140px; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; background: #F3F2F1; border: 1px dashed #505A5F; font-size: 16px; color: #505A5F;">[placeholder — before/after screenshots, coming soon]</div>
+    </section>
+
+    <section id="{{ idp }}howiwork" style="margin-top: 48px; padding-top: 32px; border-top: 1px solid #B1B4B6;">
+      <h2 style="margin: 0 0 16px; font-weight: 700; font-size: clamp(27px, 2.6cqw, 36px); line-height: 1.15;">6. How I work</h2>
+      <ul style="margin: 0; padding: 0 0 0 1.4em; display: flex; flex-direction: column; gap: 10px;">
+        <li style="text-wrap: pretty;"><strong>Real fixes in your code.</strong> No widgets, no overlays.</li>
+        <li style="text-wrap: pretty;"><strong>Every change tested by a person</strong> with a keyboard and a screen reader.</li>
+        <li style="text-wrap: pretty;"><strong>Honest reports.</strong> If something only partly works, the report says so.</li>
+        <li style="text-wrap: pretty;"><strong>Working hours that overlap with yours:</strong> 10:00–14:00 CET every working day, replies the same day.</li>
+        <li style="text-wrap: pretty;"><strong>Clear contracts in English,</strong> with data-protection terms for EU clients.</li>
+      </ul>
+    </section>
+
+    <section id="{{ idp }}about" style="margin-top: 48px; padding-top: 32px; border-top: 1px solid #B1B4B6;">
+      <h2 style="margin: 0 0 16px; font-weight: 700; font-size: clamp(27px, 2.6cqw, 36px); line-height: 1.15;">7. About Akhil Vij</h2>
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px;">
+        <div style="flex: none; width: 180px; height: 180px; display: flex; align-items: center; justify-content: center; padding: 12px; text-align: center; background: #F3F2F1; border: 1px dashed #505A5F; font-size: 15px; color: #505A5F;">[placeholder — photo]</div>
+        <div style="flex: 1 1 320px; min-width: 0;">
+          <p style="margin: 0; text-wrap: pretty;">I’m a staff engineer with 12+ years building large web products. I’ve spent years making accessibility work at scale, in design systems used by dozens of products. I’m based in India and work with teams across Europe.</p>
+          <p style="margin: 14px 0 0;"><a href="#{{ idp }}contact" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">LinkedIn profile</a> <span style="display: inline-block; font-size: 16px; color: #505A5F; border: 1px dashed #505A5F; padding: 0 6px;">[placeholder — link]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="{{ idp }}faq" style="margin-top: 48px; padding-top: 32px; border-top: 1px solid #B1B4B6;">
+      <h2 style="margin: 0 0 16px; font-weight: 700; font-size: clamp(27px, 2.6cqw, 36px); line-height: 1.15;">8. Questions</h2>
+      <h3 style="margin: 0 0 6px; font-weight: 700; font-size: 22px; line-height: 1.3;">Will this make us compliant?</h3>
+      <p style="margin: 0 0 20px; text-wrap: pretty;">No one can honestly guarantee that. I test against WCAG 2.1/2.2 AA, the standard the EU law points to, fix what’s broken, and tell you plainly where you stand.</p>
+      <h3 style="margin: 0 0 6px; font-weight: 700; font-size: 22px; line-height: 1.3;">Do you use AI?</h3>
+      <p style="margin: 0 0 20px; text-wrap: pretty;">I use tools to work faster, but every fix is written into your code, reviewed and tested by a person.</p>
+      <h3 style="margin: 0 0 6px; font-weight: 700; font-size: 22px; line-height: 1.3;">Does the EAA apply to us?</h3>
+      <p style="margin: 0 0 20px; text-wrap: pretty;">Very small service businesses (under 10 staff and under €2M turnover) are exempt. Most others selling to EU consumers are covered. Happy to check on a call.</p>
+      <h3 style="margin: 0 0 6px; font-weight: 700; font-size: 22px; line-height: 1.3;">What do you need from us?</h3>
+      <p style="margin: 0; text-wrap: pretty;">Access to a test version of your site and, for fixes, your code repository or a way to send pull requests.</p>
+    </section>
+
+    <section id="{{ idp }}contact" style="margin-top: 48px; padding-top: 32px; border-top: 1px solid #B1B4B6;">
+      <h2 style="margin: 0 0 12px; font-weight: 700; font-size: clamp(27px, 2.6cqw, 36px); line-height: 1.15;">9. Get a free check</h2>
+      <p style="margin: 0 0 20px; font-size: 21px; line-height: 1.4; text-wrap: pretty;">Send me your website. I’ll reply with the three biggest problems I find, free. A real look by a person, not a scanner. No sales pitch.</p>
+      <form onSubmit="{{ preventSubmit }}" aria-label="Free check request" style="background: #F3F2F1; padding: 24px; display: flex; flex-direction: column; gap: 18px;">
+        <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; max-width: 480px;">Your website
+          <input type="url" name="website" autocomplete="url" style="width: 100%; min-height: 48px; padding: 8px 12px; font-family: inherit; font-size: 19px; font-weight: 400; color: #0B0C0C; background: #FFFFFF; border: 2px solid #0B0C0C;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: inset 0 0 0 2px #0B0C0C;">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; max-width: 480px;">Work email
+          <input type="email" name="email" autocomplete="email" style="width: 100%; min-height: 48px; padding: 8px 12px; font-family: inherit; font-size: 19px; font-weight: 400; color: #0B0C0C; background: #FFFFFF; border: 2px solid #0B0C0C;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: inset 0 0 0 2px #0B0C0C;">
+        </label>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; margin-top: 4px;">
+          <button type="submit" style="display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 10px 28px; background: #1A4FBF; color: #FFFFFF; font-family: inherit; font-weight: 700; font-size: 19px; border: 0; cursor: pointer; transition: background-color .15s ease;" style-hover="background: #0B2E7A;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Send</button>
+          <a href="#{{ idp }}contact" style="color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Or book a 20-minute call</a>
+        </div>
+        <p style="margin: 0; font-size: 16px; color: #505A5F;">[placeholder — form is not wired up in this prototype]</p>
+      </form>
+    </section>
+  </div>
+</main>
+
+<footer style="background: #F3F2F1; border-top: 1px solid #B1B4B6; padding: 24px clamp(20px, 4cqw, 40px) 40px;">
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px; font-size: 16px;">
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 24px;">
+      <li><a href="mailto:hello@fixedforall.com" style="display: inline-flex; align-items: center; min-height: 44px; color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">hello@fixedforall.com</a></li>
+      <li><a href="#{{ idp }}about" style="display: inline-flex; align-items: center; min-height: 44px; color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">LinkedIn</a></li>
+      <li><a href="#{{ idp }}top" style="display: inline-flex; align-items: center; min-height: 44px; color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Accessibility statement</a></li>
+      <li><a href="#{{ idp }}top" style="display: inline-flex; align-items: center; min-height: 44px; color: #1A4FBF; text-underline-offset: 3px; text-decoration-thickness: 1px;" style-hover="color: #0B2E7A; text-decoration-thickness: 3px;" style-focus="outline: 3px solid #FFDD00; outline-offset: 0; box-shadow: 0 0 0 6px #0B0C0C;">Privacy</a></li>
+    </ul>
+    <p style="margin: 0; color: #505A5F;">© 2026 Fixed for All · Akhil Vij</p>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;variant&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;auto&quot;, &quot;desktop&quot;, &quot;mobile&quot;], &quot;default&quot;: &quot;auto&quot;, &quot;tsType&quot;: &quot;'auto' | 'desktop' | 'mobile'&quot;, &quot;section&quot;: &quot;Layout&quot;}, &quot;mobileMenuOpen&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Prototype&quot;}, &quot;idPrefix&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { narrow: false, menuOpen: null };
+  rootRef = React.createRef();
+  componentDidMount() {
+    const el = this.rootRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    this.ro = new ResizeObserver((en) => {
+      const narrow = en[0].contentRect.width < 760;
+      if (narrow !== this.state.narrow) this.setState({ narrow });
+    });
+    this.ro.observe(el);
+  }
+  componentWillUnmount() { if (this.ro) this.ro.disconnect(); }
+  renderVals() {
+    const v = this.props.variant;
+    const forced = v === 'mobile' || v === 'desktop';
+    const narrow = v === 'mobile' ? true : v === 'desktop' ? false : this.state.narrow;
+    const open = this.state.menuOpen !== null ? this.state.menuOpen : (this.props.mobileMenuOpen ?? false);
+    return {
+      rootRef: this.rootRef,
+      idp: (this.props.idPrefix ?? '') + (forced ? v + '-' : ''),
+      narrow,
+      wide: !narrow,
+      menuOpen: narrow && open,
+      toggleMenu: () => this.setState({ menuOpen: !open }),
+      preventSubmit: (e) => e.preventDefault(),
+    };
+  }
+}
+</script>
+</body>
+</html>

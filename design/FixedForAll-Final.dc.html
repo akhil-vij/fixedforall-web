@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+body { margin: 0; background: #FAF8F3; }
+*, *::before, *::after { box-sizing: border-box; }
+a { color: #1E6B5A; }
+a:hover { color: #1C1B18; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" id="{{ idp }}top" style="position: relative; container-type: inline-size; width: 100%; min-width: 0; background: #FAF8F3; color: #1C1B18; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased;">
+<a href="#{{ idp }}main" style="position: absolute; left: -9999px; top: 12px; z-index: 10; display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; background: #FAF8F3; color: #1C1B18; font-weight: 700; font-size: 17px; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; border-radius: 4px;" style-focus="left: 16px; outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Skip to content</a>
+
+<header style="border-bottom: 1px solid #DDD8CE;">
+  <div style="max-width: 1344px; margin: 0 auto; padding: 12px clamp(20px, 5cqw, 72px); min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 16px 32px;">
+    <a href="#{{ idp }}top" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 4px; color: #1C1B18; text-decoration: none; font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em; border-radius: 4px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">
+      <span aria-hidden="true" style="display: inline-block; width: 12px; height: 12px; background: #1E6B5A; border-radius: 3px;"></span>
+      <span>Fixed for All</span>
+    </a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 12px 28px;">
+        <nav aria-label="Main">
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 24px;">
+            <li><a href="#{{ idp }}how" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; color: #1C1B18; font-size: 17px; text-decoration: none; border-radius: 4px;" style-hover="text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">How it works</a></li>
+            <li><a href="#{{ idp }}services" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; color: #1C1B18; font-size: 17px; text-decoration: none; border-radius: 4px;" style-hover="text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Services</a></li>
+            <li><a href="#{{ idp }}work" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; color: #1C1B18; font-size: 17px; text-decoration: none; border-radius: 4px;" style-hover="text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Work</a></li>
+            <li><a href="#{{ idp }}about" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; color: #1C1B18; font-size: 17px; text-decoration: none; border-radius: 4px;" style-hover="text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">About</a></li>
+            <li><a href="#{{ idp }}faq" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; color: #1C1B18; font-size: 17px; text-decoration: none; border-radius: 4px;" style-hover="text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">FAQ</a></li>
+          </ul>
+        </nav>
+        <a href="#{{ idp }}contact" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; background: #1E6B5A; color: #FFFFFF; font-weight: 700; font-size: 18px; line-height: 1.2; text-decoration: none; border-radius: 6px; transition: background-color .15s ease;" style-hover="background: #17564A; color: #FFFFFF;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Book a 20-minute call</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; background: transparent; border: 2px solid #1C1B18; border-radius: 6px; font-family: inherit; font-weight: 700; font-size: 17px; color: #1C1B18; cursor: pointer;" style-hover="background: #F2EEE6;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Menu</button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav aria-label="Main" style="border-top: 1px solid #DDD8CE; padding: 8px clamp(20px, 5cqw, 72px) 24px;">
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
+        <li><a href="#{{ idp }}how" style="display: flex; align-items: center; min-height: 52px; padding: 8px 4px; border-bottom: 1px solid #DDD8CE; color: #1C1B18; font-size: 20px; text-decoration: none;" style-hover="text-decoration: underline; text-underline-offset: 5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18; border-radius: 4px;">How it works</a></li>
+        <li><a href="#{{ idp }}services" style="display: flex; align-items: center; min-height: 52px; padding: 8px 4px; border-bottom: 1px solid #DDD8CE; color: #1C1B18; font-size: 20px; text-decoration: none;" style-hover="text-decoration: underline; text-underline-offset: 5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18; border-radius: 4px;">Services</a></li>
+        <li><a href="#{{ idp }}work" style="display: flex; align-items: center; min-height: 52px; padding: 8px 4px; border-bottom: 1px solid #DDD8CE; color: #1C1B18; font-size: 20px; text-decoration: none;" style-hover="text-decoration: underline; text-underline-offset: 5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18; border-radius: 4px;">Work</a></li>
+        <li><a href="#{{ idp }}about" style="display: flex; align-items: center; min-height: 52px; padding: 8px 4px; border-bottom: 1px solid #DDD8CE; color: #1C1B18; font-size: 20px; text-decoration: none;" style-hover="text-decoration: underline; text-underline-offset: 5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18; border-radius: 4px;">About</a></li>
+        <li><a href="#{{ idp }}faq" style="display: flex; align-items: center; min-height: 52px; padding: 8px 4px; border-bottom: 1px solid #DDD8CE; color: #1C1B18; font-size: 20px; text-decoration: none;" style-hover="text-decoration: underline; text-underline-offset: 5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18; border-radius: 4px;">FAQ</a></li>
+      </ul>
+      <a href="#{{ idp }}contact" style="display: flex; align-items: center; justify-content: center; min-height: 52px; margin-top: 20px; padding: 12px 22px; background: #1E6B5A; color: #FFFFFF; font-weight: 700; font-size: 18px; line-height: 1.2; text-decoration: none; border-radius: 6px;" style-hover="background: #17564A; color: #FFFFFF;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Book a 20-minute call</a>
+    </nav>
+  </sc-if>
+</header>
+
+<main id="{{ idp }}main">
+
+<section style="padding: clamp(48px, 7cqw, 104px) clamp(20px, 5cqw, 72px) clamp(40px, 5cqw, 72px);">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(32px, 4cqw, 64px);">
+    <div style="flex: 1 1 400px; max-width: 600px; min-width: 0;">
+      <h1 style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(36px, 4.6cqw, 68px); line-height: 1.05; letter-spacing: -0.02em; color: #1C1B18; text-wrap: balance;">Accessibility, fixed at the source.</h1>
+      <p style="margin: 24px 0 0; font-size: clamp(18px, 1.45cqw, 21px); line-height: 1.55; text-wrap: pretty;">I find and fix accessibility problems in the shared components your whole product is built from, so every page gets better at once and stays that way. For teams preparing for the European Accessibility Act.</p>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 32px;">
+        <a href="#{{ idp }}contact" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 24px; background: #1E6B5A; color: #FFFFFF; font-weight: 700; font-size: 18px; line-height: 1.2; text-decoration: none; border-radius: 6px; transition: background-color .15s ease;" style-hover="background: #17564A; color: #FFFFFF;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Book a 20-minute call</a>
+        <a href="#{{ idp }}report" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 10px 24px; background: transparent; color: #1C1B18; font-weight: 700; font-size: 18px; line-height: 1.2; text-decoration: none; border: 2px solid #1C1B18; border-radius: 6px; transition: background-color .15s ease;" style-hover="background: #F2EEE6; color: #1C1B18;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">See a sample report</a>
+      </div>
+    </div>
+    <article aria-label="Example pull request (illustrative)" style="flex: 1 1 380px; max-width: 600px; min-width: 0; background: #FFFFFF; border: 1px solid #D6D0C4; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 2px rgba(28, 27, 24, 0.06), 0 18px 44px rgba(28, 27, 24, 0.09);">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 14px 18px; border-bottom: 1px solid #E6E1D7;">
+        <p style="margin: 0; font-weight: 700; font-size: 17px; line-height: 1.4;">DatePicker: make trigger keyboard-operable <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 400; font-size: 16px; color: #5B5950;">#412</span></p>
+        <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; border-radius: 999px; background: #1E6B5A; color: #FFFFFF; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">Merged</span>
+      </div>
+      <p style="margin: 0; padding: 8px 18px; border-bottom: 1px solid #E6E1D7; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; line-height: 1.6; color: #5B5950;">src/components/DatePicker.tsx</p>
+      <div role="region" aria-label="Code changes in DatePicker.tsx" tabIndex="0" style="background: #1C1B18; color: #E6E1D7; padding: 10px 0; overflow-x: auto; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; line-height: 1.7;" style-focus="outline: 3px solid transparent; box-shadow: inset 0 0 0 3px #FAF8F3;">
+        <div style="display: grid; grid-template-columns: 48px minmax(0, 1fr);"><span style="padding-right: 10px; text-align: right; color: #C5BFB2;">41</span><span style="padding: 0 18px 0 10px; white-space: nowrap;">&nbsp;&nbsp;&lt;label&gt;Check-in date&lt;/label&gt;</span></div>
+        <div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); background: rgba(242, 166, 152, 0.14);"><span style="padding-right: 10px; text-align: right; color: #C5BFB2;">42</span><span style="padding: 0 18px 0 10px; white-space: nowrap; color: #F2A698;">-&nbsp;&lt;div on<span>Click</span>={open}&gt;</span></div>
+        <div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); background: rgba(159, 217, 180, 0.14);"><span style="padding-right: 10px; text-align: right; color: #C5BFB2;">42</span><span style="padding: 0 18px 0 10px; white-space: nowrap; color: #9FD9B4;">+&nbsp;&lt;button type="button"</span></div>
+        <div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); background: rgba(159, 217, 180, 0.14);"><span style="padding-right: 10px; text-align: right; color: #C5BFB2;">43</span><span style="padding: 0 18px 0 10px; white-space: nowrap; color: #9FD9B4;">+&nbsp;&nbsp;&nbsp;aria-expanded={isOpen}</span></div>
+        <div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); background: rgba(159, 217, 180, 0.14);"><span style="padding-right: 10px; text-align: right; color: #C5BFB2;">44</span><span style="padding: 0 18px 0 10px; white-space: nowrap; color: #9FD9B4;">+&nbsp;&nbsp;&nbsp;on<span>Click</span>={open}&gt;</span></div>
+        <div style="display: grid; grid-template-columns: 48px minmax(0, 1fr);"><span style="padding-right: 10px; text-align: right; color: #C5BFB2;">45</span><span style="padding: 0 18px 0 10px; white-space: nowrap;">&nbsp;&nbsp;&nbsp;&nbsp;{formatted}</span></div>
+        <div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); background: rgba(242, 166, 152, 0.14);"><span style="padding-right: 10px; text-align: right; color: #C5BFB2;">46</span><span style="padding: 0 18px 0 10px; white-space: nowrap; color: #F2A698;">-&nbsp;&lt;/div&gt;</span></div>
+        <div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); background: rgba(159, 217, 180, 0.14);"><span style="padding-right: 10px; text-align: right; color: #C5BFB2;">46</span><span style="padding: 0 18px 0 10px; white-space: nowrap; color: #9FD9B4;">+&nbsp;&lt;/button&gt;</span></div>
+      </div>
+      <p style="margin: 0; padding: 12px 18px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; line-height: 1.6; color: #5B5950;">6 pages affected · tested: keyboard · NVDA · VoiceOver · 200% zoom</p>
+    </article>
+  </div>
+</section>
+
+<section aria-label="Experience" style="padding: 0 clamp(20px, 5cqw, 72px) clamp(48px, 6cqw, 96px);">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <sc-if value="{{ proofNames }}" hint-placeholder-val="{{ true }}">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 0 clamp(24px, 3cqw, 48px);">
+        <div style="border-top: 1px solid #DDD8CE; padding: 20px 0 8px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(44px, 4cqw, 64px); line-height: 1; letter-spacing: -0.02em; color: #1C1B18;">25+</p>
+          <p style="margin: 10px 0 0; font-size: 17px; line-height: 1.5; text-wrap: pretty;">enterprise products made accessible through one shared design system at Informatica</p>
+        </div>
+        <div style="border-top: 1px solid #DDD8CE; padding: 20px 0 8px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(44px, 4cqw, 64px); line-height: 1; letter-spacing: -0.02em; color: #1C1B18;">30+</p>
+          <p style="margin: 10px 0 0; font-size: 17px; line-height: 1.5; text-wrap: pretty;">brands on one travel platform at Agoda, where every fix reached every brand</p>
+        </div>
+        <div style="border-top: 1px solid #DDD8CE; padding: 20px 0 8px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(44px, 4cqw, 64px); line-height: 1; letter-spacing: -0.02em; color: #1C1B18;">12+</p>
+          <p style="margin: 10px 0 0; font-size: 17px; line-height: 1.5; text-wrap: pretty;">years building large web products</p>
+        </div>
+      </div>
+      <p style="margin: 16px 0 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; line-height: 1.5; color: #5B5950;">[placeholder — pending permission to name companies and confirm figures]</p>
+    </sc-if>
+    <sc-if value="{{ proofGeneric }}" hint-placeholder-val="{{ false }}">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 0 clamp(24px, 3cqw, 48px);">
+        <div style="border-top: 1px solid #DDD8CE; padding: 20px 0 8px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(44px, 4cqw, 64px); line-height: 1; letter-spacing: -0.02em; color: #1C1B18;">25+</p>
+          <p style="margin: 10px 0 0; font-size: 17px; line-height: 1.5; text-wrap: pretty;">enterprise products · one design system</p>
+        </div>
+        <div style="border-top: 1px solid #DDD8CE; padding: 20px 0 8px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(44px, 4cqw, 64px); line-height: 1; letter-spacing: -0.02em; color: #1C1B18;">30+</p>
+          <p style="margin: 10px 0 0; font-size: 17px; line-height: 1.5; text-wrap: pretty;">brands · one shared platform</p>
+        </div>
+        <div style="border-top: 1px solid #DDD8CE; padding: 20px 0 8px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(44px, 4cqw, 64px); line-height: 1; letter-spacing: -0.02em; color: #1C1B18;">12+</p>
+          <p style="margin: 10px 0 0; font-size: 17px; line-height: 1.5; text-wrap: pretty;">years building large web products</p>
+        </div>
+      </div>
+      <p style="margin: 16px 0 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; line-height: 1.5; color: #5B5950;">[placeholder — figures to confirm]</p>
+    </sc-if>
+  </div>
+</section>
+
+<section style="background: #F2EEE6; border-top: 1px solid #DDD8CE; border-bottom: 1px solid #DDD8CE; padding: clamp(56px, 7cqw, 112px) clamp(20px, 5cqw, 72px);">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 16px;">01 — Why now</p>
+    <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(32px, 3.2cqw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 clamp(28px, 3cqw, 44px); color: #1C1B18; text-wrap: pretty; max-width: 24ch;">Why this matters now</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(24px, 3cqw, 48px);">
+      <div style="border-top: 2px solid #1C1B18; padding-top: 20px;">
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 10px; color: #1C1B18; text-wrap: pretty;">The law applies now.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">Since June <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">2025</span>, the European Accessibility Act covers online shops, banking, travel booking and many consumer apps.</p>
+      </div>
+      <div style="border-top: 2px solid #1C1B18; padding-top: 20px;">
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 10px; color: #1C1B18; text-wrap: pretty;">Scanners only catch part of it.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">Automated tools find roughly a third of real problems. Can someone finish your checkout with only a keyboard? Does a screen reader announce errors? That takes a person.</p>
+      </div>
+      <div style="border-top: 2px solid #1C1B18; padding-top: 20px;">
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 10px; color: #1C1B18; text-wrap: pretty;">Widgets don’t fix code.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">Overlay tools hide problems instead of fixing them. German testing centres (BIK) no longer give their test seal to sites that rely on them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}how" style="padding: clamp(56px, 7cqw, 112px) clamp(20px, 5cqw, 72px);">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 16px;">02 — How it works</p>
+    <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(32px, 3.2cqw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 16px; color: #1C1B18; text-wrap: pretty; max-width: 24ch;">Fix it once. Fixed for all.</h2>
+    <p style="margin: 0; font-size: clamp(18px, 1.4cqw, 21px); line-height: 1.55; max-width: 60ch; color: #5B5950; text-wrap: pretty;">Most accessibility problems live in a handful of shared components. Fix those, and every page that uses them is fixed.</p>
+
+    <figure style="margin: clamp(28px, 3cqw, 44px) 0 0; background: #F2EEE6; border: 1px solid #D6D0C4; border-radius: 12px; padding: clamp(20px, 2.5cqw, 36px);">
+      <div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: clamp(24px, 3cqw, 48px);">
+        <div style="flex: 1 1 320px; max-width: 480px; min-width: 0; background: #FAF8F3; border: 1px solid #D6D0C4; border-radius: 10px; padding: clamp(18px, 2cqw, 28px); display: flex; flex-direction: column; gap: 16px;">
+          <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0;">Shared component</p>
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 26px; line-height: 1.2;">Date picker</p>
+          <div aria-hidden="true" style="background: #FFFFFF; border: 1px solid #D6D0C4; border-radius: 8px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-weight: 700; font-size: 16px; line-height: 1.4;">Check-in date</span>
+            <span style="display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1.5px solid #1C1B18; border-radius: 6px; font-size: 16px;"><span>12 Mar 2026</span><span style="color: #5B5950;">▾</span></span>
+          </div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #5B5950;">Couldn’t be opened with a keyboard. Fixed in one pull request, then tested by hand: keyboard, screen reader, <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">200%</span> zoom.</p>
+        </div>
+        <div style="flex: 1 1 380px; max-width: 600px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <p style="margin: 0; font-weight: 700; font-size: 18px; line-height: 1.4;">Used on 6 pages</p>
+            <p style="margin: 2px 0 0; font-size: 16px; line-height: 1.5; color: #5B5950;">The same blocker on every page. One pull request, all six fixed.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; align-content: start;">
+            <div style="background: #FAF8F3; border: 1px solid #D6D0C4; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-weight: 700; font-size: 16px; line-height: 1.3;">Search</span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 85%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 60%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 30px; border: 2px solid #1E6B5A; border-radius: 5px; background: #FFFFFF; margin-top: 2px;"></span>
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #1E6B5A; font-weight: 500;">✓ Fixed</span>
+            </div>
+            <div style="background: #FAF8F3; border: 1px solid #D6D0C4; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-weight: 700; font-size: 16px; line-height: 1.3;">Results</span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 70%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 50%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 30px; border: 2px solid #1E6B5A; border-radius: 5px; background: #FFFFFF; margin-top: 2px;"></span>
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #1E6B5A; font-weight: 500;">✓ Fixed</span>
+            </div>
+            <div style="background: #FAF8F3; border: 1px solid #D6D0C4; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-weight: 700; font-size: 16px; line-height: 1.3;">Checkout</span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 90%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 45%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 30px; border: 2px solid #1E6B5A; border-radius: 5px; background: #FFFFFF; margin-top: 2px;"></span>
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #1E6B5A; font-weight: 500;">✓ Fixed</span>
+            </div>
+            <div style="background: #FAF8F3; border: 1px solid #D6D0C4; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-weight: 700; font-size: 16px; line-height: 1.3;">Confirmation</span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 65%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 80%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 30px; border: 2px solid #1E6B5A; border-radius: 5px; background: #FFFFFF; margin-top: 2px;"></span>
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #1E6B5A; font-weight: 500;">✓ Fixed</span>
+            </div>
+            <div style="background: #FAF8F3; border: 1px solid #D6D0C4; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-weight: 700; font-size: 16px; line-height: 1.3;">Account</span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 75%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 55%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 30px; border: 2px solid #1E6B5A; border-radius: 5px; background: #FFFFFF; margin-top: 2px;"></span>
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #1E6B5A; font-weight: 500;">✓ Fixed</span>
+            </div>
+            <div style="background: #FAF8F3; border: 1px solid #D6D0C4; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-weight: 700; font-size: 16px; line-height: 1.3;">Support</span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 80%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 6px; width: 40%; background: #DDD8CE; border-radius: 3px;"></span>
+              <span aria-hidden="true" style="display: block; height: 30px; border: 2px solid #1E6B5A; border-radius: 5px; background: #FFFFFF; margin-top: 2px;"></span>
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #1E6B5A; font-weight: 500;">✓ Fixed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption style="margin: 18px 0 0; font-size: 16px; line-height: 1.5; color: #5B5950; text-wrap: pretty;">One change in the date picker, reviewed by your team as a pull request, reaches every page that uses it.</figcaption>
+    </figure>
+
+    <ol role="list" style="list-style: none; margin: clamp(36px, 4cqw, 56px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: clamp(24px, 3cqw, 48px);">
+      <li style="border-top: 2px solid #1C1B18; padding-top: 20px;">
+        <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 10px;">Step 1</p>
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 10px; color: #1C1B18;">Check.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">I scan your key pages and test the main user journeys by hand: keyboard only, screen reader, zoom.</p>
+      </li>
+      <li style="border-top: 2px solid #1C1B18; padding-top: 20px;">
+        <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 10px;">Step 2</p>
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 10px; color: #1C1B18;">Fix.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">I fix problems in your shared components and code, as normal pull requests your team reviews.</p>
+      </li>
+      <li style="border-top: 2px solid #1C1B18; padding-top: 20px;">
+        <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 10px;">Step 3</p>
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 10px; color: #1C1B18;">Keep it fixed.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">I add simple checks to your release process and give your team a short training, so problems don’t creep back.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="{{ idp }}services" style="border-top: 1px solid #DDD8CE; padding: clamp(56px, 7cqw, 112px) clamp(20px, 5cqw, 72px);">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 16px;">03 — Services</p>
+    <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(32px, 3.2cqw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 clamp(28px, 3cqw, 44px); color: #1C1B18; text-wrap: pretty; max-width: 24ch;">Services</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 2cqw, 28px);">
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 2.4cqw, 32px); background: #FFFFFF; border: 1px solid #D6D0C4; border-radius: 12px;">
+        <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #1E6B5A; margin: 0;">Most teams start here</p>
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 26px; line-height: 1.2; margin: 0; color: #1C1B18;">Accessibility Check</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">Your main user journeys, scanned and tested by hand. A plain-English report with what to fix first.</p>
+        <p style="margin: auto 0 0; padding-top: 16px; border-top: 1px solid #E6E1D7; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.6; color: #1C1B18;">2–3 days · from €1,200 <span style="color: #5B5950; background: #F2EEE6; border: 1px dashed #A9A396; border-radius: 4px; padding: 1px 7px;">[price placeholder]</span></p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 2.4cqw, 32px); background: #FFFFFF; border: 1px solid #D6D0C4; border-radius: 12px;">
+        <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0;">After the Check</p>
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 26px; line-height: 1.2; margin: 0; color: #1C1B18;">Fix Sprint</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">I fix your shared components and key journeys, and train your team.</p>
+        <p style="margin: auto 0 0; padding-top: 16px; border-top: 1px solid #E6E1D7; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.6; color: #1C1B18;">1–4 weeks · quoted after the Check</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 2.4cqw, 32px); background: #FFFFFF; border: 1px solid #D6D0C4; border-radius: 12px;">
+        <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0;">For software companies</p>
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 26px; line-height: 1.2; margin: 0; color: #1C1B18;">Independent Accessibility Report</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">For when your customers ask for one (often called an ACR or VPAT). An honest, independent report, which buyers trust more than one a company writes about itself.</p>
+        <p style="margin: auto 0 0; padding-top: 16px; border-top: 1px solid #E6E1D7; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.6; color: #1C1B18;">Quoted per product</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}report" style="background: #F2EEE6; border-top: 1px solid #DDD8CE; border-bottom: 1px solid #DDD8CE; padding: clamp(56px, 7cqw, 112px) clamp(20px, 5cqw, 72px);">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(28px, 4cqw, 64px);">
+    <div style="flex: 1 1 300px; max-width: 440px; min-width: 0;">
+      <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 16px;">04 — What you get</p>
+      <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(32px, 3.2cqw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 20px; color: #1C1B18; text-wrap: pretty;">A report your team can act on</h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">Every Check ends with a short report: a one-line summary, problems grouped by how badly they block people, and the five fixes to do first. Each finding says whether a scanner found it or a person did.</p>
+      <p style="margin: 16px 0 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">You also get a spreadsheet of every issue, and tickets ready to import into Jira.</p>
+      <p style="margin: 16px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; font-size: 18px; line-height: 1.6;"><a href="#{{ idp }}report" style="display: inline-flex; align-items: center; min-height: 44px; color: #1E6B5A; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; border-radius: 2px;" style-hover="color: #1C1B18; text-decoration-thickness: 2.5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #F2EEE6, 0 0 0 6px #1C1B18;">Download the sample report (PDF)</a> <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #5B5950; background: #FAF8F3; border: 1px dashed #A9A396; border-radius: 4px; padding: 1px 7px;">[placeholder — sample PDF to come]</span></p>
+    </div>
+    <article aria-label="Sample report, page 1 (illustrative)" style="flex: 1.3 1 360px; max-width: 680px; min-width: 0; background: #FFFFFF; border: 1px solid #D6D0C4; border-radius: 6px; padding: clamp(20px, 2.5cqw, 36px); box-shadow: 0 1px 2px rgba(28,27,24,0.06), 0 18px 44px rgba(28,27,24,0.09); display: flex; flex-direction: column; gap: 22px;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding-bottom: 14px; border-bottom: 1px solid #E6E1D7; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.5; color: #5B5950;">
+        <span>Accessibility Check · Sample report</span>
+        <span>Page 1 of 14 · illustrative</span>
+      </div>
+      <div>
+        <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 8px;">Summary</p>
+        <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(22px, 1.9cqw, 28px); line-height: 1.25; text-wrap: pretty;">12 problems found on 6 key screens. 4 block users completely.</p>
+      </div>
+      <div>
+        <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 12px;">By impact on users</p>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 6px 14px;">
+            <span style="font-size: 16px; font-weight: 700; line-height: 1.4;">Blocks users completely</span>
+            <span style="font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right;">4</span>
+            <span aria-hidden="true" style="grid-column: 1 / -1; display: block; height: 10px; background: #F2EEE6; border-radius: 5px; overflow: hidden;"><span style="display: block; height: 100%; width: 33%; background: #1C1B18; border-radius: 5px;"></span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 6px 14px;">
+            <span style="font-size: 16px; font-weight: 700; line-height: 1.4;">Makes tasks much harder</span>
+            <span style="font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right;">5</span>
+            <span aria-hidden="true" style="grid-column: 1 / -1; display: block; height: 10px; background: #F2EEE6; border-radius: 5px; overflow: hidden;"><span style="display: block; height: 100%; width: 42%; background: #6B675E; border-radius: 5px;"></span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 6px 14px;">
+            <span style="font-size: 16px; font-weight: 700; line-height: 1.4;">Minor friction</span>
+            <span style="font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right;">3</span>
+            <span aria-hidden="true" style="grid-column: 1 / -1; display: block; height: 10px; background: #F2EEE6; border-radius: 5px; overflow: hidden;"><span style="display: block; height: 100%; width: 25%; background: #B9B3A6; border-radius: 5px;"></span></span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 4px;">Fix these first</p>
+        <ol role="list" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column;">
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 0; border-top: 1px solid #E6E1D7; font-size: 16px; line-height: 1.5;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #5B5950; min-width: 1.5ch;">1</span>
+            <span style="flex: 1 1 220px;">Checkout “Continue” button has no accessible name</span>
+            <span style="display: inline-block; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.3; padding: 3px 8px; border-radius: 4px; background: #1C1B18; color: #FAF8F3; white-space: nowrap;">Tested by hand</span>
+          </li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 0; border-top: 1px solid #E6E1D7; font-size: 16px; line-height: 1.5;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #5B5950; min-width: 1.5ch;">2</span>
+            <span style="flex: 1 1 220px;">Date picker can’t be used with a keyboard</span>
+            <span style="display: inline-block; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.3; padding: 3px 8px; border-radius: 4px; background: #1C1B18; color: #FAF8F3; white-space: nowrap;">Tested by hand</span>
+          </li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 0; border-top: 1px solid #E6E1D7; font-size: 16px; line-height: 1.5;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #5B5950; min-width: 1.5ch;">3</span>
+            <span style="flex: 1 1 220px;">Form errors aren’t announced to screen readers</span>
+            <span style="display: inline-block; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.3; padding: 3px 8px; border-radius: 4px; background: #1C1B18; color: #FAF8F3; white-space: nowrap;">Tested by hand</span>
+          </li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 0; border-top: 1px solid #E6E1D7; font-size: 16px; line-height: 1.5;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #5B5950; min-width: 1.5ch;">4</span>
+            <span style="flex: 1 1 220px;">Price text contrast is 3.1:1, needs 4.5:1</span>
+            <span style="display: inline-block; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.3; padding: 2px 7px; border-radius: 4px; border: 1px solid #1C1B18; color: #1C1B18; white-space: nowrap;">Scanned automatically</span>
+          </li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 0; border-top: 1px solid #E6E1D7; border-bottom: 1px solid #E6E1D7; font-size: 16px; line-height: 1.5;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #5B5950; min-width: 1.5ch;">5</span>
+            <span style="flex: 1 1 220px;">Focus is lost when the cookie dialog closes</span>
+            <span style="display: inline-block; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.3; padding: 3px 8px; border-radius: 4px; background: #1C1B18; color: #FAF8F3; white-space: nowrap;">Tested by hand</span>
+          </li>
+        </ol>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.5; color: #5B5950;">
+        <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px;"><span style="display: inline-block; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.3; padding: 2px 7px; border-radius: 4px; border: 1px solid #1C1B18; color: #1C1B18; white-space: nowrap;">Scanned automatically</span><span>axe-core across the 6 screens</span></p>
+        <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px;"><span style="display: inline-block; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.3; padding: 3px 8px; border-radius: 4px; background: #1C1B18; color: #FAF8F3; white-space: nowrap;">Tested by hand</span><span>keyboard · NVDA + Chrome · VoiceOver + Safari · <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">200%</span> zoom</span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="{{ idp }}work" style="padding: clamp(56px, 7cqw, 112px) clamp(20px, 5cqw, 72px);">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 16px;">05 — Work</p>
+    <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(32px, 3.2cqw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 clamp(28px, 3cqw, 44px); color: #1C1B18; text-wrap: pretty; max-width: 24ch;">Where this has worked before</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 2cqw, 28px);">
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 2.4cqw, 32px); border: 1px solid #D6D0C4; border-radius: 12px;">
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 26px; line-height: 1.2; margin: 0; color: #1C1B18; text-wrap: pretty;">Informatica: one design system, 25+ products.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">Built accessibility (WCAG 2.1 AA) into the company-wide component library, a requirement for enterprise and government sales.</p>
+        <p style="margin: auto 0 0; padding-top: 12px;"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #5B5950; background: #F2EEE6; border: 1px dashed #A9A396; border-radius: 4px; padding: 1px 7px;">[placeholder — company name and numbers pending permission]</span></p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 2.4cqw, 32px); border: 1px solid #D6D0C4; border-radius: 12px;">
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 26px; line-height: 1.2; margin: 0; color: #1C1B18; text-wrap: pretty;">Agoda: one platform, 30+ brands.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">On a shared codebase behind <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">30+</span> partner brands, every fix reached every brand. Built a tool that turns audit reports into ready-to-review fixes: about <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">60%</span> fixed in the first pass, about <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">85%</span> a strong starting point, all reviewed by engineers.</p>
+        <p style="margin: auto 0 0; padding-top: 12px;"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #5B5950; background: #F2EEE6; border: 1px dashed #A9A396; border-radius: 4px; padding: 1px 7px;">[placeholder — company name and numbers pending permission]</span></p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 2.4cqw, 32px); border: 1px solid #D6D0C4; border-radius: 12px;">
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 26px; line-height: 1.2; margin: 0; color: #1C1B18; text-wrap: pretty;">Before and after: my own product.</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">A real scan, the fixes, and the result.</p>
+        <div style="margin-top: 4px; min-height: 150px; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; background: repeating-linear-gradient(135deg, #F2EEE6 0 10px, #E9E4DA 10px 20px); border: 1px dashed #A9A396; border-radius: 8px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.5; color: #5B5950;">[placeholder — before/after screenshots, coming soon]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: #F2EEE6; border-top: 1px solid #DDD8CE; border-bottom: 1px solid #DDD8CE; padding: clamp(56px, 7cqw, 112px) clamp(20px, 5cqw, 72px);">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(24px, 4cqw, 64px);">
+    <div style="flex: 1 1 280px; max-width: 400px; min-width: 0;">
+      <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 16px;">06 — How I work</p>
+      <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(32px, 3.2cqw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0; color: #1C1B18; text-wrap: pretty;">Plain terms, real fixes</h2>
+    </div>
+    <ul style="flex: 2 1 400px; max-width: 760px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
+      <li style="padding: 18px 0; border-top: 1px solid #D6D0C4; font-size: 19px; line-height: 1.55; text-wrap: pretty;"><strong>Real fixes in your code.</strong> No widgets, no overlays.</li>
+      <li style="padding: 18px 0; border-top: 1px solid #D6D0C4; font-size: 19px; line-height: 1.55; text-wrap: pretty;"><strong>Every change tested by a person</strong> with a keyboard and a screen reader.</li>
+      <li style="padding: 18px 0; border-top: 1px solid #D6D0C4; font-size: 19px; line-height: 1.55; text-wrap: pretty;"><strong>Honest reports.</strong> If something only partly works, the report says so.</li>
+      <li style="padding: 18px 0; border-top: 1px solid #D6D0C4; font-size: 19px; line-height: 1.55; text-wrap: pretty;"><strong>Working hours that overlap with yours:</strong> <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">10:00–14:00</span> CET every working day, replies the same day.</li>
+      <li style="padding: 18px 0; border-top: 1px solid #D6D0C4; border-bottom: 1px solid #D6D0C4; font-size: 19px; line-height: 1.55; text-wrap: pretty;"><strong>Clear contracts in English,</strong> with data-protection terms for EU clients.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="{{ idp }}about" style="padding: clamp(56px, 7cqw, 112px) clamp(20px, 5cqw, 72px);">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(28px, 4cqw, 64px);">
+    <div style="flex: 1 1 300px; max-width: 420px; min-width: 0; position: relative; padding-bottom: 56px;">
+      <div style="aspect-ratio: 4 / 5; border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 20px; text-align: center; background: repeating-linear-gradient(135deg, #F2EEE6 0 10px, #E9E4DA 10px 20px); border: 1px dashed #A9A396; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.5; color: #5B5950;">[placeholder — photo of Akhil, natural light, plain background]</div>
+      <div style="position: absolute; left: 20px; right: 20px; bottom: 0; background: #FFFFFF; border: 1px solid #D6D0C4; border-radius: 10px; padding: 14px 18px; box-shadow: 0 1px 2px rgba(28, 27, 24, 0.06), 0 14px 32px rgba(28, 27, 24, 0.10);">
+        <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 20px; line-height: 1.3;">Akhil Vij</p>
+        <p style="margin: 4px 0 0; font-size: 16px; line-height: 1.5; color: #5B5950; text-wrap: pretty;">Staff engineer, <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">12+</span> years. Based in India, working with teams across Europe. <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">10:00–14:00</span> CET overlap, replies the same working day.</p>
+      </div>
+    </div>
+    <div style="flex: 1.4 1 360px; max-width: 680px; min-width: 0;">
+      <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 16px;">07 — About</p>
+      <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(32px, 3.2cqw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 20px; color: #1C1B18;">Hi, I’m Akhil.</h2>
+      <p style="margin: 0; font-size: clamp(19px, 1.5cqw, 22px); line-height: 1.55; text-wrap: pretty;">I’m a staff engineer with <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">12+</span> years building large web products. I’ve spent years making accessibility work at scale, in design systems used by dozens of products. I’m based in India and work with teams across Europe.</p>
+      <p style="margin: 12px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; font-size: 18px; line-height: 1.6;"><a href="#{{ idp }}contact" style="display: inline-flex; align-items: center; min-height: 44px; color: #1E6B5A; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; border-radius: 2px;" style-hover="color: #1C1B18; text-decoration-thickness: 2.5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">LinkedIn profile</a> <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; color: #5B5950; background: #F2EEE6; border: 1px dashed #A9A396; border-radius: 4px; padding: 1px 7px;">[placeholder — link]</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}faq" style="border-top: 1px solid #DDD8CE; padding: clamp(56px, 7cqw, 112px) clamp(20px, 5cqw, 72px);">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(24px, 4cqw, 64px);">
+    <div style="flex: 1 1 280px; max-width: 400px; min-width: 0;">
+      <p style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: #5B5950; margin: 0 0 16px;">08 — FAQ</p>
+      <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(32px, 3.2cqw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0; color: #1C1B18; text-wrap: pretty;">Questions I get asked</h2>
+    </div>
+    <div style="flex: 2 1 400px; max-width: 760px; min-width: 0; display: flex; flex-direction: column;">
+      <div style="padding: 22px 0; border-top: 1px solid #D6D0C4;">
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 10px; color: #1C1B18; text-wrap: pretty;">Will this make us compliant?</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">No one can honestly guarantee that. I test against WCAG 2.1/2.2 AA, the standard the EU law points to, fix what’s broken, and tell you plainly where you stand.</p>
+      </div>
+      <div style="padding: 22px 0; border-top: 1px solid #D6D0C4;">
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 10px; color: #1C1B18; text-wrap: pretty;">Do you use AI?</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">I use tools to work faster, but every fix is written into your code, reviewed and tested by a person.</p>
+      </div>
+      <div style="padding: 22px 0; border-top: 1px solid #D6D0C4;">
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 10px; color: #1C1B18; text-wrap: pretty;">Does the EAA apply to us?</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">Very small service businesses (under <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">10</span> staff and under €2M turnover) are exempt. Most others selling to EU consumers are covered. Happy to check on a call.</p>
+      </div>
+      <div style="padding: 22px 0; border-top: 1px solid #D6D0C4; border-bottom: 1px solid #D6D0C4;">
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 10px; color: #1C1B18; text-wrap: pretty;">What do you need from us?</h3>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; text-wrap: pretty;">Access to a test version of your site and, for fixes, your code repository or a way to send pull requests.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}contact" style="background: #14352D; color: #FAF8F3; padding: clamp(56px, 7cqw, 112px) clamp(20px, 5cqw, 72px);">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(28px, 4cqw, 64px);">
+    <div style="flex: 1 1 320px; max-width: 600px; min-width: 0;">
+      <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(32px, 3.4cqw, 50px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 20px; color: #FAF8F3; text-wrap: balance;">Send me your website. I’ll reply with the three biggest problems I find, free.</h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C5D3CC; text-wrap: pretty;">A real look by a person, not a scanner. No sales pitch.</p>
+    </div>
+    <form onSubmit="{{ preventSubmit }}" aria-label="Free check request" style="flex: 1 1 320px; max-width: 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px;">
+      <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 700; font-size: 16px; line-height: 1.4; color: #FAF8F3;">Your website
+        <input type="url" name="website" autocomplete="url" style="width: 100%; min-height: 50px; padding: 10px 14px; font-family: inherit; font-size: 18px; font-weight: 400; color: #1C1B18; background: #FAF8F3; border: 1px solid #FAF8F3; border-radius: 6px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 700; font-size: 16px; line-height: 1.4; color: #FAF8F3;">Work email
+        <input type="email" name="email" autocomplete="email" style="width: 100%; min-height: 50px; padding: 10px 14px; font-family: inherit; font-size: 18px; font-weight: 400; color: #1C1B18; background: #FAF8F3; border: 1px solid #FAF8F3; border-radius: 6px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">
+      </label>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 4px;">
+        <button type="submit" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 28px; background: #FAF8F3; color: #14352D; font-family: inherit; font-weight: 700; font-size: 18px; line-height: 1.2; border: 0; border-radius: 6px; cursor: pointer; transition: background-color .15s ease;" style-hover="background: #FFFFFF;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">Send</button>
+        <a href="#{{ idp }}contact" style="display: inline-flex; align-items: center; min-height: 44px; color: #FAF8F3; font-size: 18px; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 2px;" style-hover="color: #FFFFFF; text-decoration-thickness: 2.5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">Or book a 20-minute call</a>
+      </div>
+      <p style="margin: 4px 0 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.5; color: #C5D3CC;">[placeholder — form is not wired up in this prototype]</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer style="background: #14352D; color: #FAF8F3; border-top: 1px solid rgba(250, 248, 243, 0.22); padding: 28px clamp(20px, 5cqw, 72px) 40px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 32px;">
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 16px; line-height: 1.6;">
+      <li><a href="mailto:hello@fixedforall.com" style="display: inline-flex; align-items: center; min-height: 44px; color: #FAF8F3; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 2px;" style-hover="color: #FFFFFF; text-decoration-thickness: 2.5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">hello@fixedforall.com</a></li>
+      <li><a href="#{{ idp }}about" style="display: inline-flex; align-items: center; min-height: 44px; color: #FAF8F3; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 2px;" style-hover="color: #FFFFFF; text-decoration-thickness: 2.5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">LinkedIn</a></li>
+      <li><a href="#{{ idp }}top" style="display: inline-flex; align-items: center; min-height: 44px; color: #FAF8F3; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 2px;" style-hover="color: #FFFFFF; text-decoration-thickness: 2.5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">Accessibility statement</a></li>
+      <li><a href="#{{ idp }}top" style="display: inline-flex; align-items: center; min-height: 44px; color: #FAF8F3; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 2px;" style-hover="color: #FFFFFF; text-decoration-thickness: 2.5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">Privacy</a></li>
+    </ul>
+    <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C5D3CC;">© <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94em;">2026</span> Fixed for All · Akhil Vij</p>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;variant&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;auto&quot;, &quot;desktop&quot;, &quot;mobile&quot;], &quot;default&quot;: &quot;auto&quot;, &quot;tsType&quot;: &quot;'auto' | 'desktop' | 'mobile'&quot;, &quot;section&quot;: &quot;Layout&quot;}, &quot;proofNames&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Content&quot;}, &quot;mobileMenuOpen&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Prototype&quot;}, &quot;idPrefix&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { narrow: false, menuOpen: null };
+  rootRef = React.createRef();
+
+  componentDidMount() {
+    document.documentElement.lang = 'en';
+    const v = this.props.variant;
+    if (!v || v === 'auto') document.title = 'Fixed for All: accessibility fixed at the source';
+    const el = this.rootRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    this.ro = new ResizeObserver((en) => {
+      const narrow = en[0].contentRect.width < 760;
+      if (narrow !== this.state.narrow) this.setState({ narrow });
+    });
+    this.ro.observe(el);
+  }
+
+  componentWillUnmount() { if (this.ro) this.ro.disconnect(); }
+
+  renderVals() {
+    const v = this.props.variant;
+    const forced = v === 'mobile' || v === 'desktop';
+    const narrow = v === 'mobile' ? true : v === 'desktop' ? false : this.state.narrow;
+    const open = this.state.menuOpen !== null ? this.state.menuOpen : (this.props.mobileMenuOpen ?? false);
+    const proofNames = this.props.proofNames ?? true;
+    return {
+      rootRef: this.rootRef,
+      idp: (this.props.idPrefix ?? '') + (forced ? v + '-' : ''),
+      narrow,
+      wide: !narrow,
+      menuOpen: narrow && open,
+      proofNames,
+      proofGeneric: !proofNames,
+      toggleMenu: () => this.setState({ menuOpen: !open }),
+      preventSubmit: (e) => e.preventDefault(),
+    };
+  }
+}
+</script>
+</body>
+</html>

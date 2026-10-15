@@ -1,0 +1,170 @@
+/*
+ * Design tokens: the only file allowed to contain raw colour values (enforced by stylelint).
+ *
+ * 1. Palette: the colours from the design, named for what they are.
+ * 2. Roles: what components use, named for what they do. Components never use palette tokens.
+ *
+ * Contrast for every text and UI pairing is checked in tests/tokens.contrast.spec.ts.
+ * Layout breakpoint (media queries can't read custom properties): narrow layout below 760px.
+ */
+
+:root {
+  /* ---------- 1. Palette ---------- */
+
+  --paper: #faf8f3;
+  --panel: #f2eee6;
+  --white: #fff;
+  --ink: #1c1b18;
+  --secondary: #5b5950;
+  --rule: #ddd8ce;
+  --rule-strong: #d6d0c4;
+  --rule-soft: #e6e1d7;
+  --green: #1e6b5a;
+  --green-hover: #17564a;
+  --band: #14352d;
+  --band-muted: #c5d3cc;
+  --band-rule: rgb(250 248 243 / 22%);
+
+  /* Code panel (hero diff) */
+  --code-text: #e6e1d7;
+  --code-line-number: #c5bfb2;
+  --code-removed: #f2a698;
+  --code-added: #9fd9b4;
+  --code-removed-tint: rgb(242 166 152 / 14%);
+  --code-added-tint: rgb(159 217 180 / 14%);
+
+  /* Sample report impact bars (decorative; the counts are text) */
+  --bar-severe: #1c1b18;
+  --bar-moderate: #6b675e;
+  --bar-minor: #b9b3a6;
+
+  /* Shadow base colour: ink */
+  --shadow-ink-6: rgb(28 27 24 / 6%);
+  --shadow-ink-9: rgb(28 27 24 / 9%);
+  --shadow-ink-10: rgb(28 27 24 / 10%);
+
+  /* ---------- 2. Roles ---------- */
+
+  /* Surfaces. `--surface` is the surface an element sits on; [data-surface] sets it (globals.css)
+     and the focus ring's gap uses it, so the ring always matches its background. */
+  --surface: var(--surface-page);
+  --surface-page: var(--paper);
+  --surface-panel: var(--panel);
+  --surface-card: var(--white);
+  --surface-band: var(--band);
+  --surface-code: var(--ink);
+  --surface-code-removed: var(--code-removed-tint);
+  --surface-code-added: var(--code-added-tint);
+
+  /* Text */
+  --text: var(--ink);
+  --text-secondary: var(--secondary);
+  --text-on-band: var(--paper);
+  --text-on-band-muted: var(--band-muted);
+  --text-on-ink: var(--paper);
+  --text-code: var(--code-text);
+  --text-code-line-number: var(--code-line-number);
+  --text-code-removed: var(--code-removed);
+  --text-code-added: var(--code-added);
+
+  /* Links and actions */
+  --link: var(--green);
+  --link-hover: var(--ink);
+  --link-on-band: var(--paper);
+  --link-on-band-hover: var(--white);
+  --action: var(--green);
+  --action-hover: var(--green-hover);
+  --action-text: var(--white);
+  --action-on-band: var(--paper);
+  --action-on-band-hover: var(--white);
+  --action-on-band-text: var(--band);
+  --control-border: var(--ink);
+  --control-hover: var(--panel);
+  --accent: var(--green);
+
+  /* Rules and borders */
+  --border: var(--rule);
+  --border-strong: var(--rule-strong);
+  --border-soft: var(--rule-soft);
+  --border-heavy: var(--ink);
+  --border-on-band: var(--band-rule);
+
+  /* Focus: double ring, 3px gap in the surface colour + 3px ring. The band redefines --focus-ring. */
+  --focus-ring: var(--ink);
+  --focus-ring-on-band: var(--paper);
+  --focus-ring-on-code: var(--paper);
+  --focus-width: 3px;
+
+  /* Report bars */
+  --bar-track: var(--panel);
+  --bar-1: var(--bar-severe);
+  --bar-2: var(--bar-moderate);
+  --bar-3: var(--bar-minor);
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px var(--shadow-ink-6), 0 18px 44px var(--shadow-ink-9);
+  --shadow-caption: 0 1px 2px var(--shadow-ink-6), 0 14px 32px var(--shadow-ink-10);
+
+  /* ---------- Type ---------- */
+
+  /* next/font sets the --font-* variables on <html> (src/app/fonts.ts). */
+  --font-heading: var(--font-source-serif), georgia, serif;
+  --font-body: var(--font-atkinson), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --text-h1: clamp(2.25rem, 4.6vw, 4.25rem);
+  --text-h2: clamp(2rem, 3.2vw, 2.875rem);
+  --text-h2-band: clamp(2rem, 3.4vw, 3.125rem);
+  --text-h3: 1.5rem;
+  --text-h3-card: 1.625rem;
+  --text-proof: clamp(2.75rem, 4vw, 4rem);
+  --text-lead: clamp(1.125rem, 1.45vw, 1.3125rem);
+  --text-about: clamp(1.1875rem, 1.5vw, 1.375rem);
+  --text-body: 1.125rem;
+  --text-list: 1.1875rem;
+  --text-nav: 1.0625rem;
+  --text-small: 1rem;
+  --text-code-size: 0.9375rem;
+  --text-wordmark: 1.5rem;
+
+  --leading-tight: 1.05;
+  --leading-heading: 1.1;
+  --leading-subheading: 1.25;
+  --leading-lead: 1.55;
+  --leading-body: 1.6;
+
+  --tracking-display: -0.02em;
+  --tracking-heading: -0.01em;
+  --tracking-label: 0.04em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---------- Space and layout ---------- */
+
+  --gutter: clamp(20px, 5vw, 72px);
+  --section-space: clamp(56px, 7vw, 112px);
+  --content-max: 1200px;
+  --header-max: 1344px;
+  --header-height: 76px;
+
+  /* ---------- Shape ---------- */
+
+  --radius-link: 2px;
+  --radius-sm: 4px;
+  --radius-control: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+
+  --border-width-control: 2px;
+
+  /* ---------- Targets and motion ---------- */
+
+  --target-min: 44px;
+  --target-button: 52px;
+  --transition-fast: 150ms ease;
+}

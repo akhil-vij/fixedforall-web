@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<style>
+body { margin: 0; background: #E7E2D8; }
+*, *::before, *::after { box-sizing: border-box; }
+a { color: #1E6B5A; }
+a:hover { color: #1C1B18; }
+</style>
+</helmet>
+<div style="padding: 40px 48px 72px; display: flex; flex-direction: column; gap: 36px; font-family: ui-monospace, Menlo, Consolas, monospace; color: #1C1B18;">
+  <div style="display: flex; flex-direction: column; gap: 6px; max-width: 980px;">
+    <p style="margin: 0; font-size: 14px; font-weight: 700;">Fixed for All — final. Base: 1a Engineer’s report, with the pull-request card (2b), proof row (2a) and portrait treatment (2d).</p>
+    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5B5950;">Same responsive page at both widths; resize it and it reflows down to 320px. Tweaks: switch the proof row to the no-company-names fallback, open the mobile menu, force a layout.</p>
+  </div>
+
+  <div style="display: flex; align-items: flex-start; gap: 64px;">
+    <div style="flex: none; width: 1440px; display: flex; flex-direction: column; gap: 10px;">
+      <p style="margin: 0; font-size: 13px; color: #5B5950;">Desktop · 1440</p>
+      <div style="background: #FAF8F3; box-shadow: 0 2px 6px rgba(28, 27, 24, 0.08), 0 24px 60px rgba(28, 27, 24, 0.14);">
+        <dc-import name="FixedForAll-Final" variant="desktop" proof-names="{{ proofNames }}" hint-size="1440px,1600px"></dc-import>
+      </div>
+    </div>
+    <div style="flex: none; width: 390px; display: flex; flex-direction: column; gap: 10px;">
+      <p style="margin: 0; font-size: 13px; color: #5B5950;">Mobile · 390</p>
+      <div style="background: #FAF8F3; box-shadow: 0 2px 6px rgba(28, 27, 24, 0.08), 0 24px 60px rgba(28, 27, 24, 0.14);">
+        <dc-import name="FixedForAll-Final" variant="mobile" proof-names="{{ proofNames }}" mobile-menu-open="{{ mobileMenuOpen }}" hint-size="390px,1600px"></dc-import>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: flex-start; gap: 64px;">
+    <div style="flex: none; width: 1240px; display: flex; flex-direction: column; gap: 10px;">
+      <p style="margin: 0; font-size: 13px; color: #5B5950;">States · keyboard focus, open mobile menu, proof-row fallback</p>
+      <div style="background: #E7E2D8; border: 1px solid #D6D0C4; box-shadow: 0 2px 6px rgba(28, 27, 24, 0.08), 0 24px 60px rgba(28, 27, 24, 0.14);">
+        <dc-import name="FixedForAll-States" hint-size="1240px,900px"></dc-import>
+      </div>
+    </div>
+    <div style="flex: none; width: 560px; display: flex; flex-direction: column; gap: 10px;">
+      <p style="margin: 0; font-size: 13px; color: #5B5950;">Change log · from 1a to final</p>
+      <div style="background: #FAF8F3; border: 1px solid #D6D0C4; padding: 24px 28px; font-size: 13px; line-height: 1.65; display: flex; flex-direction: column; gap: 14px;">
+        <p style="margin: 0;"><strong>Hero.</strong> Merged pull-request card from 2b on the right, re-skinned: white card, 1a’s dark code panel (#1C1B18). All card text ≥ 4.5:1, line numbers included (6.8–8.2:1 on the tinted rows); +/− prefixes kept. The diff region is keyboard-focusable because it can scroll at 320px. The code snippet in the How-it-works date-picker card was removed; its “tested by hand” line stays.</p>
+        <p style="margin: 0;"><strong>Proof row.</strong> From 2a, set in 1a’s style (Source Serif 4 numerals, thin rules) directly under the hero, marked [placeholder — pending permission]. The hero’s “Previously built…” line is gone. A fallback without company names is one tweak away and shown on the states board.</p>
+        <p style="margin: 0;"><strong>About.</strong> 2d’s larger portrait with a caption card (name, role, India/Europe, 10:00–14:00 CET overlap, same-day replies). Heading now reads “Hi, I’m Akhil.”; the rest of the copy is unchanged apart from dropping the now-duplicate name.</p>
+        <p style="margin: 0;"><strong>Fixes.</strong> Page title and lang="en" set. Every standalone link is ≥ 44px tall (sample report, LinkedIn, “Or book a call”, skip link, footer). Figures with zeros are set in Source Serif 4 (proof numerals) or IBM Plex Mono (prices, hours, years, percentages) to avoid Atkinson’s slashed zero; body text stays in Atkinson. Static focus demos and “[shown: …]” notes removed from the page and moved to the states board. One CTA wording throughout. No logos. Field and button outlines ≥ 3:1 kept.</p>
+        <p style="margin: 0;"><strong>Automated check.</strong> axe-core 4.10.3, WCAG 2.0/2.1/2.2 A+AA, run on the final page at 1440 and 390: 0 violations at both widths; 21 rules passed; page-level rules passed (title, lang, skip link, one main, one h1); 0 best-practice notes. 1 “needs manual review” item each: colour contrast on the striped placeholder boxes (gradients can’t be measured automatically; the text is 6.1:1 on the lighter stripe) plus one off-screen paragraph the scanner could not sample (ink on paper, 15:1).</p>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;proofNames&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Content&quot;}, &quot;mobileMenuOpen&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Prototype&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    document.documentElement.lang = 'en';
+    document.title = 'Fixed for All — final (desktop, mobile, states)';
+  }
+  renderVals() {
+    return {
+      proofNames: this.props.proofNames ?? true,
+      mobileMenuOpen: this.props.mobileMenuOpen ?? false,
+    };
+  }
+}
+</script>
+</body>
+</html>

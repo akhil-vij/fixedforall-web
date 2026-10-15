@@ -1,0 +1,26 @@
+.skipLink {
+  position: absolute;
+  top: 12px;
+  left: -9999px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  padding: 0 14px;
+  background: var(--surface-page);
+  color: var(--text);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-nav);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.skipLink:hover {
+  color: var(--text);
+}
+
+.skipLink:focus {
+  left: 16px;
+}

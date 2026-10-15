@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+body { margin: 0; background: #E7E2D8; }
+*, *::before, *::after { box-sizing: border-box; }
+a { color: #1E6B5A; }
+a:hover { color: #1C1B18; }
+</style>
+</helmet>
+<div style="padding: 28px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px; background: #E7E2D8; color: #1C1B18; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-size: 18px; line-height: 1.6;">
+
+  <div style="flex: 1 1 360px; max-width: 560px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+    <p style="margin: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.5; color: #5B5950;">Skip link — keyboard focus. Hidden off-screen until it receives focus, then appears top-left of the header.</p>
+    <div style="background: #FAF8F3; border: 1px solid #DDD8CE; border-radius: 8px; overflow: hidden;">
+      <div style="position: relative; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 24px;">
+        <span aria-hidden="true" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em; opacity: 0.35;"><span style="display: inline-block; width: 12px; height: 12px; background: #1E6B5A; border-radius: 3px;"></span>Fixed for All</span>
+        <span aria-hidden="true" style="font-size: 17px; color: #5B5950; opacity: 0.5;">How it works · Services · Work · About · FAQ</span>
+        <a href="#states-skip-target" style="position: absolute; left: 16px; top: 16px; display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; background: #FAF8F3; color: #1C1B18; font-weight: 700; font-size: 17px; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; border-radius: 4px; outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Skip to content</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 360px; max-width: 560px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+    <p style="margin: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.5; color: #5B5950;">Primary and secondary buttons, text link — keyboard focus. Double ring: 3px paper gap, 3px ink.</p>
+    <div style="background: #FAF8F3; border: 1px solid #DDD8CE; border-radius: 8px; padding: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 24px;">
+      <a href="#states-skip-target" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 24px; background: #1E6B5A; color: #FFFFFF; font-weight: 700; font-size: 18px; line-height: 1.2; text-decoration: none; border-radius: 6px; outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Book a 20-minute call</a>
+      <a href="#states-skip-target" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 10px 24px; background: transparent; color: #1C1B18; font-weight: 700; font-size: 18px; line-height: 1.2; text-decoration: none; border: 2px solid #1C1B18; border-radius: 6px; outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">See a sample report</a>
+      <a href="#states-skip-target" style="display: inline-flex; align-items: center; min-height: 44px; color: #1E6B5A; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; border-radius: 2px; outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Download the sample report (PDF)</a>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 360px; max-width: 560px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+    <p style="margin: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.5; color: #5B5950;">Form field and Send button on the dark contact band — keyboard focus. The ring inverts: 3px band-colour gap, 3px paper.</p>
+    <div style="background: #14352D; color: #FAF8F3; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 22px;">
+      <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 700; font-size: 16px; line-height: 1.4; max-width: 420px;">Your website
+        <input type="url" name="website-demo" autocomplete="url" style="width: 100%; min-height: 50px; padding: 10px 14px; font-family: inherit; font-size: 18px; font-weight: 400; color: #1C1B18; background: #FAF8F3; border: 1px solid #FAF8F3; border-radius: 6px; outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">
+      </label>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px;">
+        <button type="button" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 28px; background: #FAF8F3; color: #14352D; font-family: inherit; font-weight: 700; font-size: 18px; line-height: 1.2; border: 0; border-radius: 6px; cursor: default; outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">Send</button>
+        <span style="display: inline-flex; align-items: center; min-height: 44px; color: #FAF8F3; font-size: 18px; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px;">Or book a 20-minute call</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex: none; width: 390px; max-width: 100%; display: flex; flex-direction: column; gap: 10px;">
+    <p style="margin: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.5; color: #5B5950;">Mobile menu — open. The Menu button is live: press it to toggle. Current attribute: {{ ariaText }}</p>
+    <div id="states-skip-target" style="background: #FAF8F3; border: 1px solid #DDD8CE; border-radius: 8px; overflow: hidden;">
+      <div style="min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; border-bottom: 1px solid #DDD8CE;">
+        <span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em;"><span aria-hidden="true" style="display: inline-block; width: 12px; height: 12px; background: #1E6B5A; border-radius: 3px;"></span>Fixed for All</span>
+        <button type="button" aria-expanded="{{ menuOpen }}" aria-controls="states-mobile-nav" onClick="{{ toggleMenu }}" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; background: transparent; border: 2px solid #1C1B18; border-radius: 6px; font-family: inherit; font-weight: 700; font-size: 17px; color: #1C1B18; cursor: pointer;" style-hover="background: #F2EEE6;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Menu</button>
+      </div>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ true }}">
+        <nav id="states-mobile-nav" aria-label="Main" style="padding: 8px 20px 24px;">
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
+            <li><a href="#states-skip-target" style="display: flex; align-items: center; min-height: 52px; padding: 8px 4px; border-bottom: 1px solid #DDD8CE; color: #1C1B18; font-size: 20px; text-decoration: none;" style-hover="text-decoration: underline; text-underline-offset: 5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18; border-radius: 4px;">How it works</a></li>
+            <li><a href="#states-skip-target" style="display: flex; align-items: center; min-height: 52px; padding: 8px 4px; border-bottom: 1px solid #DDD8CE; color: #1C1B18; font-size: 20px; text-decoration: none;" style-hover="text-decoration: underline; text-underline-offset: 5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18; border-radius: 4px;">Services</a></li>
+            <li><a href="#states-skip-target" style="display: flex; align-items: center; min-height: 52px; padding: 8px 4px; border-bottom: 1px solid #DDD8CE; color: #1C1B18; font-size: 20px; text-decoration: none;" style-hover="text-decoration: underline; text-underline-offset: 5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18; border-radius: 4px;">Work</a></li>
+            <li><a href="#states-skip-target" style="display: flex; align-items: center; min-height: 52px; padding: 8px 4px; border-bottom: 1px solid #DDD8CE; color: #1C1B18; font-size: 20px; text-decoration: none;" style-hover="text-decoration: underline; text-underline-offset: 5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18; border-radius: 4px;">About</a></li>
+            <li><a href="#states-skip-target" style="display: flex; align-items: center; min-height: 52px; padding: 8px 4px; border-bottom: 1px solid #DDD8CE; color: #1C1B18; font-size: 20px; text-decoration: none;" style-hover="text-decoration: underline; text-underline-offset: 5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18; border-radius: 4px;">FAQ</a></li>
+          </ul>
+          <a href="#states-skip-target" style="display: flex; align-items: center; justify-content: center; min-height: 52px; margin-top: 20px; padding: 12px 22px; background: #1E6B5A; color: #FFFFFF; font-weight: 700; font-size: 18px; line-height: 1.2; text-decoration: none; border-radius: 6px;" style-hover="background: #17564A; color: #FFFFFF;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #FAF8F3, 0 0 0 6px #1C1B18;">Book a 20-minute call</a>
+        </nav>
+      </sc-if>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 560px; max-width: 900px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+    <p style="margin: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.5; color: #5B5950;">Proof row — fallback without company names (used if permission to name them is not granted). Numerals in Source Serif 4, no slashed zero.</p>
+    <div style="background: #FAF8F3; border: 1px solid #DDD8CE; border-radius: 8px; padding: 28px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 0 32px;">
+        <div style="border-top: 1px solid #DDD8CE; padding: 20px 0 8px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 52px; line-height: 1; letter-spacing: -0.02em;">25+</p>
+          <p style="margin: 10px 0 0; font-size: 17px; line-height: 1.5;">enterprise products · one design system</p>
+        </div>
+        <div style="border-top: 1px solid #DDD8CE; padding: 20px 0 8px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 52px; line-height: 1; letter-spacing: -0.02em;">30+</p>
+          <p style="margin: 10px 0 0; font-size: 17px; line-height: 1.5;">brands · one shared platform</p>
+        </div>
+        <div style="border-top: 1px solid #DDD8CE; padding: 20px 0 8px;">
+          <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 52px; line-height: 1; letter-spacing: -0.02em;">12+</p>
+          <p style="margin: 10px 0 0; font-size: 17px; line-height: 1.5;">years building large web products</p>
+        </div>
+      </div>
+      <p style="margin: 16px 0 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; color: #5B5950;">[placeholder — figures to confirm]</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: true };
+  renderVals() {
+    const open = this.state.menuOpen;
+    return {
+      menuOpen: open,
+      ariaText: open ? 'aria-expanded="true"' : 'aria-expanded="false"',
+      toggleMenu: () => this.setState({ menuOpen: !open }),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&display=swap">
+<style>
+body { margin: 0; background: #FFFFFF; }
+*, *::before, *::after { box-sizing: border-box; }
+a { color: #0A0A0A; }
+a:hover { color: #0A0A0A; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" id="{{ idp }}top" style="position: relative; container-type: inline-size; width: 100%; min-width: 0; background: #FFFFFF; color: #0A0A0A; font-family: 'Archivo', system-ui, sans-serif; font-size: 19px; line-height: 1.55; -webkit-font-smoothing: antialiased;">
+<a href="#{{ idp }}main" style="position: absolute; left: -9999px; top: 14px; z-index: 10; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; background: #FFD60A; color: #0A0A0A; font-weight: 700; text-decoration: underline;" style-focus="left: 16px; outline: 4px solid #0A0A0A; outline-offset: 2px;">Skip to content</a>
+
+<header style="border-bottom: 4px solid #0A0A0A;">
+  <div style="max-width: 1360px; margin: 0 auto; padding: 14px clamp(20px, 4cqw, 56px); min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 16px 32px;">
+    <a href="#{{ idp }}top" style="display: inline-flex; align-items: center; min-height: 44px; color: #0A0A0A; text-decoration: none; font-weight: 900; font-size: 22px; letter-spacing: -0.02em; text-transform: uppercase;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">Fixed for All</a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 12px 28px;">
+        <nav aria-label="Main">
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 26px;">
+            <li><a href="#{{ idp }}how" style="display: inline-flex; align-items: center; min-height: 44px; color: #0A0A0A; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;" style-hover="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">How it works</a></li>
+            <li><a href="#{{ idp }}services" style="display: inline-flex; align-items: center; min-height: 44px; color: #0A0A0A; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;" style-hover="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">Services</a></li>
+            <li><a href="#{{ idp }}work" style="display: inline-flex; align-items: center; min-height: 44px; color: #0A0A0A; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;" style-hover="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">Work</a></li>
+            <li><a href="#{{ idp }}about" style="display: inline-flex; align-items: center; min-height: 44px; color: #0A0A0A; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;" style-hover="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">About</a></li>
+            <li><a href="#{{ idp }}faq" style="display: inline-flex; align-items: center; min-height: 44px; color: #0A0A0A; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;" style-hover="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">FAQ</a></li>
+          </ul>
+        </nav>
+        <a href="#{{ idp }}contact" style="display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 12px 24px; background: #0A0A0A; color: #FFFFFF; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background-color .15s ease, color .15s ease;" style-hover="background: #FFD60A; color: #0A0A0A;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">Book a call</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; background: #FFFFFF; border: 3px solid #0A0A0A; font-family: inherit; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #0A0A0A; cursor: pointer;" style-hover="background: #FFD60A;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">Menu</button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav aria-label="Main" style="border-top: 4px solid #0A0A0A; padding: 8px clamp(20px, 4cqw, 56px) 24px;">
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
+        <li><a href="#{{ idp }}how" style="display: flex; align-items: center; min-height: 56px; padding: 8px 0; border-bottom: 2px solid #0A0A0A; color: #0A0A0A; font-weight: 900; font-size: 24px; letter-spacing: -0.01em; text-decoration: none;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 2px;">How it works</a></li>
+        <li><a href="#{{ idp }}services" style="display: flex; align-items: center; min-height: 56px; padding: 8px 0; border-bottom: 2px solid #0A0A0A; color: #0A0A0A; font-weight: 900; font-size: 24px; letter-spacing: -0.01em; text-decoration: none;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 2px;">Services</a></li>
+        <li><a href="#{{ idp }}work" style="display: flex; align-items: center; min-height: 56px; padding: 8px 0; border-bottom: 2px solid #0A0A0A; color: #0A0A0A; font-weight: 900; font-size: 24px; letter-spacing: -0.01em; text-decoration: none;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 2px;">Work</a></li>
+        <li><a href="#{{ idp }}about" style="display: flex; align-items: center; min-height: 56px; padding: 8px 0; border-bottom: 2px solid #0A0A0A; color: #0A0A0A; font-weight: 900; font-size: 24px; letter-spacing: -0.01em; text-decoration: none;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 2px;">About</a></li>
+        <li><a href="#{{ idp }}faq" style="display: flex; align-items: center; min-height: 56px; padding: 8px 0; border-bottom: 2px solid #0A0A0A; color: #0A0A0A; font-weight: 900; font-size: 24px; letter-spacing: -0.01em; text-decoration: none;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 2px;">FAQ</a></li>
+      </ul>
+      <a href="#{{ idp }}contact" style="display: flex; align-items: center; justify-content: center; min-height: 54px; margin-top: 20px; padding: 12px 24px; background: #0A0A0A; color: #FFFFFF; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;" style-hover="background: #FFD60A; color: #0A0A0A;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">Book a 20-minute call</a>
+    </nav>
+  </sc-if>
+</header>
+
+<main id="{{ idp }}main">
+
+<section style="padding: clamp(56px, 8cqw, 120px) clamp(20px, 4cqw, 56px) clamp(40px, 5cqw, 72px);">
+  <div style="max-width: 1360px; margin: 0 auto;">
+    <p style="margin: 0 0 24px; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">Accessibility for teams preparing for the European Accessibility Act</p>
+    <h1 style="margin: 0; font-weight: 900; font-size: clamp(52px, 9.2cqw, 148px); line-height: 0.95; letter-spacing: -0.035em; text-wrap: balance;">Fix it once.<br>Fixed <span style="background: #FFD60A; padding: 0 0.08em; box-decoration-break: clone; -webkit-box-decoration-break: clone;">for all.</span></h1>
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px 48px; margin-top: clamp(32px, 4cqw, 64px);">
+      <p style="flex: 1 1 420px; max-width: 640px; margin: 0; font-size: clamp(20px, 1.7cqw, 26px); line-height: 1.4; text-wrap: pretty;">I find and fix accessibility problems in the shared components your whole product is built from, so every page gets better at once and stays that way.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="#{{ idp }}contact" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 14px 28px; background: #0A0A0A; color: #FFFFFF; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background-color .15s ease, color .15s ease;" style-hover="background: #FFD60A; color: #0A0A0A;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">Book a 20-minute call</a>
+        <a href="#{{ idp }}report" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 11px 25px; background: #FFFFFF; color: #0A0A0A; border: 3px solid #0A0A0A; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background-color .15s ease, color .15s ease;" style-hover="background: #0A0A0A; color: #FFFFFF;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">See a sample report</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Experience">
+  <div style="max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 0 40px;">
+    <div style="border-top: 4px solid #0A0A0A; padding: 24px 0 32px;">
+      <p style="margin: 0; font-weight: 900; font-size: clamp(56px, 6cqw, 104px); line-height: 0.95; letter-spacing: -0.045em;">25+</p>
+      <p style="margin: 10px 0 0; font-size: 18px; line-height: 1.45; text-wrap: pretty;">enterprise products made accessible through one shared design system at Informatica</p>
+    </div>
+    <div style="border-top: 4px solid #0A0A0A; padding: 24px 0 32px;">
+      <p style="margin: 0; font-weight: 900; font-size: clamp(56px, 6cqw, 104px); line-height: 0.95; letter-spacing: -0.045em;">30+</p>
+      <p style="margin: 10px 0 0; font-size: 18px; line-height: 1.45; text-wrap: pretty;">brands on one travel platform at Agoda, where every fix reached every brand</p>
+    </div>
+    <div style="border-top: 4px solid #0A0A0A; padding: 24px 0 32px;">
+      <p style="margin: 0; font-weight: 900; font-size: clamp(56px, 6cqw, 104px); line-height: 0.95; letter-spacing: -0.045em;">12+</p>
+      <p style="margin: 10px 0 0; font-size: 18px; line-height: 1.45; text-wrap: pretty;">years building large web products as a staff engineer</p>
+    </div>
+  </div>
+  <p style="max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px) 28px; font-size: 16px; color: #3D3D3D;">[placeholder — confirming I can name these companies]</p>
+</section>
+
+<section style="background: #0A0A0A; color: #FFFFFF; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1360px; margin: 0 auto;">
+    <p style="margin: 0 0 20px; color: #FFD60A; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">01 — Why now</p>
+    <h2 style="margin: 0 0 clamp(32px, 4cqw, 56px); font-weight: 900; font-size: clamp(36px, 4.6cqw, 72px); line-height: 1; letter-spacing: -0.03em; max-width: 20ch; text-wrap: balance;">The law is in force. Scanners miss most of it. Widgets fix nothing.</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 0 48px;">
+      <div style="border-top: 3px solid #FFFFFF; padding: 20px 0 32px;">
+        <h3 style="margin: 0 0 10px; font-weight: 900; font-size: 26px; line-height: 1.15; letter-spacing: -0.015em;">The law applies now.</h3>
+        <p style="margin: 0; font-size: 19px; line-height: 1.5; text-wrap: pretty;">Since June 2025, the European Accessibility Act covers online shops, banking, travel booking and many consumer apps.</p>
+      </div>
+      <div style="border-top: 3px solid #FFFFFF; padding: 20px 0 32px;">
+        <h3 style="margin: 0 0 10px; font-weight: 900; font-size: 26px; line-height: 1.15; letter-spacing: -0.015em;">Scanners only catch part of it.</h3>
+        <p style="margin: 0; font-size: 19px; line-height: 1.5; text-wrap: pretty;">Automated tools find roughly a third of real problems. Can someone finish your checkout with only a keyboard? Does a screen reader announce errors? That takes a person.</p>
+      </div>
+      <div style="border-top: 3px solid #FFFFFF; padding: 20px 0 32px;">
+        <h3 style="margin: 0 0 10px; font-weight: 900; font-size: 26px; line-height: 1.15; letter-spacing: -0.015em;">Widgets don’t fix code.</h3>
+        <p style="margin: 0; font-size: 19px; line-height: 1.5; text-wrap: pretty;">Overlay tools hide problems instead of fixing them. German testing centres (BIK) no longer give their test seal to sites that rely on them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}how" style="padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1360px; margin: 0 auto;">
+    <p style="margin: 0 0 20px; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">02 — How it works</p>
+    <h2 style="margin: 0; font-weight: 900; font-size: clamp(36px, 4.6cqw, 72px); line-height: 1; letter-spacing: -0.03em; max-width: 20ch; text-wrap: balance;">Most problems live in a handful of shared components.</h2>
+    <p style="margin: 20px 0 0; max-width: 60ch; font-size: clamp(19px, 1.5cqw, 23px); line-height: 1.45; text-wrap: pretty;">Fix those, and every page that uses them is fixed. One change, reviewed by your team as a normal pull request.</p>
+    <figure style="margin: clamp(36px, 4cqw, 56px) 0 0;">
+      <div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 24px 40px;">
+        <div style="flex: 0 1 360px; min-width: 0; background: #0A0A0A; color: #FFFFFF; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px;">
+          <p style="margin: 0; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: #FFD60A;">One component</p>
+          <p style="margin: 0; font-weight: 900; font-size: clamp(36px, 3.4cqw, 56px); line-height: 1; letter-spacing: -0.03em;">Date picker</p>
+          <p style="margin: 0; font-size: 18px; line-height: 1.5; text-wrap: pretty;">Couldn’t be opened with a keyboard. One pull request later, it can.</p>
+        </div>
+        <div aria-hidden="true" style="flex: none; align-self: center; font-weight: 900; font-size: clamp(48px, 5cqw, 96px); line-height: 1;">→</div>
+        <div style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
+          <div style="border: 3px solid #0A0A0A; padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px;"><span style="font-weight: 700; font-size: 20px;">Search</span><span style="align-self: flex-start; background: #FFD60A; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 8px;">Fixed</span></div>
+          <div style="border: 3px solid #0A0A0A; padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px;"><span style="font-weight: 700; font-size: 20px;">Results</span><span style="align-self: flex-start; background: #FFD60A; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 8px;">Fixed</span></div>
+          <div style="border: 3px solid #0A0A0A; padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px;"><span style="font-weight: 700; font-size: 20px;">Checkout</span><span style="align-self: flex-start; background: #FFD60A; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 8px;">Fixed</span></div>
+          <div style="border: 3px solid #0A0A0A; padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px;"><span style="font-weight: 700; font-size: 20px;">Confirmation</span><span style="align-self: flex-start; background: #FFD60A; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 8px;">Fixed</span></div>
+          <div style="border: 3px solid #0A0A0A; padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px;"><span style="font-weight: 700; font-size: 20px;">Account</span><span style="align-self: flex-start; background: #FFD60A; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 8px;">Fixed</span></div>
+          <div style="border: 3px solid #0A0A0A; padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px;"><span style="font-weight: 700; font-size: 20px;">Support</span><span style="align-self: flex-start; background: #FFD60A; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 8px;">Fixed</span></div>
+        </div>
+      </div>
+      <figcaption style="margin: 18px 0 0; font-size: 17px; color: #3D3D3D;">Six pages used it. Six pages fixed, in one change your team reviews.</figcaption>
+    </figure>
+    <ol style="list-style: none; margin: clamp(40px, 5cqw, 72px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 0 40px;">
+      <li style="border-top: 4px solid #0A0A0A; padding: 20px 0 32px;">
+        <p style="margin: 0; font-weight: 900; font-size: clamp(64px, 7cqw, 120px); line-height: 0.9; letter-spacing: -0.05em;">1</p>
+        <h3 style="margin: 16px 0 8px; font-weight: 900; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em;">Check.</h3>
+        <p style="margin: 0; text-wrap: pretty;">I scan your key pages and test the main user journeys by hand: keyboard only, screen reader, zoom.</p>
+      </li>
+      <li style="border-top: 4px solid #0A0A0A; padding: 20px 0 32px;">
+        <p style="margin: 0; font-weight: 900; font-size: clamp(64px, 7cqw, 120px); line-height: 0.9; letter-spacing: -0.05em;">2</p>
+        <h3 style="margin: 16px 0 8px; font-weight: 900; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em;">Fix.</h3>
+        <p style="margin: 0; text-wrap: pretty;">I fix problems in your shared components and code, as normal pull requests your team reviews.</p>
+      </li>
+      <li style="border-top: 4px solid #0A0A0A; padding: 20px 0 32px;">
+        <p style="margin: 0; font-weight: 900; font-size: clamp(64px, 7cqw, 120px); line-height: 0.9; letter-spacing: -0.05em;">3</p>
+        <h3 style="margin: 16px 0 8px; font-weight: 900; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em;">Keep it fixed.</h3>
+        <p style="margin: 0; text-wrap: pretty;">I add simple checks to your release process and give your team a short training, so problems don’t creep back.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="{{ idp }}services" style="border-top: 4px solid #0A0A0A; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1360px; margin: 0 auto;">
+    <p style="margin: 0 0 20px; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">03 — Services</p>
+    <h2 style="margin: 0 0 clamp(32px, 4cqw, 56px); font-weight: 900; font-size: clamp(36px, 4.6cqw, 72px); line-height: 1; letter-spacing: -0.03em; text-wrap: balance;">Three ways to work together.</h2>
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px 40px; padding: 28px 0 32px; border-top: 3px solid #0A0A0A;">
+        <div><p style="margin: 0 0 8px; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; background: #FFD60A; display: inline-block; padding: 3px 8px;">Most teams start here</p><h3 style="margin: 0; font-weight: 900; font-size: clamp(28px, 2.6cqw, 40px); line-height: 1.05; letter-spacing: -0.025em;">Accessibility Check</h3></div>
+        <p style="margin: 0; text-wrap: pretty;">Your main user journeys, scanned and tested by hand. A plain-English report with what to fix first.</p>
+        <p style="margin: 0; font-weight: 700; line-height: 1.4;">2–3 days<br>from €1,200 <span style="display: inline-block; font-weight: 400; font-size: 16px; color: #3D3D3D; border: 1px dashed #0A0A0A; padding: 1px 7px;">[price placeholder]</span></p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px 40px; padding: 28px 0 32px; border-top: 3px solid #0A0A0A;">
+        <div><p style="margin: 0 0 8px; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;">After the Check</p><h3 style="margin: 0; font-weight: 900; font-size: clamp(28px, 2.6cqw, 40px); line-height: 1.05; letter-spacing: -0.025em;">Fix Sprint</h3></div>
+        <p style="margin: 0; text-wrap: pretty;">I fix your shared components and key journeys, and train your team.</p>
+        <p style="margin: 0; font-weight: 700; line-height: 1.4;">1–4 weeks<br>quoted after the Check</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px 40px; padding: 28px 0 32px; border-top: 3px solid #0A0A0A; border-bottom: 3px solid #0A0A0A;">
+        <div><p style="margin: 0 0 8px; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;">For software companies</p><h3 style="margin: 0; font-weight: 900; font-size: clamp(28px, 2.6cqw, 40px); line-height: 1.05; letter-spacing: -0.025em;">Independent Accessibility Report</h3></div>
+        <p style="margin: 0; text-wrap: pretty;">For when your customers ask for one (often called an ACR or VPAT). An honest, independent report, which buyers trust more than one a company writes about itself.</p>
+        <p style="margin: 0; font-weight: 700; line-height: 1.4;">Quoted per product</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}report" style="background: #FFD60A; border-top: 4px solid #0A0A0A; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(32px, 4cqw, 72px);">
+    <div style="flex: 1 1 320px; max-width: 520px; min-width: 0;">
+      <p style="margin: 0 0 20px; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">04 — What you get</p>
+      <h2 style="margin: 0 0 20px; font-weight: 900; font-size: clamp(36px, 4.6cqw, 72px); line-height: 1; letter-spacing: -0.03em; text-wrap: balance;">A report your team can act on.</h2>
+      <p style="margin: 0; text-wrap: pretty;">Every Check ends with a short report: a one-line summary, problems grouped by how badly they block people, and the five fixes to do first. Each finding says whether a scanner found it or a person did.</p>
+      <p style="margin: 16px 0 0; text-wrap: pretty;">You also get a spreadsheet of every issue, and tickets ready to import into Jira.</p>
+      <p style="margin: 24px 0 0; font-weight: 700;"><a href="#{{ idp }}report" style="color: #0A0A0A; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px;" style-hover="text-decoration-thickness: 5px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">Download the sample report (PDF)</a> <span style="display: inline-block; font-weight: 400; font-size: 16px; border: 1px dashed #0A0A0A; padding: 1px 7px;">[placeholder — sample PDF to come]</span></p>
+    </div>
+    <article aria-label="Sample report, page 1 (illustrative)" style="flex: 1.2 1 360px; max-width: 640px; min-width: 0; background: #FFFFFF; border: 4px solid #0A0A0A; padding: clamp(20px, 2.5cqw, 36px); display: flex; flex-direction: column; gap: 24px;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding-bottom: 14px; border-bottom: 3px solid #0A0A0A; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;">
+        <span>Accessibility Check · Sample</span>
+        <span>Page 1 of 14 · illustrative</span>
+      </div>
+      <p style="margin: 0; font-weight: 900; font-size: clamp(26px, 2.4cqw, 36px); line-height: 1.05; letter-spacing: -0.025em; text-wrap: pretty;">12 problems found on 6 key screens. 4 block users completely.</p>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 14px; font-weight: 700; font-size: 17px;"><span>Blocks users completely</span><span style="font-variant-numeric: tabular-nums;">4</span><span aria-hidden="true" style="grid-column: 1 / -1; display: block; height: 14px; background: #EFEFEF;"><span style="display: block; height: 100%; width: 33%; background: #0A0A0A;"></span></span></div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 14px; font-weight: 700; font-size: 17px;"><span>Makes tasks much harder</span><span style="font-variant-numeric: tabular-nums;">5</span><span aria-hidden="true" style="grid-column: 1 / -1; display: block; height: 14px; background: #EFEFEF;"><span style="display: block; height: 100%; width: 42%; background: #0A0A0A;"></span></span></div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 14px; font-weight: 700; font-size: 17px;"><span>Minor friction</span><span style="font-variant-numeric: tabular-nums;">3</span><span aria-hidden="true" style="grid-column: 1 / -1; display: block; height: 14px; background: #EFEFEF;"><span style="display: block; height: 100%; width: 25%; background: #0A0A0A;"></span></span></div>
+      </div>
+      <div>
+        <p style="margin: 0 0 6px; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;">Fix these first</p>
+        <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column;">
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 0; border-top: 2px solid #0A0A0A; font-size: 17px;"><span style="font-weight: 900; min-width: 1.5ch;">1</span><span style="flex: 1 1 220px;">Checkout “Continue” button has no accessible name</span><span style="font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; background: #0A0A0A; color: #FFFFFF; white-space: nowrap;">By hand</span></li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 0; border-top: 2px solid #0A0A0A; font-size: 17px;"><span style="font-weight: 900; min-width: 1.5ch;">2</span><span style="flex: 1 1 220px;">Date picker can’t be used with a keyboard</span><span style="font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; background: #0A0A0A; color: #FFFFFF; white-space: nowrap;">By hand</span></li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 0; border-top: 2px solid #0A0A0A; font-size: 17px;"><span style="font-weight: 900; min-width: 1.5ch;">3</span><span style="flex: 1 1 220px;">Form errors aren’t announced to screen readers</span><span style="font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; background: #0A0A0A; color: #FFFFFF; white-space: nowrap;">By hand</span></li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 0; border-top: 2px solid #0A0A0A; font-size: 17px;"><span style="font-weight: 900; min-width: 1.5ch;">4</span><span style="flex: 1 1 220px;">Price text contrast is 3.1:1, needs 4.5:1</span><span style="font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; border: 1px solid #0A0A0A; white-space: nowrap;">Scanner</span></li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 0; border-top: 2px solid #0A0A0A; border-bottom: 2px solid #0A0A0A; font-size: 17px;"><span style="font-weight: 900; min-width: 1.5ch;">5</span><span style="flex: 1 1 220px;">Focus is lost when the cookie dialog closes</span><span style="font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; background: #0A0A0A; color: #FFFFFF; white-space: nowrap;">By hand</span></li>
+        </ol>
+      </div>
+      <p style="margin: 0; font-size: 16px; color: #3D3D3D;">Tested by hand: keyboard · NVDA + Chrome · VoiceOver + Safari · 200% zoom. Scanned: axe-core on all 6 screens.</p>
+    </article>
+  </div>
+</section>
+
+<section id="{{ idp }}work" style="border-top: 4px solid #0A0A0A; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1360px; margin: 0 auto;">
+    <p style="margin: 0 0 20px; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">05 — Work</p>
+    <h2 style="margin: 0 0 clamp(32px, 4cqw, 56px); font-weight: 900; font-size: clamp(36px, 4.6cqw, 72px); line-height: 1; letter-spacing: -0.03em; text-wrap: balance;">Where this has worked before.</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 0 40px;">
+      <div style="border-top: 3px solid #0A0A0A; padding: 20px 0 32px; display: flex; flex-direction: column; gap: 12px;">
+        <h3 style="margin: 0; font-weight: 900; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; text-wrap: pretty;">Informatica: one design system, 25+ products.</h3>
+        <p style="margin: 0; text-wrap: pretty;">Built accessibility (WCAG 2.1 AA) into the company-wide component library, a requirement for enterprise and government sales.</p>
+        <p style="margin: auto 0 0; font-size: 16px; color: #3D3D3D;"><span style="display: inline-block; border: 1px dashed #0A0A0A; padding: 1px 7px;">[placeholder — numbers to confirm]</span></p>
+      </div>
+      <div style="border-top: 3px solid #0A0A0A; padding: 20px 0 32px; display: flex; flex-direction: column; gap: 12px;">
+        <h3 style="margin: 0; font-weight: 900; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; text-wrap: pretty;">Agoda: one platform, 30+ brands.</h3>
+        <p style="margin: 0; text-wrap: pretty;">Every fix reached every brand. Built a tool that turns audit reports into ready-to-review fixes: about 60% fixed in the first pass, about 85% a strong starting point, all reviewed by engineers.</p>
+        <p style="margin: auto 0 0; font-size: 16px; color: #3D3D3D;"><span style="display: inline-block; border: 1px dashed #0A0A0A; padding: 1px 7px;">[placeholder — confirming I can share these]</span></p>
+      </div>
+      <div style="border-top: 3px solid #0A0A0A; padding: 20px 0 32px; display: flex; flex-direction: column; gap: 12px;">
+        <h3 style="margin: 0; font-weight: 900; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; text-wrap: pretty;">Before and after: my own product.</h3>
+        <p style="margin: 0; text-wrap: pretty;">A real scan, the fixes, and the result.</p>
+        <div style="min-height: 150px; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; border: 3px dashed #0A0A0A; font-size: 16px; color: #3D3D3D;">[placeholder — before/after screenshots, coming soon]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="border-top: 4px solid #0A0A0A; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(24px, 4cqw, 64px);">
+    <div style="flex: 1 1 280px; max-width: 420px; min-width: 0;">
+      <p style="margin: 0 0 20px; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">06 — How I work</p>
+      <h2 style="margin: 0; font-weight: 900; font-size: clamp(36px, 4.6cqw, 72px); line-height: 1; letter-spacing: -0.03em; text-wrap: balance;">Plain terms. Real fixes.</h2>
+    </div>
+    <ul style="flex: 2 1 400px; max-width: 800px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
+      <li style="padding: 18px 0; border-top: 3px solid #0A0A0A; font-weight: 700; font-size: clamp(21px, 1.8cqw, 28px); line-height: 1.3; letter-spacing: -0.01em; text-wrap: pretty;">Real fixes in your code. No widgets, no overlays.</li>
+      <li style="padding: 18px 0; border-top: 3px solid #0A0A0A; font-weight: 700; font-size: clamp(21px, 1.8cqw, 28px); line-height: 1.3; letter-spacing: -0.01em; text-wrap: pretty;">Every change tested by a person with a keyboard and a screen reader.</li>
+      <li style="padding: 18px 0; border-top: 3px solid #0A0A0A; font-weight: 700; font-size: clamp(21px, 1.8cqw, 28px); line-height: 1.3; letter-spacing: -0.01em; text-wrap: pretty;">Honest reports. If something only partly works, the report says so.</li>
+      <li style="padding: 18px 0; border-top: 3px solid #0A0A0A; font-weight: 700; font-size: clamp(21px, 1.8cqw, 28px); line-height: 1.3; letter-spacing: -0.01em; text-wrap: pretty;">Working hours that overlap with yours: 10:00–14:00 CET every working day, replies the same day.</li>
+      <li style="padding: 18px 0; border-top: 3px solid #0A0A0A; border-bottom: 3px solid #0A0A0A; font-weight: 700; font-size: clamp(21px, 1.8cqw, 28px); line-height: 1.3; letter-spacing: -0.01em; text-wrap: pretty;">Clear contracts in English, with data-protection terms for EU clients.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="{{ idp }}about" style="border-top: 4px solid #0A0A0A; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(24px, 4cqw, 64px);">
+    <div style="flex: 0 1 340px; min-width: 0; width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; border: 4px dashed #0A0A0A; font-size: 16px; color: #3D3D3D;">[placeholder — photo of Akhil, high contrast, plain background]</div>
+    <div style="flex: 1 1 360px; max-width: 760px; min-width: 0;">
+      <p style="margin: 0 0 20px; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">07 — About</p>
+      <h2 style="margin: 0 0 20px; font-weight: 900; font-size: clamp(36px, 4.6cqw, 72px); line-height: 1; letter-spacing: -0.03em;">Akhil Vij</h2>
+      <p style="margin: 0; font-size: clamp(20px, 1.6cqw, 24px); line-height: 1.45; text-wrap: pretty;">I’m a staff engineer with 12+ years building large web products. I’ve spent years making accessibility work at scale, in design systems used by dozens of products. I’m based in India and work with teams across Europe.</p>
+      <p style="margin: 24px 0 0; font-weight: 700;"><a href="#{{ idp }}contact" style="color: #0A0A0A; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px;" style-hover="text-decoration-thickness: 5px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">LinkedIn profile</a> <span style="display: inline-block; font-weight: 400; font-size: 16px; color: #3D3D3D; border: 1px dashed #0A0A0A; padding: 1px 7px;">[placeholder — link]</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}faq" style="border-top: 4px solid #0A0A0A; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(24px, 4cqw, 64px);">
+    <div style="flex: 1 1 280px; max-width: 420px; min-width: 0;">
+      <p style="margin: 0 0 20px; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase;">08 — FAQ</p>
+      <h2 style="margin: 0; font-weight: 900; font-size: clamp(36px, 4.6cqw, 72px); line-height: 1; letter-spacing: -0.03em; text-wrap: balance;">Questions I get asked.</h2>
+    </div>
+    <div style="flex: 2 1 400px; max-width: 800px; min-width: 0; display: flex; flex-direction: column;">
+      <div style="padding: 22px 0; border-top: 3px solid #0A0A0A;"><h3 style="margin: 0 0 10px; font-weight: 900; font-size: 26px; line-height: 1.15; letter-spacing: -0.015em; text-wrap: pretty;">Will this make us compliant?</h3><p style="margin: 0; text-wrap: pretty;">No one can honestly guarantee that. I test against WCAG 2.1/2.2 AA, the standard the EU law points to, fix what’s broken, and tell you plainly where you stand.</p></div>
+      <div style="padding: 22px 0; border-top: 3px solid #0A0A0A;"><h3 style="margin: 0 0 10px; font-weight: 900; font-size: 26px; line-height: 1.15; letter-spacing: -0.015em; text-wrap: pretty;">Do you use AI?</h3><p style="margin: 0; text-wrap: pretty;">I use tools to work faster, but every fix is written into your code, reviewed and tested by a person.</p></div>
+      <div style="padding: 22px 0; border-top: 3px solid #0A0A0A;"><h3 style="margin: 0 0 10px; font-weight: 900; font-size: 26px; line-height: 1.15; letter-spacing: -0.015em; text-wrap: pretty;">Does the EAA apply to us?</h3><p style="margin: 0; text-wrap: pretty;">Very small service businesses (under 10 staff and under €2M turnover) are exempt. Most others selling to EU consumers are covered. Happy to check on a call.</p></div>
+      <div style="padding: 22px 0; border-top: 3px solid #0A0A0A; border-bottom: 3px solid #0A0A0A;"><h3 style="margin: 0 0 10px; font-weight: 900; font-size: 26px; line-height: 1.15; letter-spacing: -0.015em; text-wrap: pretty;">What do you need from us?</h3><p style="margin: 0; text-wrap: pretty;">Access to a test version of your site and, for fixes, your code repository or a way to send pull requests.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}contact" style="background: #0A0A0A; color: #FFFFFF; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(32px, 4cqw, 72px);">
+    <div style="flex: 1.2 1 360px; max-width: 760px; min-width: 0;">
+      <h2 style="margin: 0 0 20px; font-weight: 900; font-size: clamp(36px, 4.8cqw, 76px); line-height: 0.98; letter-spacing: -0.035em; text-wrap: balance;">Send me your website. I’ll reply with the three biggest problems I find, <span style="background: #FFD60A; color: #0A0A0A; padding: 0 0.1em; box-decoration-break: clone; -webkit-box-decoration-break: clone;">free.</span></h2>
+      <p style="margin: 0; font-size: clamp(19px, 1.5cqw, 23px); line-height: 1.45;">A real look by a person, not a scanner. No sales pitch.</p>
+    </div>
+    <form onSubmit="{{ preventSubmit }}" aria-label="Free check request" style="flex: 1 1 320px; max-width: 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+      <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">Your website
+        <input type="url" name="website" autocomplete="url" style="width: 100%; min-height: 54px; padding: 10px 14px; font-family: inherit; font-size: 19px; font-weight: 400; letter-spacing: 0; text-transform: none; color: #0A0A0A; background: #FFFFFF; border: 3px solid #FFFFFF;" style-focus="outline: 4px solid #FFD60A; outline-offset: 3px;">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">Work email
+        <input type="email" name="email" autocomplete="email" style="width: 100%; min-height: 54px; padding: 10px 14px; font-family: inherit; font-size: 19px; font-weight: 400; letter-spacing: 0; text-transform: none; color: #0A0A0A; background: #FFFFFF; border: 3px solid #FFFFFF;" style-focus="outline: 4px solid #FFD60A; outline-offset: 3px;">
+      </label>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 4px;">
+        <button type="submit" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 14px 32px; background: #FFD60A; color: #0A0A0A; font-family: inherit; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; border: 0; cursor: pointer; transition: background-color .15s ease;" style-hover="background: #FFFFFF;" style-focus="outline: 4px solid #FFD60A; outline-offset: 4px;">Send</button>
+        <a href="#{{ idp }}contact" style="color: #FFFFFF; font-weight: 700; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px;" style-hover="color: #FFD60A;" style-focus="outline: 4px solid #FFD60A; outline-offset: 4px;">Or book a 20-minute call</a>
+      </div>
+      <p style="margin: 4px 0 0; font-size: 16px; color: #D4D4D4;">[placeholder — form is not wired up in this prototype]</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer style="border-top: 4px solid #0A0A0A; padding: 24px clamp(20px, 4cqw, 56px) 40px;">
+  <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px;">
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 28px; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">
+      <li><a href="mailto:hello@fixedforall.com" style="display: inline-flex; align-items: center; min-height: 44px; color: #0A0A0A; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; text-transform: none; letter-spacing: 0; font-size: 17px;" style-hover="text-decoration-thickness: 5px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">hello@fixedforall.com</a></li>
+      <li><a href="#{{ idp }}about" style="display: inline-flex; align-items: center; min-height: 44px; color: #0A0A0A; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px;" style-hover="text-decoration-thickness: 5px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">LinkedIn</a></li>
+      <li><a href="#{{ idp }}top" style="display: inline-flex; align-items: center; min-height: 44px; color: #0A0A0A; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px;" style-hover="text-decoration-thickness: 5px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">Accessibility statement</a></li>
+      <li><a href="#{{ idp }}top" style="display: inline-flex; align-items: center; min-height: 44px; color: #0A0A0A; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px;" style-hover="text-decoration-thickness: 5px;" style-focus="outline: 4px solid #0A0A0A; outline-offset: 4px;">Privacy</a></li>
+    </ul>
+    <p style="margin: 0; font-size: 16px; color: #3D3D3D;">© 2026 Fixed for All · Akhil Vij</p>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;variant&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;auto&quot;, &quot;desktop&quot;, &quot;mobile&quot;], &quot;default&quot;: &quot;auto&quot;, &quot;tsType&quot;: &quot;'auto' | 'desktop' | 'mobile'&quot;, &quot;section&quot;: &quot;Layout&quot;}, &quot;mobileMenuOpen&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Prototype&quot;}, &quot;idPrefix&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { narrow: false, menuOpen: null };
+  rootRef = React.createRef();
+  componentDidMount() {
+    const el = this.rootRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    this.ro = new ResizeObserver((en) => {
+      const narrow = en[0].contentRect.width < 760;
+      if (narrow !== this.state.narrow) this.setState({ narrow });
+    });
+    this.ro.observe(el);
+  }
+  componentWillUnmount() { if (this.ro) this.ro.disconnect(); }
+  renderVals() {
+    const v = this.props.variant;
+    const forced = v === 'mobile' || v === 'desktop';
+    const narrow = v === 'mobile' ? true : v === 'desktop' ? false : this.state.narrow;
+    const open = this.state.menuOpen !== null ? this.state.menuOpen : (this.props.mobileMenuOpen ?? false);
+    return {
+      rootRef: this.rootRef,
+      idp: (this.props.idPrefix ?? '') + (forced ? v + '-' : ''),
+      narrow,
+      wide: !narrow,
+      menuOpen: narrow && open,
+      toggleMenu: () => this.setState({ menuOpen: !open }),
+      preventSubmit: (e) => e.preventDefault(),
+    };
+  }
+}
+</script>
+</body>
+</html>

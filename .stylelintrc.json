@@ -1,0 +1,39 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "color-no-hex": [
+      true,
+      {
+        "message": "Use a role token from src/styles/tokens.css, not a raw colour."
+      }
+    ],
+    "color-named": [
+      "never",
+      {
+        "message": "Use a role token from src/styles/tokens.css, not a raw colour."
+      }
+    ],
+    "function-disallowed-list": [
+      ["rgb", "rgba", "hsl", "hsla", "hwb", "lab", "lch", "oklab", "oklch", "color", "color-mix"],
+      {
+        "message": "Use a role token from src/styles/tokens.css, not a raw colour."
+      }
+    ],
+    "selector-class-pattern": [
+      "^[a-z][a-zA-Z0-9]*$|^[a-z][a-z0-9-]*$",
+      {
+        "message": "Use camelCase in CSS Modules and kebab-case in global CSS."
+      }
+    ],
+    "custom-property-empty-line-before": null
+  },
+  "overrides": [
+    {
+      "files": ["src/styles/tokens.css"],
+      "rules": {
+        "color-no-hex": null,
+        "function-disallowed-list": null
+      }
+    }
+  ]
+}

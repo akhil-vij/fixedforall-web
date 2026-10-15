@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><style>body{margin:0;background:#E7E2D8;font-family:system-ui,sans-serif}*,*::before,*::after{box-sizing:border-box}a{color:#1E6B5A}a:hover{color:#1C1B18}.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin:0 0 20px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{font:600 13px/1.4 system-ui,sans-serif;color:#1a1a1a;max-width:1100px}.dv-opts{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;font:400 12px/1.4 system-ui,sans-serif;color:rgba(0,0,0,.6);max-width:1100px}.dv-card{display:flex;align-items:flex-start;gap:32px}.dv-frame{flex:none;box-shadow:0 2px 6px rgba(28,27,24,.08),0 24px 60px rgba(28,27,24,.14)}.dv-flabel{margin:0 0 10px;font:12px ui-monospace,Menlo,monospace;color:#5B5950}.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}.dv-next{margin:28px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.55)}</style></helmet>
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Four new directions beside <a class="dv-oid" href="#1a">1a</a>. Same copy and structure, four different stances: who it speaks to, how loud it is, what metaphor carries the message. Each is the same responsive page at 1440 and 390.</span></div>
+<div class="dv-opts">
+<div class="dv-opt" id="2a"><div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a><span><strong>Manifesto.</strong> Stark black, white and one highlighter yellow; poster-scale Archivo; thick rules; square corners. Opinionated and loud — for founders and product leaders who respond to conviction.</span></div>
+<div class="dv-card">
+<div><p class="dv-flabel">Desktop · 1440</p><div class="dv-frame" style="width:1440px;background:#FFFFFF"><dc-import name="FixedForAll-2a-Manifesto" variant="desktop" id-prefix="2a-" hint-size="1440px,1600px"></dc-import></div></div>
+<div><p class="dv-flabel">Mobile · 390</p><div class="dv-frame" style="width:390px;background:#FFFFFF"><dc-import name="FixedForAll-2a-Manifesto" variant="mobile" id-prefix="2a-m-" mobile-menu-open="{{ mobileMenuOpen }}" hint-size="390px,1600px"></dc-import></div></div>
+</div></div>
+<div class="dv-opt" id="2b"><div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a><span><strong>Pull request.</strong> Dark developer-tool palette, IBM Plex Sans + Mono; the hero is a merged PR diff and the method is a dependency tree. For engineering leads and CTOs who will review the fixes.</span></div>
+<div class="dv-card">
+<div><p class="dv-flabel">Desktop · 1440</p><div class="dv-frame" style="width:1440px;background:#101418"><dc-import name="FixedForAll-2b-PullRequest" variant="desktop" id-prefix="2b-" hint-size="1440px,1600px"></dc-import></div></div>
+<div><p class="dv-flabel">Mobile · 390</p><div class="dv-frame" style="width:390px;background:#101418"><dc-import name="FixedForAll-2b-PullRequest" variant="mobile" id-prefix="2b-m-" mobile-menu-open="{{ mobileMenuOpen }}" hint-size="390px,1600px"></dc-import></div></div>
+</div></div>
+<div class="dv-opt" id="2c"><div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a><span><strong>Plain service.</strong> Institutional and unadorned: white, black, blue links, yellow focus; a numbered document with a contents list and real tables instead of cards. For compliance and procurement readers who want facts.</span></div>
+<div class="dv-card">
+<div><p class="dv-flabel">Desktop · 1440</p><div class="dv-frame" style="width:1440px;background:#FFFFFF"><dc-import name="FixedForAll-2c-PlainService" variant="desktop" id-prefix="2c-" hint-size="1440px,1600px"></dc-import></div></div>
+<div><p class="dv-flabel">Mobile · 390</p><div class="dv-frame" style="width:390px;background:#FFFFFF"><dc-import name="FixedForAll-2c-PlainService" variant="mobile" id-prefix="2c-m-" mobile-menu-open="{{ mobileMenuOpen }}" hint-size="390px,1600px"></dc-import></div></div>
+</div></div>
+<div class="dv-opt" id="2d"><div class="dv-olabel"><a class="dv-oid" href="#2d">2d</a><span><strong>Human.</strong> Warm cream and clay, Figtree, pills and soft corners; leads with Akhil and a greeting, the fix shown as friendly chips. For small and mid-size teams who want a person, not a vendor.</span></div>
+<div class="dv-card">
+<div><p class="dv-flabel">Desktop · 1440</p><div class="dv-frame" style="width:1440px;background:#FFF8F0"><dc-import name="FixedForAll-2d-Human" variant="desktop" id-prefix="2d-" hint-size="1440px,1600px"></dc-import></div></div>
+<div><p class="dv-flabel">Mobile · 390</p><div class="dv-frame" style="width:390px;background:#FFF8F0"><dc-import name="FixedForAll-2d-Human" variant="mobile" id-prefix="2d-m-" mobile-menu-open="{{ mobileMenuOpen }}" hint-size="390px,1600px"></dc-import></div></div>
+</div></div>
+</div>
+<p class="dv-next">Try next: “go with <a class="dv-oid" href="#2b">2b</a> but on the warm paper of <a class="dv-oid" href="#1a">1a</a>” · “<a class="dv-oid" href="#2a">2a</a>, less loud” · “the hero of <a class="dv-oid" href="#2d">2d</a> with the report card from <a class="dv-oid" href="#1a">1a</a>” · “tables from <a class="dv-oid" href="#2c">2c</a> inside <a class="dv-oid" href="#1a">1a</a>”</p>
+</section>
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Engineer’s report. Warm paper, near-black ink, one green for actions and “fixed”; Source Serif 4 headlines, Atkinson Hyperlegible body, IBM Plex Mono for code and report details.</span></div>
+<div class="dv-opts">
+<div class="dv-opt" id="1a"><div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a><span><strong>Engineer’s report.</strong> Calm, editorial, credible. Focus states shown statically on the skip link and hero button.</span></div>
+<div class="dv-card">
+<div><p class="dv-flabel">Desktop · 1440</p><div class="dv-frame" style="width:1440px;background:#FAF8F3"><dc-import name="FixedForAll" variant="desktop" focus-demo="{{ focusDemo }}" hint-size="1440px,1600px"></dc-import></div></div>
+<div><p class="dv-flabel">Mobile · 390</p><div class="dv-frame" style="width:390px;background:#FAF8F3"><dc-import name="FixedForAll" variant="mobile" focus-demo="{{ focusDemo }}" mobile-menu-open="{{ mobileMenuOpen }}" hint-size="390px,1600px"></dc-import></div></div>
+</div></div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;focusDemo&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Prototype&quot;}, &quot;mobileMenuOpen&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Prototype&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      focusDemo: this.props.focusDemo ?? true,
+      mobileMenuOpen: this.props.mobileMenuOpen ?? false,
+    };
+  }
+}
+</script>
+</body>
+</html>

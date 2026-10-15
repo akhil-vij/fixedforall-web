@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# build output
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# test output
+test-results/
+playwright-report/
+blob-report/
+
+# local env and tooling
+.env*.local
+.vercel/
+.DS_Store
+
+# the design package zip; its contents live in design/
+*.zip

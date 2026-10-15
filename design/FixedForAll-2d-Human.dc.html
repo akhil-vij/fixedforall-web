@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;800&display=swap">
+<style>
+body { margin: 0; background: #FFF8F0; }
+*, *::before, *::after { box-sizing: border-box; }
+a { color: #B8431F; }
+a:hover { color: #2A211C; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" id="{{ idp }}top" style="position: relative; container-type: inline-size; width: 100%; min-width: 0; background: #FFF8F0; color: #2A211C; font-family: 'Figtree', system-ui, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased;">
+<a href="#{{ idp }}main" style="position: absolute; left: -9999px; top: 12px; z-index: 10; display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: #2A211C; color: #FFF8F0; font-weight: 700; text-decoration: underline; border-radius: 999px;" style-focus="left: 16px; outline: 3px solid #B8431F; outline-offset: 3px;">Skip to content</a>
+
+<header>
+  <div style="max-width: 1240px; margin: 0 auto; padding: 16px clamp(20px, 4cqw, 56px); min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 16px 32px;">
+    <a href="#{{ idp }}top" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: #2A211C; text-decoration: none; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; border-radius: 999px;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;"><span aria-hidden="true" style="display: inline-block; width: 12px; height: 12px; background: #B8431F; border-radius: 50%;"></span><span>Fixed for All</span></a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 12px 28px;">
+        <nav aria-label="Main">
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 24px; font-weight: 500; font-size: 17px;">
+            <li><a href="#{{ idp }}how" style="display: inline-flex; align-items: center; min-height: 44px; color: #2A211C; text-decoration: none; border-radius: 999px;" style-hover="color: #B8431F; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">How it works</a></li>
+            <li><a href="#{{ idp }}services" style="display: inline-flex; align-items: center; min-height: 44px; color: #2A211C; text-decoration: none; border-radius: 999px;" style-hover="color: #B8431F; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">Services</a></li>
+            <li><a href="#{{ idp }}work" style="display: inline-flex; align-items: center; min-height: 44px; color: #2A211C; text-decoration: none; border-radius: 999px;" style-hover="color: #B8431F; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">Work</a></li>
+            <li><a href="#{{ idp }}about" style="display: inline-flex; align-items: center; min-height: 44px; color: #2A211C; text-decoration: none; border-radius: 999px;" style-hover="color: #B8431F; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">About</a></li>
+            <li><a href="#{{ idp }}faq" style="display: inline-flex; align-items: center; min-height: 44px; color: #2A211C; text-decoration: none; border-radius: 999px;" style-hover="color: #B8431F; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">FAQ</a></li>
+          </ul>
+        </nav>
+        <a href="#{{ idp }}contact" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; background: #B8431F; color: #FFFFFF; font-weight: 700; font-size: 17px; text-decoration: none; border-radius: 999px; transition: background-color .15s ease;" style-hover="background: #9A3618; color: #FFFFFF;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">Say hello</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: #FFFFFF; border: 2px solid #2A211C; border-radius: 999px; font-family: inherit; font-weight: 700; font-size: 17px; color: #2A211C; cursor: pointer;" style-hover="background: #F6E9DB;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">Menu</button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav aria-label="Main" style="padding: 0 clamp(20px, 4cqw, 56px) 24px;">
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 20px; overflow: hidden;">
+        <li><a href="#{{ idp }}how" style="display: flex; align-items: center; min-height: 54px; padding: 8px 20px; border-bottom: 1px solid #E8D8C6; color: #2A211C; font-weight: 500; font-size: 19px; text-decoration: none;" style-hover="background: #F6E9DB; color: #B8431F;" style-focus="outline: 3px solid #2A211C; outline-offset: -3px;">How it works</a></li>
+        <li><a href="#{{ idp }}services" style="display: flex; align-items: center; min-height: 54px; padding: 8px 20px; border-bottom: 1px solid #E8D8C6; color: #2A211C; font-weight: 500; font-size: 19px; text-decoration: none;" style-hover="background: #F6E9DB; color: #B8431F;" style-focus="outline: 3px solid #2A211C; outline-offset: -3px;">Services</a></li>
+        <li><a href="#{{ idp }}work" style="display: flex; align-items: center; min-height: 54px; padding: 8px 20px; border-bottom: 1px solid #E8D8C6; color: #2A211C; font-weight: 500; font-size: 19px; text-decoration: none;" style-hover="background: #F6E9DB; color: #B8431F;" style-focus="outline: 3px solid #2A211C; outline-offset: -3px;">Work</a></li>
+        <li><a href="#{{ idp }}about" style="display: flex; align-items: center; min-height: 54px; padding: 8px 20px; border-bottom: 1px solid #E8D8C6; color: #2A211C; font-weight: 500; font-size: 19px; text-decoration: none;" style-hover="background: #F6E9DB; color: #B8431F;" style-focus="outline: 3px solid #2A211C; outline-offset: -3px;">About</a></li>
+        <li><a href="#{{ idp }}faq" style="display: flex; align-items: center; min-height: 54px; padding: 8px 20px; color: #2A211C; font-weight: 500; font-size: 19px; text-decoration: none;" style-hover="background: #F6E9DB; color: #B8431F;" style-focus="outline: 3px solid #2A211C; outline-offset: -3px;">FAQ</a></li>
+      </ul>
+      <a href="#{{ idp }}contact" style="display: flex; align-items: center; justify-content: center; min-height: 54px; margin-top: 16px; padding: 12px 24px; background: #B8431F; color: #FFFFFF; font-weight: 700; font-size: 18px; text-decoration: none; border-radius: 999px;" style-hover="background: #9A3618; color: #FFFFFF;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">Say hello</a>
+    </nav>
+  </sc-if>
+</header>
+
+<main id="{{ idp }}main">
+
+<section style="padding: clamp(32px, 5cqw, 80px) clamp(20px, 4cqw, 56px) clamp(48px, 6cqw, 96px);">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(32px, 5cqw, 80px);">
+    <div style="flex: 1 1 400px; max-width: 620px; min-width: 0;">
+      <h1 style="margin: 0; font-weight: 800; font-size: clamp(40px, 5cqw, 72px); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance;">Hi, I’m Akhil. I make websites work for everyone.</h1>
+      <p style="margin: 24px 0 0; font-size: clamp(19px, 1.5cqw, 22px); line-height: 1.5; color: #4A3F38; text-wrap: pretty;">I find and fix accessibility problems in the shared components your product is built from, so every page gets better at once and stays that way. If you’re getting ready for the European Accessibility Act, I’d like to take a look at your site.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px;">
+        <a href="#{{ idp }}contact" style="display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 14px 28px; background: #B8431F; color: #FFFFFF; font-weight: 700; font-size: 18px; text-decoration: none; border-radius: 999px; transition: background-color .15s ease;" style-hover="background: #9A3618; color: #FFFFFF;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">Book a 20-minute call</a>
+        <a href="#{{ idp }}report" style="display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 12px 26px; background: #FFFFFF; color: #2A211C; border: 2px solid #2A211C; font-weight: 700; font-size: 18px; text-decoration: none; border-radius: 999px; transition: background-color .15s ease;" style-hover="background: #F6E9DB; color: #2A211C;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">See a sample report</a>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 36px; font-size: 16px; color: #6B5E55;">
+        <span>Previously at</span>
+        <span style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; background: #F6E9DB; border: 1px dashed #C9B6A2; border-radius: 999px;">[Informatica logo]</span>
+        <span style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; background: #F6E9DB; border: 1px dashed #C9B6A2; border-radius: 999px;">[Agoda logo]</span>
+        <span>[placeholder — pending permission]</span>
+      </div>
+    </div>
+    <div style="flex: 1 1 320px; max-width: 460px; min-width: 0; position: relative; padding-bottom: 44px;">
+      <div style="aspect-ratio: 4 / 5; border-radius: 28px; display: flex; align-items: center; justify-content: center; padding: 24px; text-align: center; background: repeating-linear-gradient(135deg, #F6E9DB 0 12px, #EFDFCC 12px 24px); border: 2px dashed #C9B6A2; font-size: 16px; color: #6B5E55;">[placeholder — photo of Akhil, natural light, smiling, plain background]</div>
+      <div style="position: absolute; left: 20px; right: 20px; bottom: 0; background: #FFFFFF; border-radius: 18px; padding: 16px 20px; box-shadow: 0 12px 32px rgba(42, 33, 28, 0.14); display: flex; flex-direction: column; gap: 2px;">
+        <span style="font-weight: 700; font-size: 17px;">Akhil Vij</span>
+        <span style="font-size: 16px; line-height: 1.45; color: #6B5E55;">Staff engineer, 12+ years. Based in India, working with teams across Europe.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 0 clamp(20px, 4cqw, 56px) clamp(56px, 7cqw, 104px);">
+  <div style="max-width: 1240px; margin: 0 auto;">
+    <h2 style="margin: 0 0 clamp(24px, 3cqw, 40px); font-weight: 800; font-size: clamp(30px, 3.2cqw, 44px); line-height: 1.1; letter-spacing: -0.025em; text-wrap: pretty; max-width: 22ch;">Why teams are getting in touch now</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px;">
+      <div style="background: #F6E9DB; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+        <span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; font-weight: 800; font-size: 18px; color: #B8431F;">1</span>
+        <h3 style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1.3;">The law applies now.</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">Since June 2025, the European Accessibility Act covers online shops, banking, travel booking and many consumer apps.</p>
+      </div>
+      <div style="background: #F6E9DB; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+        <span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; font-weight: 800; font-size: 18px; color: #B8431F;">2</span>
+        <h3 style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1.3;">Scanners only catch part of it.</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">Automated tools find roughly a third of real problems. Can someone finish your checkout with only a keyboard? Does a screen reader announce errors? That takes a person.</p>
+      </div>
+      <div style="background: #F6E9DB; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+        <span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; font-weight: 800; font-size: 18px; color: #B8431F;">3</span>
+        <h3 style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1.3;">Widgets don’t fix code.</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">Overlay tools hide problems instead of fixing them. German testing centres (BIK) no longer give their test seal to sites that rely on them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}how" style="background: #FFFFFF; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1240px; margin: 0 auto;">
+    <h2 style="margin: 0 0 16px; font-weight: 800; font-size: clamp(30px, 3.2cqw, 44px); line-height: 1.1; letter-spacing: -0.025em; text-wrap: pretty; max-width: 22ch;">Fix it once, and it’s fixed for all</h2>
+    <p style="margin: 0; max-width: 62ch; font-size: clamp(18px, 1.4cqw, 21px); color: #4A3F38; text-wrap: pretty;">Most accessibility problems live in a handful of shared components. Fix those, and every page that uses them is fixed too.</p>
+    <figure style="margin: clamp(28px, 3cqw, 44px) 0 0; background: #FFF8F0; border-radius: 28px; padding: clamp(20px, 2.6cqw, 36px);">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px;">
+        <div style="flex: 0 1 300px; min-width: 0; background: #3B2A22; color: #FFF8F0; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 10px;">
+          <p style="margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; color: #F0C9B4;">One shared component</p>
+          <p style="margin: 0; font-weight: 800; font-size: 30px; line-height: 1.1; letter-spacing: -0.02em;">Date picker</p>
+          <p style="margin: 0; font-size: 17px; color: #F6E9DB; text-wrap: pretty;">Couldn’t be opened with a keyboard. Fixed once, in one change your team reviews.</p>
+        </div>
+        <div aria-hidden="true" style="flex: none; font-weight: 800; font-size: 48px; line-height: 1; color: #B8431F;">→</div>
+        <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 999px; font-weight: 500;">Search <span style="color: #B8431F; font-weight: 700;">✓ Fixed</span></span>
+          <span style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 999px; font-weight: 500;">Results <span style="color: #B8431F; font-weight: 700;">✓ Fixed</span></span>
+          <span style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 999px; font-weight: 500;">Checkout <span style="color: #B8431F; font-weight: 700;">✓ Fixed</span></span>
+          <span style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 999px; font-weight: 500;">Confirmation <span style="color: #B8431F; font-weight: 700;">✓ Fixed</span></span>
+          <span style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 999px; font-weight: 500;">Account <span style="color: #B8431F; font-weight: 700;">✓ Fixed</span></span>
+          <span style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 999px; font-weight: 500;">Support <span style="color: #B8431F; font-weight: 700;">✓ Fixed</span></span>
+        </div>
+      </div>
+      <figcaption style="margin: 18px 0 0; font-size: 16px; color: #6B5E55;">Six pages used it. Six pages fixed, in one change.</figcaption>
+    </figure>
+    <ol style="list-style: none; margin: clamp(36px, 4cqw, 56px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px;">
+      <li style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: #B8431F; color: #FFFFFF; font-weight: 800; font-size: 20px;">1</span>
+        <h3 style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1.3;">First, I check.</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">I scan your key pages and test the main user journeys by hand: keyboard only, screen reader, zoom.</p>
+      </li>
+      <li style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: #B8431F; color: #FFFFFF; font-weight: 800; font-size: 20px;">2</span>
+        <h3 style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1.3;">Then, I fix.</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">I fix problems in your shared components and code, as normal pull requests your team reviews.</p>
+      </li>
+      <li style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: #B8431F; color: #FFFFFF; font-weight: 800; font-size: 20px;">3</span>
+        <h3 style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1.3;">Then we keep it fixed.</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">I add simple checks to your release process and give your team a short training, so problems don’t creep back.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="{{ idp }}services" style="padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1240px; margin: 0 auto;">
+    <h2 style="margin: 0 0 clamp(24px, 3cqw, 40px); font-weight: 800; font-size: clamp(30px, 3.2cqw, 44px); line-height: 1.1; letter-spacing: -0.025em;">Ways we can work together</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 14px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 24px; padding: 28px;">
+        <span style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 30px; padding: 0 12px; background: #B8431F; color: #FFFFFF; border-radius: 999px; font-weight: 700; font-size: 14px;">Most teams start here</span>
+        <h3 style="margin: 0; font-weight: 700; font-size: 24px; line-height: 1.25;">Accessibility Check</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">Your main user journeys, scanned and tested by hand. A plain-English report with what to fix first.</p>
+        <p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #E8D8C6; font-weight: 700;">2–3 days · from €1,200 <span style="font-weight: 400; font-size: 15px; color: #6B5E55; border: 1px dashed #C9B6A2; border-radius: 999px; padding: 1px 8px;">[price placeholder]</span></p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 24px; padding: 28px;">
+        <span style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 30px; padding: 0 12px; background: #F6E9DB; color: #2A211C; border-radius: 999px; font-weight: 700; font-size: 14px;">After the Check</span>
+        <h3 style="margin: 0; font-weight: 700; font-size: 24px; line-height: 1.25;">Fix Sprint</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">I fix your shared components and key journeys, and train your team.</p>
+        <p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #E8D8C6; font-weight: 700;">1–4 weeks · quoted after the Check</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 24px; padding: 28px;">
+        <span style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 30px; padding: 0 12px; background: #F6E9DB; color: #2A211C; border-radius: 999px; font-weight: 700; font-size: 14px;">For software companies</span>
+        <h3 style="margin: 0; font-weight: 700; font-size: 24px; line-height: 1.25;">Independent Accessibility Report</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">For when your customers ask for one (often called an ACR or VPAT). An honest, independent report, which buyers trust more than one a company writes about itself.</p>
+        <p style="margin: auto 0 0; padding-top: 14px; border-top: 1px solid #E8D8C6; font-weight: 700;">Quoted per product</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}report" style="background: #FFFFFF; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(28px, 4cqw, 64px);">
+    <div style="flex: 1 1 300px; max-width: 460px; min-width: 0;">
+      <h2 style="margin: 0 0 20px; font-weight: 800; font-size: clamp(30px, 3.2cqw, 44px); line-height: 1.1; letter-spacing: -0.025em; text-wrap: pretty;">A report your team can actually use</h2>
+      <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">Every Check ends with a short report in plain English: a one-line summary, problems grouped by how badly they block people, and the five fixes to do first. Each finding says whether a scanner found it or a person did.</p>
+      <p style="margin: 16px 0 0; color: #4A3F38; text-wrap: pretty;">You also get a spreadsheet of every issue, and tickets ready to import into Jira.</p>
+      <p style="margin: 24px 0 0; font-weight: 700;"><a href="#{{ idp }}report" style="color: #B8431F; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; border-radius: 4px;" style-hover="color: #2A211C;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">Download the sample report (PDF)</a> <span style="font-weight: 400; font-size: 15px; color: #6B5E55; border: 1px dashed #C9B6A2; border-radius: 999px; padding: 1px 8px;">[placeholder — sample PDF to come]</span></p>
+    </div>
+    <article aria-label="Sample report, page 1 (illustrative)" style="flex: 1.3 1 360px; max-width: 660px; min-width: 0; background: #FFF8F0; border-radius: 28px; padding: clamp(22px, 2.8cqw, 40px); box-shadow: 0 16px 40px rgba(42, 33, 28, 0.10); display: flex; flex-direction: column; gap: 22px;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; font-size: 15px; color: #6B5E55;"><span>Accessibility Check · Sample report</span><span>Page 1 of 14 · illustrative</span></div>
+      <p style="margin: 0; font-weight: 800; font-size: clamp(22px, 2cqw, 28px); line-height: 1.25; letter-spacing: -0.02em; text-wrap: pretty;">12 problems found on 6 key screens. 4 block users completely.</p>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 14px; font-weight: 700; font-size: 16px;"><span>Blocks users completely</span><span>4</span><span aria-hidden="true" style="grid-column: 1 / -1; display: block; height: 12px; background: #F6E9DB; border-radius: 6px; overflow: hidden;"><span style="display: block; height: 100%; width: 33%; background: #B8431F; border-radius: 6px;"></span></span></div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 14px; font-weight: 700; font-size: 16px;"><span>Makes tasks much harder</span><span>5</span><span aria-hidden="true" style="grid-column: 1 / -1; display: block; height: 12px; background: #F6E9DB; border-radius: 6px; overflow: hidden;"><span style="display: block; height: 100%; width: 42%; background: #6B5E55; border-radius: 6px;"></span></span></div>
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 14px; font-weight: 700; font-size: 16px;"><span>Minor friction</span><span>3</span><span aria-hidden="true" style="grid-column: 1 / -1; display: block; height: 12px; background: #F6E9DB; border-radius: 6px; overflow: hidden;"><span style="display: block; height: 100%; width: 25%; background: #C9B6A2; border-radius: 6px;"></span></span></div>
+      </div>
+      <div>
+        <p style="margin: 0 0 6px; font-weight: 700; font-size: 15px; color: #6B5E55;">Fix these first</p>
+        <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column;">
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 10px 0; border-top: 1px solid #E8D8C6; font-size: 16px;"><span style="font-weight: 800; color: #B8431F; min-width: 1.5ch;">1</span><span style="flex: 1 1 220px;">Checkout “Continue” button has no accessible name</span><span style="font-size: 14px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: #2A211C; color: #FFF8F0; white-space: nowrap;">By a person</span></li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 10px 0; border-top: 1px solid #E8D8C6; font-size: 16px;"><span style="font-weight: 800; color: #B8431F; min-width: 1.5ch;">2</span><span style="flex: 1 1 220px;">Date picker can’t be used with a keyboard</span><span style="font-size: 14px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: #2A211C; color: #FFF8F0; white-space: nowrap;">By a person</span></li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 10px 0; border-top: 1px solid #E8D8C6; font-size: 16px;"><span style="font-weight: 800; color: #B8431F; min-width: 1.5ch;">3</span><span style="flex: 1 1 220px;">Form errors aren’t announced to screen readers</span><span style="font-size: 14px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: #2A211C; color: #FFF8F0; white-space: nowrap;">By a person</span></li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 10px 0; border-top: 1px solid #E8D8C6; font-size: 16px;"><span style="font-weight: 800; color: #B8431F; min-width: 1.5ch;">4</span><span style="flex: 1 1 220px;">Price text contrast is 3.1:1, needs 4.5:1</span><span style="font-size: 14px; font-weight: 700; padding: 1px 9px; border-radius: 999px; border: 1px solid #2A211C; color: #2A211C; white-space: nowrap;">By a scanner</span></li>
+          <li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 10px 0; border-top: 1px solid #E8D8C6; border-bottom: 1px solid #E8D8C6; font-size: 16px;"><span style="font-weight: 800; color: #B8431F; min-width: 1.5ch;">5</span><span style="flex: 1 1 220px;">Focus is lost when the cookie dialog closes</span><span style="font-size: 14px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: #2A211C; color: #FFF8F0; white-space: nowrap;">By a person</span></li>
+        </ol>
+      </div>
+      <p style="margin: 0; font-size: 15px; color: #6B5E55;">Tested by hand: keyboard · NVDA + Chrome · VoiceOver + Safari · 200% zoom. Scanned: axe-core on all 6 screens.</p>
+    </article>
+  </div>
+</section>
+
+<section id="{{ idp }}work" style="padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1240px; margin: 0 auto;">
+    <h2 style="margin: 0 0 clamp(24px, 3cqw, 40px); font-weight: 800; font-size: clamp(30px, 3.2cqw, 44px); line-height: 1.1; letter-spacing: -0.025em; text-wrap: pretty; max-width: 22ch;">Where this has worked before</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 24px; padding: 28px;">
+        <h3 style="margin: 0; font-weight: 700; font-size: 23px; line-height: 1.3; text-wrap: pretty;">Informatica: one design system, 25+ products.</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">Built accessibility (WCAG 2.1 AA) into the company-wide component library, a requirement for enterprise and government sales.</p>
+        <p style="margin: auto 0 0; padding-top: 10px; font-size: 15px; color: #6B5E55;"><span style="border: 1px dashed #C9B6A2; border-radius: 999px; padding: 1px 8px;">[placeholder — numbers to confirm]</span></p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 24px; padding: 28px;">
+        <h3 style="margin: 0; font-weight: 700; font-size: 23px; line-height: 1.3; text-wrap: pretty;">Agoda: one platform, 30+ brands.</h3>
+        <p style="margin: 0; color: #4A3F38; text-wrap: pretty;">Every fix reached every brand. Built a tool that turns audit reports into ready-to-review fixes: about 60% fixed in the first pass, about 85% a strong starting point, all reviewed by engineers.</p>
+        <p style="margin: auto 0 0; padding-top: 10px; font-size: 15px; color: #6B5E55;"><span style="border: 1px dashed #C9B6A2; border-radius: 999px; padding: 1px 8px;">[placeholder — confirming I can share these]</span></p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; background: #FFFFFF; border: 2px solid #E8D8C6; border-radius: 24px; padding: 28px;">
+        <h3 style="margin: 0; font-weight: 700; font-size: 23px; line-height: 1.3; text-wrap: pretty;">Before and after: my own product.</h3>
+        <p style="margin: 0; color: #4A3F38;">A real scan, the fixes, and the result.</p>
+        <div style="min-height: 140px; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; background: repeating-linear-gradient(135deg, #F6E9DB 0 12px, #EFDFCC 12px 24px); border: 2px dashed #C9B6A2; border-radius: 16px; font-size: 15px; color: #6B5E55;">[placeholder — before/after screenshots, coming soon]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: #FFFFFF; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(24px, 4cqw, 64px);">
+    <div style="flex: 1 1 280px; max-width: 400px; min-width: 0;">
+      <h2 style="margin: 0; font-weight: 800; font-size: clamp(30px, 3.2cqw, 44px); line-height: 1.1; letter-spacing: -0.025em; text-wrap: pretty;">A few promises</h2>
+    </div>
+    <ul style="flex: 2 1 400px; max-width: 760px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px;">
+      <li style="display: flex; align-items: flex-start; gap: 14px; text-wrap: pretty;"><span aria-hidden="true" style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-top: 1px; border-radius: 50%; background: #B8431F; color: #FFFFFF; font-weight: 800; font-size: 15px;">✓</span><span><strong>Real fixes in your code.</strong> No widgets, no overlays.</span></li>
+      <li style="display: flex; align-items: flex-start; gap: 14px; text-wrap: pretty;"><span aria-hidden="true" style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-top: 1px; border-radius: 50%; background: #B8431F; color: #FFFFFF; font-weight: 800; font-size: 15px;">✓</span><span><strong>Every change tested by a person</strong> with a keyboard and a screen reader.</span></li>
+      <li style="display: flex; align-items: flex-start; gap: 14px; text-wrap: pretty;"><span aria-hidden="true" style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-top: 1px; border-radius: 50%; background: #B8431F; color: #FFFFFF; font-weight: 800; font-size: 15px;">✓</span><span><strong>Honest reports.</strong> If something only partly works, the report says so.</span></li>
+      <li style="display: flex; align-items: flex-start; gap: 14px; text-wrap: pretty;"><span aria-hidden="true" style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-top: 1px; border-radius: 50%; background: #B8431F; color: #FFFFFF; font-weight: 800; font-size: 15px;">✓</span><span><strong>Working hours that overlap with yours:</strong> 10:00–14:00 CET every working day, replies the same day.</span></li>
+      <li style="display: flex; align-items: flex-start; gap: 14px; text-wrap: pretty;"><span aria-hidden="true" style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-top: 1px; border-radius: 50%; background: #B8431F; color: #FFFFFF; font-weight: 800; font-size: 15px;">✓</span><span><strong>Clear contracts in English,</strong> with data-protection terms for EU clients.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="{{ idp }}about" style="padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(24px, 4cqw, 64px);">
+    <div style="flex: 1 1 280px; max-width: 400px; min-width: 0;">
+      <h2 style="margin: 0; font-weight: 800; font-size: clamp(30px, 3.2cqw, 44px); line-height: 1.1; letter-spacing: -0.025em; text-wrap: pretty;">A bit more about me</h2>
+    </div>
+    <div style="flex: 2 1 400px; max-width: 760px; min-width: 0;">
+      <p style="margin: 0; font-size: clamp(18px, 1.4cqw, 21px); color: #4A3F38; text-wrap: pretty;">I’m Akhil Vij, a staff engineer with 12+ years building large web products. I’ve spent years making accessibility work at scale, in design systems used by dozens of products. I’m based in India and work with teams across Europe, with hours that overlap with yours.</p>
+      <p style="margin: 20px 0 0; font-weight: 700;"><a href="#{{ idp }}contact" style="color: #B8431F; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; border-radius: 4px;" style-hover="color: #2A211C;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">LinkedIn profile</a> <span style="font-weight: 400; font-size: 15px; color: #6B5E55; border: 1px dashed #C9B6A2; border-radius: 999px; padding: 1px 8px;">[placeholder — link]</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}faq" style="background: #FFFFFF; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(24px, 4cqw, 64px);">
+    <div style="flex: 1 1 280px; max-width: 400px; min-width: 0;">
+      <h2 style="margin: 0; font-weight: 800; font-size: clamp(30px, 3.2cqw, 44px); line-height: 1.1; letter-spacing: -0.025em; text-wrap: pretty;">Questions I get asked</h2>
+    </div>
+    <div style="flex: 2 1 400px; max-width: 760px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+      <div style="background: #FFF8F0; border-radius: 20px; padding: 22px 26px;"><h3 style="margin: 0 0 8px; font-weight: 700; font-size: 21px; line-height: 1.3;">Will this make us compliant?</h3><p style="margin: 0; color: #4A3F38; text-wrap: pretty;">No one can honestly guarantee that. I test against WCAG 2.1/2.2 AA, the standard the EU law points to, fix what’s broken, and tell you plainly where you stand.</p></div>
+      <div style="background: #FFF8F0; border-radius: 20px; padding: 22px 26px;"><h3 style="margin: 0 0 8px; font-weight: 700; font-size: 21px; line-height: 1.3;">Do you use AI?</h3><p style="margin: 0; color: #4A3F38; text-wrap: pretty;">I use tools to work faster, but every fix is written into your code, reviewed and tested by a person.</p></div>
+      <div style="background: #FFF8F0; border-radius: 20px; padding: 22px 26px;"><h3 style="margin: 0 0 8px; font-weight: 700; font-size: 21px; line-height: 1.3;">Does the EAA apply to us?</h3><p style="margin: 0; color: #4A3F38; text-wrap: pretty;">Very small service businesses (under 10 staff and under €2M turnover) are exempt. Most others selling to EU consumers are covered. Happy to check on a call.</p></div>
+      <div style="background: #FFF8F0; border-radius: 20px; padding: 22px 26px;"><h3 style="margin: 0 0 8px; font-weight: 700; font-size: 21px; line-height: 1.3;">What do you need from us?</h3><p style="margin: 0; color: #4A3F38; text-wrap: pretty;">Access to a test version of your site and, for fixes, your code repository or a way to send pull requests.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="{{ idp }}contact" style="background: #3B2A22; color: #FFF8F0; padding: clamp(56px, 7cqw, 104px) clamp(20px, 4cqw, 56px);">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(28px, 4cqw, 64px);">
+    <div style="flex: 1 1 320px; max-width: 580px; min-width: 0;">
+      <h2 style="margin: 0 0 16px; font-weight: 800; font-size: clamp(30px, 3.4cqw, 48px); line-height: 1.08; letter-spacing: -0.025em; text-wrap: balance;">Send me your website. I’ll reply with the three biggest problems I find — free.</h2>
+      <p style="margin: 0; font-size: 19px; color: #F0E4D6; text-wrap: pretty;">A real look by a person, not a scanner. No sales pitch, just a useful reply.</p>
+    </div>
+    <form onSubmit="{{ preventSubmit }}" aria-label="Free check request" style="flex: 1 1 320px; max-width: 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px;">
+      <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 700; font-size: 16px;">Your website
+        <input type="url" name="website" autocomplete="url" style="width: 100%; min-height: 52px; padding: 10px 18px; font-family: inherit; font-size: 18px; font-weight: 400; color: #2A211C; background: #FFF8F0; border: 2px solid #FFF8F0; border-radius: 14px;" style-focus="outline: 3px solid #F0C9B4; outline-offset: 3px;">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 700; font-size: 16px;">Work email
+        <input type="email" name="email" autocomplete="email" style="width: 100%; min-height: 52px; padding: 10px 18px; font-family: inherit; font-size: 18px; font-weight: 400; color: #2A211C; background: #FFF8F0; border: 2px solid #FFF8F0; border-radius: 14px;" style-focus="outline: 3px solid #F0C9B4; outline-offset: 3px;">
+      </label>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 4px;">
+        <button type="submit" style="display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 14px 30px; background: #B8431F; color: #FFFFFF; font-family: inherit; font-weight: 700; font-size: 18px; border: 0; border-radius: 999px; cursor: pointer; transition: background-color .15s ease;" style-hover="background: #D2552C;" style-focus="outline: 3px solid #F0C9B4; outline-offset: 4px;">Send</button>
+        <a href="#{{ idp }}contact" style="color: #FFF8F0; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; border-radius: 4px;" style-hover="color: #F0C9B4;" style-focus="outline: 3px solid #F0C9B4; outline-offset: 4px;">Or book a 20-minute call</a>
+      </div>
+      <p style="margin: 4px 0 0; font-size: 15px; color: #F0E4D6;">[placeholder — form is not wired up in this prototype]</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer style="padding: 28px clamp(20px, 4cqw, 56px) 40px;">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px; font-size: 16px;">
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 24px;">
+      <li><a href="mailto:hello@fixedforall.com" style="display: inline-flex; align-items: center; min-height: 44px; color: #2A211C; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 4px;" style-hover="color: #B8431F;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">hello@fixedforall.com</a></li>
+      <li><a href="#{{ idp }}about" style="display: inline-flex; align-items: center; min-height: 44px; color: #2A211C; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 4px;" style-hover="color: #B8431F;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">LinkedIn</a></li>
+      <li><a href="#{{ idp }}top" style="display: inline-flex; align-items: center; min-height: 44px; color: #2A211C; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 4px;" style-hover="color: #B8431F;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">Accessibility statement</a></li>
+      <li><a href="#{{ idp }}top" style="display: inline-flex; align-items: center; min-height: 44px; color: #2A211C; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 4px;" style-hover="color: #B8431F;" style-focus="outline: 3px solid #2A211C; outline-offset: 4px;">Privacy</a></li>
+    </ul>
+    <p style="margin: 0; color: #6B5E55;">© 2026 Fixed for All · Akhil Vij</p>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;variant&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;auto&quot;, &quot;desktop&quot;, &quot;mobile&quot;], &quot;default&quot;: &quot;auto&quot;, &quot;tsType&quot;: &quot;'auto' | 'desktop' | 'mobile'&quot;, &quot;section&quot;: &quot;Layout&quot;}, &quot;mobileMenuOpen&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Prototype&quot;}, &quot;idPrefix&quot;: {&quot;editor&quot;: null, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { narrow: false, menuOpen: null };
+  rootRef = React.createRef();
+  componentDidMount() {
+    const el = this.rootRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    this.ro = new ResizeObserver((en) => {
+      const narrow = en[0].contentRect.width < 760;
+      if (narrow !== this.state.narrow) this.setState({ narrow });
+    });
+    this.ro.observe(el);
+  }
+  componentWillUnmount() { if (this.ro) this.ro.disconnect(); }
+  renderVals() {
+    const v = this.props.variant;
+    const forced = v === 'mobile' || v === 'desktop';
+    const narrow = v === 'mobile' ? true : v === 'desktop' ? false : this.state.narrow;
+    const open = this.state.menuOpen !== null ? this.state.menuOpen : (this.props.mobileMenuOpen ?? false);
+    return {
+      rootRef: this.rootRef,
+      idp: (this.props.idPrefix ?? '') + (forced ? v + '-' : ''),
+      narrow,
+      wide: !narrow,
+      menuOpen: narrow && open,
+      toggleMenu: () => this.setState({ menuOpen: !open }),
+      preventSubmit: (e) => e.preventDefault(),
+    };
+  }
+}
+</script>
+</body>
+</html>
