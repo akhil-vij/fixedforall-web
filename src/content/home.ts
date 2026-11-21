@@ -75,6 +75,41 @@ export const whyNow = {
 export const howItWorks = {
   label: '02 — How it works',
   heading: 'Fix it once. Fixed for all.',
+  intro:
+    'Most accessibility problems live in a handful of shared components. Fix those, and every page that uses them is fixed.',
+  /** The "one date picker, six pages" illustration. The drawn parts are decorative; this is the text. */
+  diagram: {
+    componentLabel: 'Shared component',
+    componentName: 'Date picker',
+    // Inside the decorative mock-up of the date picker.
+    mockLabel: 'Check-in date',
+    mockValue: '12 Mar 2026',
+    componentNote:
+      'Couldn’t be opened with a keyboard. Fixed in one pull request, then tested by hand: keyboard, screen reader, 200% zoom.',
+    pagesHeading: 'Used on 6 pages',
+    pagesNote: 'The same blocker on every page. One pull request, all six fixed.',
+    pages: ['Search', 'Results', 'Checkout', 'Confirmation', 'Account', 'Support'],
+    pageStatus: 'Fixed',
+    caption:
+      'One change in the date picker, reviewed by your team as a pull request, reaches every page that uses it.',
+  },
+  steps: [
+    {
+      label: 'Step 1',
+      heading: 'Check.',
+      text: 'I scan your key pages and test the main user journeys by hand: keyboard only, screen reader, zoom.',
+    },
+    {
+      label: 'Step 2',
+      heading: 'Fix.',
+      text: 'I fix problems in your shared components and code, as normal pull requests your team reviews.',
+    },
+    {
+      label: 'Step 3',
+      heading: 'Keep it fixed.',
+      text: 'I add simple checks to your release process and give your team a short training, so problems don’t creep back.',
+    },
+  ],
 };
 
 export const services = {
