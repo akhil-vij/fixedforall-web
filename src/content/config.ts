@@ -39,7 +39,7 @@ export const config: SiteConfig = {
   siteUrl: 'https://fixedforall.com',
   email: 'hello@fixedforall.com',
   bookingUrl: TODO,
-  linkedinUrl: TODO,
+  linkedinUrl: 'https://www.linkedin.com/in/akhil-vij-50b68085',
   checkPrice: '€1,200',
   sampleReportUrl: null,
   beforeAfter: null,
