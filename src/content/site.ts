@@ -11,9 +11,12 @@ export const site = {
 };
 
 /** The main call to action: the header button, the hero's primary button and the contact band. */
+/** True while the booking link is an email address rather than a booking tool (#17). */
+export const bookingIsEmail = config.bookingUrl.startsWith('mailto:');
+
 export const bookingCta = {
   // While the booking link is an email address, say so: the button opens an email, not a calendar.
-  label: config.bookingUrl.startsWith('mailto:') ? 'Email to book a call' : 'Book a 20-minute call',
+  label: bookingIsEmail ? 'Email to book a call' : 'Book a 20-minute call',
   // Until the booking link is set (preview builds only), send people to the contact band.
   href: isSet(config.bookingUrl) ? config.bookingUrl : sectionHref(anchors.contact),
 };

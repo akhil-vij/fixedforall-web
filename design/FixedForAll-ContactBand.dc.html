@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+body { margin: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+a { color: #1E6B5A; }
+a:hover { color: #1C1B18; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+</style>
+</helmet>
+<div style="container-type: inline-size; width: 100%; min-width: 0; background: #14352D; color: #FAF8F3; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased;">
+  <section style="padding: clamp(56px, 7cqw, 112px) clamp(20px, 5cqw, 72px);">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: clamp(28px, 4cqw, 64px);">
+      <h2 style="flex: 1.3 1 420px; max-width: 700px; min-width: 0; margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: clamp(32px, 3.4cqw, 50px); line-height: 1.1; letter-spacing: -0.01em; color: #FAF8F3; text-wrap: balance;">Book 20 minutes. Bring your website, and I’ll test it live with you.</h2>
+      <div style="flex: 1 1 320px; max-width: 440px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C5D3CC; text-wrap: pretty;">A real look by a person, not a scanner. No sales pitch.</p>
+        <sc-if value="{{ emailOnly }}" hint-placeholder-val="{{ true }}">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px;">
+            <a href="mailto:hello@fixedforall.com?subject=Book%20a%2020-minute%20call" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 28px; background: #FAF8F3; color: #14352D; font-weight: 700; font-size: 18px; line-height: 1.2; text-decoration: none; border-radius: 6px; transition: background-color .15s ease;" style-hover="background: #FFFFFF; color: #14352D;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">Email to book a call</a>
+            <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #FAF8F3; user-select: all; overflow-wrap: anywhere;">hello@fixedforall.com</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ booking }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px;">
+            <a href="#book" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 28px; background: #FAF8F3; color: #14352D; font-weight: 700; font-size: 18px; line-height: 1.2; text-decoration: none; border-radius: 6px; transition: background-color .15s ease;" style-hover="background: #FFFFFF; color: #14352D;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">Book a 20-minute call</a>
+            <a href="mailto:hello@fixedforall.com" style="display: inline-flex; align-items: center; min-height: 44px; color: #FAF8F3; font-size: 18px; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 2px; overflow-wrap: anywhere;" style-hover="color: #FFFFFF; text-decoration-thickness: 2.5px;" style-focus="outline: 3px solid transparent; box-shadow: 0 0 0 3px #14352D, 0 0 0 6px #FAF8F3;">Or email hello@fixedforall.com</a>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;bookingTool&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Content&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const booking = this.props.bookingTool ?? false;
+    return { booking, emailOnly: !booking };
+  }
+}
+</script>
+</body>
+</html>

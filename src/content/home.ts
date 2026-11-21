@@ -271,4 +271,9 @@ export const faq = {
 
 export const contact = {
   heading: 'Book 20 minutes. Bring your website, and I’ll test it live with you.',
+  line: 'A real look by a person, not a scanner. No sales pitch.',
+  // The button is the booking link (site.ts, bookingCta). With a booking tool, email is offered as
+  // a second link; while booking is by email, the address is shown as text instead.
+  emailLink: `Or email ${config.email}`,
+  emailText: config.email,
 };
