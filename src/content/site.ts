@@ -21,7 +21,10 @@ export const header = {
     { label: 'FAQ', href: sectionHref(anchors.faq) },
   ],
   cta: {
-    label: 'Book a 20-minute call',
+    // While the booking link is an email address, say so: the button opens an email, not a calendar.
+    label: config.bookingUrl.startsWith('mailto:')
+      ? 'Email to book a call'
+      : 'Book a 20-minute call',
     // Until the booking link is set (preview builds only), send people to the contact band.
     href: isSet(config.bookingUrl) ? config.bookingUrl : sectionHref(anchors.contact),
   },

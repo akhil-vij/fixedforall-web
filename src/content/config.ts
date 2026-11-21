@@ -22,7 +22,10 @@ export type BeforeAfter = {
 export type SiteConfig = {
   siteUrl: string;
   email: string;
-  /** Link to the booking page. Always a link, never an embedded iframe. */
+  /**
+   * Link to the booking page. Always a link, never an embedded iframe. Until a booking tool is
+   * chosen (#17) this is an email link; the header button then reads "Email to book a call".
+   */
   bookingUrl: string;
   linkedinUrl: string;
   /** Akhil's personal website, linked from About. Hidden while null. */
@@ -40,7 +43,7 @@ export type SiteConfig = {
 export const config: SiteConfig = {
   siteUrl: 'https://fixedforall.com',
   email: 'hello@fixedforall.com',
-  bookingUrl: TODO,
+  bookingUrl: 'mailto:hello@fixedforall.com?subject=20-minute%20call',
   linkedinUrl: 'https://www.linkedin.com/in/akhil-vij-50b68085',
   websiteUrl: 'https://akhilvij.com/',
   checkPrice: '€1,200',
