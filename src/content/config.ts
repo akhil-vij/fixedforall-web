@@ -25,6 +25,8 @@ export type SiteConfig = {
   /** Link to the booking page. Always a link, never an embedded iframe. */
   bookingUrl: string;
   linkedinUrl: string;
+  /** Akhil's personal website, linked from About. Hidden while null. */
+  websiteUrl: string | null;
   /** Shown as "from {checkPrice}" on the Accessibility Check card. */
   checkPrice: string;
   /** The "Download the sample report (PDF)" link is hidden while this is null. */
@@ -40,6 +42,7 @@ export const config: SiteConfig = {
   email: 'hello@fixedforall.com',
   bookingUrl: TODO,
   linkedinUrl: 'https://www.linkedin.com/in/akhil-vij-50b68085',
+  websiteUrl: 'https://akhilvij.com/',
   checkPrice: '€1,200',
   sampleReportUrl: null,
   beforeAfter: null,

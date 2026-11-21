@@ -1,0 +1,103 @@
+.section {
+  padding: var(--section-space) var(--gutter);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vw, 64px);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.text {
+  max-width: 680px;
+  min-width: 0;
+}
+
+.heading {
+  margin-bottom: 20px;
+}
+
+.body {
+  font-size: var(--text-about);
+  line-height: var(--leading-lead);
+  text-wrap: pretty;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 28px;
+  margin-top: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.caption {
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+}
+
+/* With a photo: 4:5 portrait, the caption card overlapping its bottom edge. */
+.portrait {
+  position: relative;
+  max-width: 420px;
+  min-width: 0;
+  padding-bottom: 56px;
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+}
+
+.portrait .caption {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  left: 20px;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-caption);
+}
+
+/* Without a photo: the caption alone, as a small panel. */
+.portraitTextOnly {
+  max-width: 420px;
+  min-width: 0;
+}
+
+.captionName {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-subheading);
+}
+
+.captionText {
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: var(--text-small);
+  text-wrap: pretty;
+}
+
+/* Wide: portrait on the left, text on the right. Only the order on screen changes; the portrait
+   has nothing focusable, so focus order is unaffected. */
+@media (width >= 760px) {
+  .inner {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .text {
+    flex: 1.4 1 0;
+  }
+
+  .portrait,
+  .portraitTextOnly {
+    flex: 1 1 0;
+    order: -1;
+  }
+}
