@@ -1,8 +1,8 @@
+import { About } from '@/components/sections/About';
+import { Faq } from '@/components/sections/Faq';
 import { PendingSection } from '@/components/sections/PendingSection';
 import {
-  about,
   contact,
-  faq,
   hero,
   howItWorks,
   howIWork,
@@ -24,8 +24,8 @@ export default function HomePage() {
       <PendingSection id={anchors.report} heading={report.heading} />
       <PendingSection id={anchors.work} heading={work.heading} />
       <PendingSection heading={howIWork.heading} />
-      <PendingSection id={anchors.about} heading={about.heading} />
-      <PendingSection id={anchors.faq} heading={faq.heading} />
+      <About />
+      <Faq />
       <PendingSection id={anchors.contact} heading={contact.heading} />
     </>
   );

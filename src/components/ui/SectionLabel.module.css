@@ -1,0 +1,8 @@
+.label {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}

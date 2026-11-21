@@ -39,11 +39,46 @@ export const howIWork = {
 export const about = {
   label: '07 — About',
   heading: 'Hi, I’m Akhil.',
+  body: 'I’m a staff engineer with 12+ years building large web products. I’ve spent years making accessibility work at scale, in design systems used by dozens of products. I’m based in India and work with teams across Europe.',
+  // Each link shows only when its URL is set in config.ts.
+  linkedinLabel: 'LinkedIn profile',
+  websiteLabel: 'Personal website',
+  caption: {
+    name: 'Akhil Vij',
+    text: 'Staff engineer, 12+ years. Based in India, working with teams across Europe. 10:00–14:00 CET overlap, replies the same working day.',
+  },
+  /**
+   * Shown when public/akhil.webp exists. Empty alt: the caption beside it already names Akhil.
+   * Describe the photo here only if it shows something the caption doesn't.
+   */
+  photo: { src: '/akhil.webp', alt: '', width: 840, height: 1050 },
 };
 
 export const faq = {
   label: '08 — FAQ',
   heading: 'Questions I get asked',
+  items: [
+    {
+      question: 'Will this make us compliant?',
+      answer:
+        'No one can honestly guarantee that. I test against WCAG 2.1/2.2 AA, the standard the EU law points to, fix what’s broken, and tell you plainly where you stand.',
+    },
+    {
+      question: 'Do you use AI?',
+      answer:
+        'I use tools to work faster, but every fix is written into your code, reviewed and tested by a person.',
+    },
+    {
+      question: 'Does the EAA apply to us?',
+      answer:
+        'Very small service businesses (under 10 staff and under €2M turnover) are exempt. Most others selling to EU consumers are covered. Happy to check on a call.',
+    },
+    {
+      question: 'What do you need from us?',
+      answer:
+        'Access to a test version of your site and, for fixes, your code repository or a way to send pull requests.',
+    },
+  ],
 };
 
 export const contact = {
