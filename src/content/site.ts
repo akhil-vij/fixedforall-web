@@ -45,3 +45,12 @@ export const footer = {
   // Build-time year: the site is static, and is rebuilt on every change.
   copyright: `© ${new Date().getFullYear()} Fixed for All · Akhil Vij`,
 };
+
+/** The 404 page. Wording from the design agent's frame (design/FixedForAll-404.dc.html). */
+export const notFound = {
+  title: `Page not found · ${site.name}`,
+  label: 'Error 404',
+  heading: 'This page doesn’t exist.',
+  text: 'The link may be out of date, or the address may have been mistyped.',
+  homeLink: 'Back to the home page',
+};

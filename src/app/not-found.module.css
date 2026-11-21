@@ -1,0 +1,34 @@
+.page {
+  padding: clamp(72px, 9vw, 144px) var(--gutter) clamp(88px, 11vw, 176px);
+}
+
+.inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.heading {
+  max-width: 18ch;
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+
+.text {
+  max-width: 52ch;
+  margin-top: 24px;
+  font-size: var(--text-lead);
+  line-height: var(--leading-lead);
+  text-wrap: pretty;
+}
+
+.home {
+  margin-top: 20px;
+}
+
+.homeLink {
+  font-weight: var(--weight-bold);
+}
