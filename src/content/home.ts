@@ -189,11 +189,39 @@ export const report = {
 export const work = {
   label: '05 — Work',
   heading: 'Where this has worked before',
+  items: [
+    {
+      heading: 'Informatica: one design system, 25+ products.',
+      text: 'Built accessibility (WCAG 2.1 AA) into the company-wide component library, a requirement for enterprise and government sales.',
+    },
+    {
+      heading: 'Agoda: one platform, 30+ brands.',
+      text: 'On a shared codebase behind 30+ partner brands, every fix reached every brand. Built a tool that turns audit reports into ready-to-review fixes: about 60% fixed in the first pass, about 85% a strong starting point, all reviewed by engineers.',
+    },
+  ],
+  /** Shown only when config.beforeAfter is set. */
+  beforeAfter: {
+    heading: 'Before and after: my own product.',
+    text: 'A real scan, the fixes, and the result.',
+    beforeLabel: 'Before',
+    afterLabel: 'After',
+  },
 };
 
 export const howIWork = {
   label: '06 — How I work',
   heading: 'Plain terms, real fixes',
+  // Each point: a bold lead, then the rest of the sentence.
+  points: [
+    { lead: 'Real fixes in your code.', rest: 'No widgets, no overlays.' },
+    { lead: 'Every change tested by a person', rest: 'with a keyboard and a screen reader.' },
+    { lead: 'Honest reports.', rest: 'If something only partly works, the report says so.' },
+    {
+      lead: 'Working hours that overlap with yours:',
+      rest: '10:00–14:00 CET every working day, replies the same day.',
+    },
+    { lead: 'Clear contracts in English,', rest: 'with data-protection terms for EU clients.' },
+  ],
 };
 
 export const about = {
