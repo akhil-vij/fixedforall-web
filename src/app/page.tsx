@@ -2,14 +2,17 @@ import { About } from '@/components/sections/About';
 import { Faq } from '@/components/sections/Faq';
 import { Hero } from '@/components/sections/Hero';
 import { PendingSection } from '@/components/sections/PendingSection';
-import { contact, howItWorks, howIWork, report, services, whyNow, work } from '@/content/home';
+import { Proof } from '@/components/sections/Proof';
+import { WhyNow } from '@/components/sections/WhyNow';
+import { contact, howItWorks, howIWork, report, services, work } from '@/content/home';
 import { anchors } from '@/lib/anchors';
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <PendingSection heading={whyNow.heading} />
+      <Proof />
+      <WhyNow />
       <PendingSection id={anchors.how} heading={howItWorks.heading} />
       <PendingSection id={anchors.services} heading={services.heading} />
       <PendingSection id={anchors.report} heading={report.heading} />

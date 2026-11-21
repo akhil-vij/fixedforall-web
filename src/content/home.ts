@@ -37,9 +37,39 @@ export const hero = {
   },
 };
 
+/** The proof row under the hero. */
+export const proof = {
+  label: 'Experience',
+  items: [
+    {
+      figure: '25+',
+      text: 'enterprise products made accessible through one shared design system at Informatica',
+    },
+    {
+      figure: '30+',
+      text: 'brands on one travel platform at Agoda, where every fix reached every brand',
+    },
+    { figure: '12+', text: 'years building large web products' },
+  ],
+};
+
 export const whyNow = {
   label: '01 — Why now',
   heading: 'Why this matters now',
+  points: [
+    {
+      heading: 'The law applies now.',
+      text: 'Since June 2025, the European Accessibility Act covers online shops, banking, travel booking and many consumer apps.',
+    },
+    {
+      heading: 'Scanners only catch part of it.',
+      text: 'Automated tools find roughly a third of real problems. Can someone finish your checkout with only a keyboard? Does a screen reader announce errors? That takes a person.',
+    },
+    {
+      heading: 'Widgets don’t fix code.',
+      text: 'Overlay tools hide problems instead of fixing them. German testing centres (BIK) no longer give their test seal to sites that rely on them.',
+    },
+  ],
 };
 
 export const howItWorks = {
