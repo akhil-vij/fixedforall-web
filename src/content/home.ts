@@ -1,9 +1,40 @@
 /** All home page copy. Edit text here; components only handle layout. */
 
+export type CodeLine = {
+  /** Line number shown in the gutter. */
+  number: number;
+  /** Context lines are unchanged; removed and added lines get − and + and their row colour. */
+  kind: 'context' | 'removed' | 'added';
+  /** The code after the − / + column, indentation included. */
+  code: string;
+};
+
 export const hero = {
   headline: 'Accessibility, fixed at the source.',
   subheadline:
     'I find and fix accessibility problems in the shared components your whole product is built from, so every page gets better at once and stays that way. For teams preparing for the European Accessibility Act.',
+  // The primary button is the booking link, shared with the header (site.ts, bookingCta).
+  secondaryCta: 'See a sample report',
+  /** The illustrative merged pull request beside the headline. */
+  pullRequest: {
+    label: 'Example pull request (illustrative)',
+    title: 'DatePicker: make trigger keyboard-operable',
+    number: '#412',
+    status: 'Merged',
+    file: 'src/components/DatePicker.tsx',
+    codeLabel: 'Code changes in DatePicker.tsx',
+    lines: [
+      { number: 41, kind: 'context', code: '<label>Check-in date</label>' },
+      { number: 42, kind: 'removed', code: '<div onClick={open}>' },
+      { number: 42, kind: 'added', code: '<button type="button"' },
+      { number: 43, kind: 'added', code: '  aria-expanded={isOpen}' },
+      { number: 44, kind: 'added', code: '  onClick={open}>' },
+      { number: 45, kind: 'context', code: '  {formatted}' },
+      { number: 46, kind: 'removed', code: '</div>' },
+      { number: 46, kind: 'added', code: '</button>' },
+    ] satisfies CodeLine[],
+    footer: '6 pages affected · tested: keyboard · NVDA · VoiceOver · 200% zoom',
+  },
 };
 
 export const whyNow = {

@@ -10,6 +10,14 @@ export const site = {
   description: hero.subheadline,
 };
 
+/** The main call to action: the header button, the hero's primary button and the contact band. */
+export const bookingCta = {
+  // While the booking link is an email address, say so: the button opens an email, not a calendar.
+  label: config.bookingUrl.startsWith('mailto:') ? 'Email to book a call' : 'Book a 20-minute call',
+  // Until the booking link is set (preview builds only), send people to the contact band.
+  href: isSet(config.bookingUrl) ? config.bookingUrl : sectionHref(anchors.contact),
+};
+
 export const header = {
   homeLabel: site.name,
   menuButton: 'Menu',
@@ -20,14 +28,7 @@ export const header = {
     { label: 'About', href: sectionHref(anchors.about) },
     { label: 'FAQ', href: sectionHref(anchors.faq) },
   ],
-  cta: {
-    // While the booking link is an email address, say so: the button opens an email, not a calendar.
-    label: config.bookingUrl.startsWith('mailto:')
-      ? 'Email to book a call'
-      : 'Book a 20-minute call',
-    // Until the booking link is set (preview builds only), send people to the contact band.
-    href: isSet(config.bookingUrl) ? config.bookingUrl : sectionHref(anchors.contact),
-  },
+  cta: bookingCta,
 };
 
 type FooterLink = { label: string; href: string };

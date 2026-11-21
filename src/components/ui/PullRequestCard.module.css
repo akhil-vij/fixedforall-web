@@ -1,0 +1,87 @@
+/* No overflow: hidden, so nothing clips the code region's focus ring. The white title bar and
+   footer fill the rounded corners. */
+.card {
+  min-width: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.titleBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.title {
+  font-size: 1.0625rem;
+  font-weight: var(--weight-bold);
+  line-height: 1.4;
+}
+
+.number {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  font-weight: var(--weight-regular);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--action-text);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: var(--weight-medium);
+}
+
+.file,
+.footer {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-code-size);
+}
+
+.file {
+  padding: 8px 18px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.footer {
+  padding: 12px 18px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 48px auto;
+}
+
+.lineNumber {
+  padding-right: 10px;
+  color: var(--text-code-line-number);
+  text-align: right;
+}
+
+.code {
+  padding: 0 18px 0 10px;
+  white-space: pre;
+  text-decoration: none;
+}
+
+.removed {
+  background: var(--surface-code-removed);
+  color: var(--text-code-removed);
+}
+
+.added {
+  background: var(--surface-code-added);
+  color: var(--text-code-added);
+}
