@@ -74,6 +74,13 @@ a:hover {
   background: var(--surface);
 }
 
+[data-surface='code'] {
+  --surface: var(--surface-code);
+  --focus-ring: var(--focus-ring-on-code);
+
+  background: var(--surface);
+}
+
 [data-surface='band'] {
   --surface: var(--surface-band);
   --focus-ring: var(--focus-ring-on-band);
@@ -93,6 +100,15 @@ a:hover {
   box-shadow:
     0 0 0 var(--focus-width) var(--surface),
     0 0 0 calc(var(--focus-width) * 2) var(--focus-ring);
+}
+
+/* The code panel spans its card edge to edge, between white rows: a ring outside it would sit on
+   white and barely show. So on code the ring is drawn just inside the edge, as an outline, which
+   paints above the coloured rows (an inset box-shadow would be hidden under them). */
+[data-surface='code']:focus-visible {
+  outline: var(--focus-width) solid var(--focus-ring);
+  outline-offset: calc(var(--focus-width) * -1);
+  box-shadow: none;
 }
 
 /* The skip link's target. It takes focus so the next Tab starts inside main, but it isn't a
