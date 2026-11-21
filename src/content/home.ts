@@ -1,5 +1,7 @@
 /** All home page copy. Edit text here; components only handle layout. */
 
+import { config } from './config';
+
 export type CodeLine = {
   /** Line number shown in the gutter. */
   number: number;
@@ -115,11 +117,73 @@ export const howItWorks = {
 export const services = {
   label: '03 — Services',
   heading: 'Services',
+  items: [
+    {
+      kicker: 'Most teams start here',
+      // The recommended starting point: its kicker is in the accent colour.
+      highlight: true,
+      name: 'Accessibility Check',
+      text: 'Your main user journeys, scanned and tested by hand. A plain-English report with what to fix first.',
+      meta: `2–3 days · from ${config.checkPrice}`,
+    },
+    {
+      kicker: 'After the Check',
+      highlight: false,
+      name: 'Fix Sprint',
+      text: 'I fix your shared components and key journeys, and train your team.',
+      meta: '1–4 weeks · quoted after the Check',
+    },
+    {
+      kicker: 'For software companies',
+      highlight: false,
+      name: 'Independent Accessibility Report',
+      text: 'For when your customers ask for one (often called an ACR or VPAT). An honest, independent report, which buyers trust more than one a company writes about itself.',
+      meta: 'Quoted per product',
+    },
+  ],
 };
+
+export type FindingMethod = 'hand' | 'scan';
 
 export const report = {
   label: '04 — What you get',
   heading: 'A report your team can act on',
+  paragraphs: [
+    'Every Check ends with a short report: a one-line summary, problems grouped by how badly they block people, and the five fixes to do first. Each finding says whether a scanner found it or a person did.',
+    'You also get a spreadsheet of every issue, and tickets ready to import into Jira.',
+  ],
+  /** Shown only when config.sampleReportUrl is set. */
+  downloadLabel: 'Download the sample report (PDF)',
+  /** The illustrative first page of a report. */
+  sample: {
+    label: 'Sample report, page 1 (illustrative)',
+    title: 'Accessibility Check · Sample report',
+    page: 'Page 1 of 14 · illustrative',
+    summaryHeading: 'Summary',
+    summary: '12 problems found on 6 key screens. 4 block users completely.',
+    impactHeading: 'By impact on users',
+    // The bars are drawn from these counts; the counts are the text.
+    impact: [
+      { label: 'Blocks users completely', count: 4 },
+      { label: 'Makes tasks much harder', count: 5 },
+      { label: 'Minor friction', count: 3 },
+    ],
+    fixFirstHeading: 'Fix these first',
+    fixFirst: [
+      { text: 'Checkout “Continue” button has no accessible name', method: 'hand' },
+      { text: 'Date picker can’t be used with a keyboard', method: 'hand' },
+      { text: 'Form errors aren’t announced to screen readers', method: 'hand' },
+      { text: 'Price text contrast is 3.1:1, needs 4.5:1', method: 'scan' },
+      { text: 'Focus is lost when the cookie dialog closes', method: 'hand' },
+    ] satisfies { text: string; method: FindingMethod }[],
+    methods: {
+      scan: { tag: 'Scanned automatically', detail: 'axe-core across the 6 screens' },
+      hand: {
+        tag: 'Tested by hand',
+        detail: 'keyboard · NVDA + Chrome · VoiceOver + Safari · 200% zoom',
+      },
+    } satisfies Record<FindingMethod, { tag: string; detail: string }>,
+  },
 };
 
 export const work = {
